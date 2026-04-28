@@ -1,6 +1,6 @@
 # Physics-Constrained Neural ODE for Austenite Reversion
 
-This folder is the clean handoff package for the medium-Mn steel austenite reversion project.
+This folder contains the core source code for the medium-Mn steel austenite reversion project.
 It keeps the core source code, curated figures, tests, and static reference data in one place,
 without transient experiment artifacts.
 

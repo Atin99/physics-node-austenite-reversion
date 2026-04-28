@@ -2,61 +2,56 @@
 
 Medium-Mn steel transformation kinetics modeling using a physics-informed Neural ODE trained on literature-derived data.
 
-## what this project actually is
+## what this is
 
-The goal was to build a kinetics predictor for austenite reversion in medium-Mn steels. There are plenty of papers on this topic, but the data across them is fragmented, inconsistent, and not ML-ready. Different studies use different alloys, temps, measurement methods, and reporting styles.
+A kinetics predictor for austenite reversion in medium-Mn steels (3-12 wt% Mn). Takes alloy composition, annealing temperature, and time as inputs. Returns predicted retained austenite fraction with physics constraints enforced.
 
-So this project ended up being less about "look at my model" and more about testing what happens when you try to learn kinetics from messy heterogeneous literature data. The answer: the model works, but the bottleneck is data quality, not architecture.
+The model was trained on 125 experimental measurements from 25 peer-reviewed studies (2010-2024). Every data point has a DOI, source reference, measurement method, and quality flag. See `data/DATASET_CARD.md` for full documentation.
 
-## the dataset
-
-125 experimental measurements from 25 peer-reviewed studies (2010-2024). Every data point has a DOI, source reference, measurement method, and quality flag. See `data/DATASET_CARD.md` for full documentation.
-
-Composition coverage: Mn 3.93-12%, C 0-0.40%, Al 0-4.3%, T 25-1000C, time 0-604800s.
+The hard part was not finding papers. It was turning heterogeneous, partially incompatible literature evidence into something a kinetics model could learn from.
 
 ## results
 
-| metric | stage 1 (ep 109) | stage 2 best (run 06) | stage 2 full (run 07) |
-|---|---|---|---|
-| val_real_rmse | 0.21278 | 0.21244 | 0.21145 |
-| test_real_rmse | 0.31368 | 0.31214 | 0.32797 |
-| test_real_mae | 0.27103 | 0.26699 | 0.27695 |
+| metric | old model (broken thermo) | retrained model (fixed thermo) |
+|---|---|---|
+| val_real_rmse | 0.212 | 0.161 |
+| test_real_rmse | 0.312 | 0.131 |
 
-run 06 is the best model on test. run 07 ran more epochs but overfit on the tiny val set.
+### backend validation against literature (10 independent cases)
 
-the val-test gap (0.21 vs 0.31) is the main finding. cross-study generalization is hard when the data comes from different labs with different protocols. thats not a bug, thats the result.
+| metric | value |
+|---|---|
+| MAE vs published data | 0.138 (13.8%) |
+| RMSE vs published data | 0.173 (17.3%) |
+| monotonicity violations | 3 / 294 (negligible) |
+| boundary violations | 0 |
 
-## folder structure
+The old model had a persistent val-test gap (0.21 vs 0.31) that looked like a data heterogeneity problem. Turned out the thermodynamic input functions (Ac1 formula, equilibrium RA fraction) were miscalibrated for medium-Mn compositions. Fixing those and retraining cut the test RMSE by 58%.
+
+## the dataset
+
+125 experimental measurements from 25 peer-reviewed studies (2010-2024).
+
+Composition coverage: Mn 3.93-12%, C 0-0.40%, Al 0-4.3%, T 25-1000C, time 0-604800s.
+
+Measurement methods: XRD (93%), EBSD (4%), neutron diffraction (3%).
+
+## running the app
 
 ```
-project_5/
-  src/                 - production source code (v3, with padding/masking fixes)
-  data/                - calphad tables, literature validation csv, dataset card
-  models/              - all checkpoints (stage1, stage2, smoke tests)
-  figures/             - publication figures (22 files including shap)
-  analysis.py          - post-hoc analysis script (cpu only, no gpu needed)
-  analysis_results/    - output from the analysis script
-  notebooks/           - colab training script, kaggle run instructions
-  kaggle/
-    cells/             - all kaggle execution cells
-    upload_bundles/    - zip files for kaggle dataset upload
-    runs/              - all 7 kaggle runs with logs notebooks and result zips
-  docs/                - paper draft, defense qbank, run registry, notes
-  tests/               - unit tests
-  archive/             - old code versions and original zip bundles
+pip install -r requirements.txt
+streamlit run src/streamlit_app.py
 ```
 
-## source code versions
+or use `launch.bat` on Windows.
 
-there are 3 versions of the code. only v3 is active.
+## running validation
 
-- v3 (src/) - production. has point_mask/obs_mask, proper val_real_rmse checkpoint selection.
-- v2 (archive/code_v2_intermediate/) - ran stage 1 on kaggle. missing the stage 2 fixes.
-- v1 (archive/code_v1_earliest/) - original version.
+```
+python validate_model.py
+```
 
-## the hard part
-
-the hard part was not finding papers. it was turning heterogeneous, partially incompatible literature evidence into something a kinetics model could learn from without giving fake confidence.
+Runs CPU-only. Tests predictions against 10 known literature values, checks monotonicity, boundary conditions, temperature/composition/time dependence.
 
 ## running the analysis
 
@@ -64,7 +59,24 @@ the hard part was not finding papers. it was turning heterogeneous, partially in
 python analysis.py
 ```
 
-this runs cpu-only and generates per-study stats, training dynamics, JMAK baseline comparisons.
+Generates per-study stats, training dynamics, JMAK baseline comparisons.
+
+## folder structure
+
+```
+project_4/
+  src/                 - source code (model, training, thermodynamics, app)
+  data/                - CALPHAD tables, literature validation CSV, dataset card
+  models/              - all checkpoints (stage1, stage2, retrained)
+  figures/             - publication figures
+  analysis.py          - post-hoc analysis script (CPU only)
+  analysis_results/    - output from the analysis script
+  notebooks/           - colab training script, kaggle run instructions
+  kaggle/              - all kaggle runs with logs notebooks and result zips
+  docs/                - paper draft, technical report, conclusion, run registry
+  tests/               - unit tests
+  archive/             - old code versions
+```
 
 ## requirements
 

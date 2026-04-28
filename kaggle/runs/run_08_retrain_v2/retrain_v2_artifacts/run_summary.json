@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-04-28T07:17:19.016631+00:00",
+  "finished_utc": "2026-04-28T07:48:45.797218+00:00",
+  "runtime_minutes": 31.45,
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "stage1_checkpoint": "/kaggle/input/datasets/atindatta2/retrain-v2-stage2-only-zip/stage1_best.pt",
+  "best_metric": 0.1612012084431807,
+  "best_val_metrics": {
+    "mae": 0.13293059030547738,
+    "rmse": 0.1612012084431807,
+    "real_mae": 0.13293059030547738,
+    "real_rmse": 0.1612012084431807,
+    "endpoint_mae": 0.13293059030547738,
+    "real_endpoint_mae": 0.13293059030547738,
+    "n_observed": 16.0,
+    "n_real_observed": 16.0
+  },
+  "evaluation": {
+    "val_real": {
+      "name": "val_real",
+      "rmse": 0.1612012084431807,
+      "real_rmse": 0.1612012084431807,
+      "mae": 0.13293059030547738,
+      "real_mae": 0.13293059030547738,
+      "endpoint_mae": 0.13293059030547738,
+      "real_endpoint_mae": 0.13293059030547738
+    },
+    "test_real": {
+      "name": "test_real",
+      "rmse": 0.13098886891808367,
+      "real_rmse": 0.13098886891808367,
+      "mae": 0.08781695679614418,
+      "real_mae": 0.08781695679614418,
+      "endpoint_mae": 0.09607451595366001,
+      "real_endpoint_mae": 0.09607451595366001
+    },
+    "val_full": {
+      "name": "val_full",
+      "rmse": 0.03928901716763171,
+      "real_rmse": 0.1612012084431807,
+      "mae": 0.020188315941724357,
+      "real_mae": 0.13293059030547738,
+      "endpoint_mae": 0.06041789187569336,
+      "real_endpoint_mae": 0.13293059030547738
+    },
+    "test_full": {
+      "name": "test_full",
+      "rmse": 0.045261302380681406,
+      "real_rmse": 0.13098886891808367,
+      "mae": 0.022408892835194406,
+      "real_mae": 0.08781695679614418,
+      "endpoint_mae": 0.06430893134524894,
+      "real_endpoint_mae": 0.09607451595366001
+    }
+  }
+}

@@ -40,3 +40,10 @@ pipeline.log
 .pytest_cache/
 htmlcov/
 .coverage
+
+# private / session notes
+HANDOFF_PROMPT.md
+docs/newplan_improvement.txt
+docs/stage2_retry_cells_summary.txt
+docs/RECOVER_FROM_STAGE1_CHECKPOINT.md
+docs/KAGGLE_RECOVERY_SETUP.txt

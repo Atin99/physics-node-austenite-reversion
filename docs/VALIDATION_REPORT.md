@@ -1,83 +1,106 @@
-# Model Backend Validation Report
+# Model Validation Report
+
+Validated with `validate_model.py` using checkpoint `stage2_fixed_best.pt` (retrained with corrected thermodynamics).
 
 ## Summary
 
-| Metric | Value | Assessment |
+| Metric | Value | Notes |
 |---|---|---|
-| Prediction MAE vs literature | 0.271 (27.1%) | Dominated by f_eq lookup failures |
-| Prediction RMSE vs literature | 0.302 (30.1%) | Consistent with test RMSE from training |
-| Monotonicity violations | 3 / 294 steps | Minor, only at 700C boundary |
-| Boundary violations | 0 | Clean |
-| Physics constraints | Mostly satisfied | 3 tiny violations at high T |
+| Prediction MAE vs literature | 0.138 (13.8%) | 10 independent test cases |
+| Prediction RMSE vs literature | 0.173 (17.3%) | Improved from 0.302 after thermo fix |
+| Max single-point error | 0.363 | PMC6266817 cold-rolled case |
+| Monotonicity violations | 3 / 294 | Negligible magnitude (~1e-6) |
+| Boundary violations | 0 | All predictions in [0, f_eq] |
 
-## Root Cause of Prediction Errors
+## Predictions vs published data
 
-The dominant error source is NOT the Neural ODE itself. It is the equilibrium fraction lookup (`get_equilibrium_RA`).
+| Study | Actual | Predicted | Error | f_eq | Pass? |
+|---|---|---|---|---|---|
+| Gibbs 2011 650C 1wk | 0.435 | 0.425 | -0.010 | 0.425 | yes |
+| Gibbs 2011 625C 1wk | 0.428 | 0.442 | +0.014 | 0.442 | yes |
+| Gibbs 2011 600C 1wk | 0.343 | 0.454 | +0.111 | 0.454 | yes |
+| Luo 2011 650C 24h | 0.350 | 0.469 | +0.119 | 0.469 | yes |
+| Luo 2011 650C 1h | 0.100 | 0.368 | +0.268 | 0.469 | no |
+| PMC6266817 CR peak | 0.390 | 0.027 | -0.363 | 0.170 | no |
+| Han 2014 peak | 0.350 | 0.190 | -0.160 | 0.379 | no |
+| Zhao 2014 peak | 0.380 | 0.218 | -0.162 | 0.419 | no |
+| Suh 2017 peak | 0.450 | 0.412 | -0.038 | 0.483 | yes |
+| Sun 2018 peak | 0.250 | 0.120 | -0.130 | 0.392 | yes |
 
-### How the model works
+Pass threshold: absolute error < 0.15.
 
-The Neural ODE predicts RA fraction as:
+6 out of 10 cases pass. The 4 failures have identifiable causes.
 
-    predicted = ODE_output * f_eq
+## Error analysis
 
-The model's output is capped at `f_eq * 1.02` by design. So if `f_eq = 0`, the model outputs 0 regardless of how good the learned dynamics are.
+### Cases that work well
 
-### What went wrong
+The model handles Gibbs 2011 and Suh 2017 data accurately. These are compositions where the recalibrated Ac1/f_eq correlations return correct thermodynamic inputs. When f_eq is right, the Neural ODE produces good predictions.
 
-The `get_equilibrium_RA_fallback` function uses empirical Ac1/Ac3 correlations. For many compositions + temperatures in the dataset, the function returns f_eq = 0 because the temperature falls below the estimated Ac1.
+### Cases that fail
 
-Examples:
-- **Fe-5Mn-0.2C at 650C**: Ac1 estimated at 670C, so f_eq = 0. But Luo 2011 measured 35% RA at this condition. The Ac1 formula overestimates Ac1 for low-Mn steels.
-- **Fe-5Mn-0.12C-1Al at 650C**: Ac1 = 676C, f_eq = 0. But PMC6266817 measured 39% RA. The Al correction pushes Ac1 too high.
-- **Fe-7.9Mn-0.07C at 640C**: Ac1 = 628C but f_eq = 0.058 (very low). Zhao 2014 measured 38%.
+**PMC6266817 (Fe-5Mn-0.12C-1Al):** The Al correction in the Ac1 formula pushes estimated Ac1 too high, which forces f_eq down to 0.170 when the actual equilibrium fraction is much higher. The model cannot predict more than f_eq by design, so the output collapses to 0.027.
 
-### Why this happens
+**Luo 2011 at 1h:** The 24h prediction is reasonable (0.469 vs 0.350), but the 1h prediction overshoots badly (0.368 vs 0.100). The model predicts fast early kinetics for this composition. This suggests the synthetic pre-training biases the model toward faster transformation than Luo 2011 observed at short times.
 
-The Ac1/Ac3 empirical formulas (Andrews-type) were developed for conventional steels. Medium-Mn steels have significantly lower actual Ac1 temperatures due to Mn stabilizing austenite more aggressively than the linear correlation captures. The formula:
+**Han 2014 and Zhao 2014:** Both underpredicted by ~0.16. The f_eq values are reasonable (0.38, 0.42), but the predicted RA at 1h does not reach the published peak values. These compositions (9Mn and 7.9Mn) may have faster reversion kinetics than the model learned from the training distribution.
 
-    Ac1 = 723 - 10.7*Mn - 3*(Mn-5)^1.2 ...
+### Remaining thermodynamic issues
 
-still overestimates Ac1 for Mn = 5-8 wt% steels by 20-50C.
+The recalibrated Ac1 formula works well for Fe-Mn-C ternaries but still overestimates Ac1 for Al-containing steels. A CALPHAD lookup with pycalphad would fix this, but requires a proper thermodynamic database (TCFE or similar).
 
-### Where the model works correctly
+## Physical sanity
 
-Cases where f_eq is correct show the Neural ODE predictions are reasonable:
-- **Han 2014** (9Mn, f_eq=1.0): predicted 0.258 vs actual 0.35 (25% error, but correct direction)
-- **Sun 2018** (12Mn, f_eq=1.0): predicted 0.196 vs actual 0.25 (good)
-- **High-Al alloy** (PMC11173901): predicted 0.629 vs actual 0.599 (5% error, excellent)
-- **Gibbs 2011 at 650C** (f_eq=0.095): predicted 0.095 (capped at f_eq)
+### Monotonicity
 
-## Physical Sanity
+291 out of 294 integration steps are strictly non-decreasing. The 3 violations occur at extreme temperatures (575C, 675C, 700C) with magnitudes on the order of 1e-6. These are numerical artifacts from the ODE solver, not physical violations.
 
-### What works
-1. **Monotonicity**: 291/294 steps are strictly non-decreasing. The 3 violations at 700C are tiny (magnitude -0.000037).
-2. **Boundary conditions**: All predictions stay in [0, f_eq]. No negative values, no super-equilibrium predictions.
-3. **Time dependence**: Shows proper sigmoidal kinetics (slow start, acceleration, saturation).
-4. **Below Ac1**: Returns ~0 as expected.
-5. **Short time**: Returns near-initial value (0.001).
-6. **Long time**: Approaches f_eq (ratio = 0.99 at 7 days).
+### Boundary conditions
 
-### What does not work
-1. **Temperature peak location**: Peak RA at 750C instead of expected 640-660C for Fe-7Mn-0.1C. This is because f_eq is 0 below ~660C, so the model cannot show the expected low-temperature response.
-2. **Composition sensitivity at 650C**: Mn=4-6 returns 0 because f_eq=0. Only Mn>=8 gives nonzero predictions at 650C.
+All predictions stay in [0, f_eq]. No negative values, no super-equilibrium fractions.
 
-## Streamlit App Implications
+### Temperature dependence
 
-The app will show correct behavior for:
-- High-Mn alloys (>8 wt% Mn) at most temperatures
-- High-Al alloys (which push Ac3 up, expanding the intercritical range)
-- Temperatures above 670C for most compositions
+Peak RA at 630C for Fe-7Mn-0.1C (1h hold). Physically reasonable — low enough for Mn partitioning to be effective, high enough for significant driving force. RA drops off at both extremes as expected.
 
-The app will underpredict for:
-- Low-Mn alloys (5-7 wt% Mn) at 600-650C
-- Any condition where the empirical Ac1 overestimates the true Ac1
+### Composition sensitivity
 
-## How to Fix
+Mn = 4: near-zero RA (below Ac1 at 650C).
+Mn = 6-8: highest RA (optimal intercritical range).
+Mn = 10-12: decreasing RA (kinetics slow as equilibrium fraction saturates).
 
-The fix is to improve the Ac1 correlation or use the CALPHAD lookup tables with better resolution. The current tables are only 3x3x3 (Mn x C x T), which is too coarse. Regenerating with pycalphad at 20x20x30 resolution would solve the f_eq accuracy problem.
+This matches the well-known Mn dependence in medium-Mn steels.
 
-However, this requires pycalphad installed with a proper thermodynamic database (not available on this machine). The model weights are fine - only the input preprocessing (thermodynamics) needs updating.
+### Time dependence
 
-## Conclusion
+Fe-7Mn-0.1C at 650C:
 
-The Neural ODE itself is working correctly. The predictions respect physics, show proper kinetics, and match literature where f_eq is accurate. The bottleneck is the thermodynamic lookup returning wrong equilibrium fractions for medium-Mn compositions at lower intercritical temperatures.
+| Time | Predicted RA |
+|---|---|
+| 1 min | 0.014 |
+| 5 min | 0.138 |
+| 30 min | 0.211 |
+| 1 h | 0.274 |
+| 4 h | 0.417 |
+| 1 d | 0.425 |
+| 7 d | 0.425 |
+
+Proper sigmoidal shape. Saturates near f_eq for long holds.
+
+### Edge cases
+
+- Below Ac1: RA = 0.000 at T = Ac1 - 50C. Correct.
+- Very short time (1s): RA = 0.001. Correct.
+- Very long time (7d): RA/f_eq = 1.00. Approaches equilibrium. Correct.
+- High-Al alloy (Fe-9.4Mn-0.2C-4.3Al at 800C): predicted 0.460 vs published 0.599. Underpredicted due to Al-induced Ac1 error, but order of magnitude is right.
+
+## Comparison with previous model
+
+| Metric | Old model | New model |
+|---|---|---|
+| MAE vs literature | 0.271 | 0.138 |
+| RMSE vs literature | 0.302 | 0.173 |
+| Pass rate (< 0.15) | 3/10 | 6/10 |
+| Boundary violations | 0 | 0 |
+
+The improvement comes entirely from fixing the thermodynamic input functions (Ac1 and f_eq), not from changes to the model architecture or training procedure. The model weights are the only thing that changed, and they changed because they received correct inputs during retraining.

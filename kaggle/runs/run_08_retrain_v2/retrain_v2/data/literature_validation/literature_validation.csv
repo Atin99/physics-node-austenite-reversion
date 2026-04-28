@@ -1,0 +1,126 @@
+Mn,C,Al,Si,Mo,Nb,T_celsius,t_seconds,f_RA,f_RA_pct,study_id,doi,data_quality,source_ref,method,unit,initial_condition,provenance,year,journal
+7.1,0.1,0.0,0.0,0.0,0.0,575,604800,0.23,23.0,gibbs_2011,10.1007/s11661-011-0736-2,table,Table III,neutron_diffraction,wt_pct,"cold-rolled, 50% reduction",experimental,2011,Metallurgical and Materials Transactions A
+7.1,0.1,0.0,0.0,0.0,0.0,600,604800,0.34299999999999997,34.3,gibbs_2011,10.1007/s11661-011-0736-2,table,Table III,neutron_diffraction,wt_pct,"cold-rolled, 50% reduction",experimental,2011,Metallurgical and Materials Transactions A
+7.1,0.1,0.0,0.0,0.0,0.0,625,604800,0.428,42.8,gibbs_2011,10.1007/s11661-011-0736-2,table,Table III,neutron_diffraction,wt_pct,"cold-rolled, 50% reduction",experimental,2011,Metallurgical and Materials Transactions A
+7.1,0.1,0.0,0.0,0.0,0.0,650,604800,0.435,43.5,gibbs_2011,10.1007/s11661-011-0736-2,table,Table III,neutron_diffraction,wt_pct,"cold-rolled, 50% reduction",experimental,2011,Metallurgical and Materials Transactions A
+7.1,0.1,0.0,0.0,0.0,0.0,675,604800,0.013999999999999999,1.4,gibbs_2011,10.1007/s11661-011-0736-2,table,Table III,XRD,wt_pct,"cold-rolled, 50% reduction",experimental,2011,Metallurgical and Materials Transactions A
+5.0,0.2,0.0,0.0,0.0,0.0,650,1800,0.03,3.0,luo_2011,10.1016/j.actamat.2011.03.025,text_reported,"Results section, text",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,3600,0.1,10.0,luo_2011,10.1016/j.actamat.2011.03.025,text_reported,"Figure 2, approximate",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,14400,0.22,22.0,luo_2011,10.1016/j.actamat.2011.03.025,digitized_figure,"Figure 2, approximate",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,43200,0.3,30.0,luo_2011,10.1016/j.actamat.2011.03.025,digitized_figure,"Figure 2, approximate",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,86400,0.35,35.0,luo_2011,10.1016/j.actamat.2011.03.025,text_reported,"Results section, text",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,172800,0.38,38.0,luo_2011,10.1016/j.actamat.2011.03.025,text_reported,"Results section, text",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,518400,0.4,40.0,luo_2011,10.1016/j.actamat.2011.03.025,text_reported,"Results section, near saturation",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Acta Materialia
+4.7,0.16,1.6,0.2,0.2,0.0,640,3600,0.0,0.0,pmc11053108_2024,PMC11053108,text_reported,Results: below Ac1,XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+4.7,0.16,1.6,0.2,0.2,0.0,660,3600,0.05,5.0,pmc11053108_2024,PMC11053108,text_reported,"Results: just above Ac1, small amount",XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+4.7,0.16,1.6,0.2,0.2,0.0,680,3600,0.3,30.0,pmc11053108_2024,PMC11053108,text_reported,Results: >30%,XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+4.7,0.16,1.6,0.2,0.2,0.0,700,3600,0.4,40.0,pmc11053108_2024,PMC11053108,text_reported,Results: peak ~40%,XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+4.7,0.16,1.6,0.2,0.2,0.0,720,3600,0.35,35.0,pmc11053108_2024,PMC11053108,text_reported,Results: fresh martensite forming,XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+4.7,0.16,1.6,0.2,0.2,0.0,800,3600,0.0,0.0,pmc11053108_2024,PMC11053108,text_reported,Results: 83% fresh martensite,XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+4.7,0.16,1.6,0.2,0.2,0.0,1000,3600,0.0,0.0,pmc11053108_2024,PMC11053108,text_reported,Results: 100% martensite,XRD,vol_pct,cold-rolled,experimental,2024,Open Access (PMC)
+9.4,0.2,4.3,0.0,0.0,0.0,750,3600,0.478,47.8,pmc11173901_2024,PMC11173901,digitized_figure,Figure 3,XRD,vol_pct,not specified,experimental,2024,Open Access (PMC)
+9.4,0.2,4.3,0.0,0.0,0.0,800,3600,0.599,59.9,pmc11173901_2024,PMC11173901,digitized_figure,"Figure 3, peak",XRD,vol_pct,not specified,experimental,2024,Open Access (PMC)
+9.4,0.2,4.3,0.0,0.0,0.0,850,3600,0.536,53.6,pmc11173901_2024,PMC11173901,digitized_figure,Figure 3,XRD,vol_pct,not specified,experimental,2024,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,600,1800,0.26,26.0,pmc6266817_2018,PMC6266817,digitized_figure,Figure 4b (CR),XRD,vol_pct,cold-rolled (CR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,625,1800,0.33,33.0,pmc6266817_2018,PMC6266817,digitized_figure,Figure 4b (CR),XRD,vol_pct,cold-rolled (CR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,650,1800,0.39,39.0,pmc6266817_2018,PMC6266817,text_reported,"Text + Figure 4b (CR), peak",XRD,vol_pct,cold-rolled (CR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,675,1800,0.29,29.0,pmc6266817_2018,PMC6266817,digitized_figure,Figure 4b (CR),XRD,vol_pct,cold-rolled (CR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,700,1800,0.21,21.0,pmc6266817_2018,PMC6266817,digitized_figure,Figure 4b (CR),XRD,vol_pct,cold-rolled (CR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,750,1800,0.2,20.0,pmc6266817_2018,PMC6266817,digitized_figure,Figure 4b (CR),XRD,vol_pct,cold-rolled (CR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,600,1800,0.16,16.0,pmc6266817_2018_HR,PMC6266817,digitized_figure,Figure 4b (HR),XRD,vol_pct,hot-rolled (HR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,625,1800,0.19,19.0,pmc6266817_2018_HR,PMC6266817,digitized_figure,Figure 4b (HR),XRD,vol_pct,hot-rolled (HR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,650,1800,0.29,29.0,pmc6266817_2018_HR,PMC6266817,text_reported,"Text + Figure 4b (HR), peak",XRD,vol_pct,hot-rolled (HR),experimental,2018,Open Access (PMC)
+5.0,0.12,1.0,0.0,0.2,0.05,690,1800,0.21,21.0,pmc6266817_2018_HR,PMC6266817,digitized_figure,Figure 4b (HR),XRD,vol_pct,hot-rolled (HR),experimental,2018,Open Access (PMC)
+6.0,0.15,1.5,0.3,0.0,0.0,650,3600,0.105,10.5,yan_2022,yan_2022_EBSD,text_reported,Search summary: low T,EBSD,vol_pct,cold-rolled,experimental,2022,MDPI Metals / EBSD study
+6.0,0.15,1.5,0.3,0.0,0.0,680,3600,0.34,34.0,yan_2022,yan_2022_EBSD,text_reported,Search summary: near optimum,EBSD,vol_pct,cold-rolled,experimental,2022,MDPI Metals / EBSD study
+6.0,0.15,1.5,0.3,0.0,0.0,710,3600,0.578,57.8,yan_2022,yan_2022_EBSD,text_reported,Search summary: peak,EBSD,vol_pct,cold-rolled,experimental,2022,MDPI Metals / EBSD study
+6.0,0.4,2.0,1.0,0.0,0.0,680,3600,0.34,34.0,aliabad_2026,aliabad_2026,text_reported,Search summary: XRD measurement,XRD,vol_pct,not specified,experimental,2026,Open Access
+6.0,0.4,2.0,1.0,0.0,0.0,680,3600,0.38,38.0,aliabad_2026,aliabad_2026,text_reported,Search summary: EBSD measurement,EBSD,vol_pct,not specified,experimental,2026,Open Access
+8.0,0.2,3.0,0.0,0.0,0.0,680,3600,0.647,64.7,frontiers_2020,frontiers_2020,text_reported,Search summary: XRD,XRD,vol_pct,not specified,experimental,2020,Frontiers in Materials
+8.0,0.2,3.0,0.0,0.0,0.0,680,3600,0.47200000000000003,47.2,frontiers_2020,frontiers_2020,text_reported,Search summary: EBSD,EBSD,vol_pct,not specified,experimental,2020,Frontiers in Materials
+3.93,0.23,2.01,0.51,0.0,0.0,25,0,0.14,14.0,lpbf_2021,MDPI_Materials_14_3081,text_reported,Page 8: as-built condition,XRD,wt_pct,LPBF as-built,experimental,2021,Materials (MDPI)
+3.93,0.23,2.01,0.51,0.0,0.0,690,600,0.3,30.0,lpbf_2021,MDPI_Materials_14_3081,text_reported,Page 8: optimum 690C/10min,XRD,wt_pct,LPBF as-built,experimental,2021,Materials (MDPI)
+3.93,0.23,2.01,0.51,0.0,0.0,750,600,0.17,17.0,lpbf_2021,MDPI_Materials_14_3081,text_reported,Page 8: over-annealed 750C/10min,XRD,wt_pct,LPBF as-built,experimental,2021,Materials (MDPI)
+7.1,0.11,0.0,0.0,0.0,0.0,600,60,0.02,2.0,demoor_2011,10.1016/j.scriptamat.2010.09.040,digitized_figure,"Figure 2, early kinetics",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Scripta Materialia
+7.1,0.11,0.0,0.0,0.0,0.0,600,600,0.08,8.0,demoor_2011,10.1016/j.scriptamat.2010.09.040,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2011,Scripta Materialia
+7.1,0.11,0.0,0.0,0.0,0.0,600,3600,0.15,15.0,demoor_2011,10.1016/j.scriptamat.2010.09.040,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2011,Scripta Materialia
+7.1,0.11,0.0,0.0,0.0,0.0,600,36000,0.28,28.0,demoor_2011,10.1016/j.scriptamat.2010.09.040,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2011,Scripta Materialia
+7.1,0.11,0.0,0.0,0.0,0.0,600,360000,0.35,35.0,demoor_2011,10.1016/j.scriptamat.2010.09.040,digitized_figure,"Figure 2, near saturation",XRD,vol_pct,cold-rolled martensitic,experimental,2011,Scripta Materialia
+5.8,0.12,2.0,0.0,0.0,0.0,625,180,0.05,5.0,lee_decooman_2014,10.1007/s11661-013-1860-y,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2013,Metallurgical and Materials Transactions A
+5.8,0.12,2.0,0.0,0.0,0.0,650,180,0.12,12.0,lee_decooman_2014,10.1007/s11661-013-1860-y,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2013,Metallurgical and Materials Transactions A
+5.8,0.12,2.0,0.0,0.0,0.0,675,180,0.18,18.0,lee_decooman_2014,10.1007/s11661-013-1860-y,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2013,Metallurgical and Materials Transactions A
+5.8,0.12,2.0,0.0,0.0,0.0,700,180,0.28,28.0,lee_decooman_2014,10.1007/s11661-013-1860-y,digitized_figure,"Figure 3, near peak",XRD,vol_pct,cold-rolled martensitic,experimental,2013,Metallurgical and Materials Transactions A
+5.8,0.12,2.0,0.0,0.0,0.0,720,180,0.32,32.0,lee_decooman_2014,10.1007/s11661-013-1860-y,digitized_figure,"Figure 3, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2013,Metallurgical and Materials Transactions A
+5.8,0.12,2.0,0.0,0.0,0.0,750,180,0.22,22.0,lee_decooman_2014,10.1007/s11661-013-1860-y,digitized_figure,"Figure 3, decreasing",XRD,vol_pct,cold-rolled martensitic,experimental,2013,Metallurgical and Materials Transactions A
+6.0,0.0,0.0,0.0,0.0,0.0,500,86400,0.05,5.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,"Figure 4, low-T regime",XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+6.0,0.0,0.0,0.0,0.0,0.0,550,86400,0.15,15.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,Figure 4,XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+6.0,0.0,0.0,0.0,0.0,0.0,575,86400,0.25,25.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,Figure 4,XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+6.0,0.0,0.0,0.0,0.0,0.0,600,86400,0.35,35.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,"Figure 4, near optimum",XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+6.0,0.0,0.0,0.0,0.0,0.0,625,86400,0.42,42.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,"Figure 4, peak",XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+6.0,0.0,0.0,0.0,0.0,0.0,650,86400,0.3,30.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,"Figure 4, decreasing",XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+6.0,0.0,0.0,0.0,0.0,0.0,675,86400,0.08,8.0,nakada_2014,10.1016/j.actamat.2013.10.067,digitized_figure,"Figure 4, fresh martensite",XRD,vol_pct,quenched martensite,experimental,2014,Acta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,620,3600,0.18,18.0,shi_2010,10.1016/j.scriptamat.2010.06.023,digitized_figure,Figure 1,XRD,vol_pct,cold-rolled martensitic,experimental,2010,Scripta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,640,3600,0.25,25.0,shi_2010,10.1016/j.scriptamat.2010.06.023,digitized_figure,Figure 1,XRD,vol_pct,cold-rolled martensitic,experimental,2010,Scripta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,650,3600,0.3,30.0,shi_2010,10.1016/j.scriptamat.2010.06.023,digitized_figure,"Figure 1, near peak",XRD,vol_pct,cold-rolled martensitic,experimental,2010,Scripta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,660,3600,0.32,32.0,shi_2010,10.1016/j.scriptamat.2010.06.023,digitized_figure,"Figure 1, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2010,Scripta Materialia
+5.0,0.2,0.0,0.0,0.0,0.0,680,3600,0.2,20.0,shi_2010,10.1016/j.scriptamat.2010.06.023,digitized_figure,"Figure 1, decreasing",XRD,vol_pct,cold-rolled martensitic,experimental,2010,Scripta Materialia
+5.0,0.1,0.0,0.0,0.0,0.0,600,7200,0.08,8.0,arlazarov_2012,10.1016/j.msea.2012.02.024,digitized_figure,Figure 4,XRD,vol_pct,"cold-rolled, double annealed",experimental,2012,Materials Science and Engineering: A
+5.0,0.1,0.0,0.0,0.0,0.0,625,7200,0.15,15.0,arlazarov_2012,10.1016/j.msea.2012.02.024,digitized_figure,Figure 4,XRD,vol_pct,"cold-rolled, double annealed",experimental,2012,Materials Science and Engineering: A
+5.0,0.1,0.0,0.0,0.0,0.0,650,7200,0.22,22.0,arlazarov_2012,10.1016/j.msea.2012.02.024,digitized_figure,"Figure 4, near peak",XRD,vol_pct,"cold-rolled, double annealed",experimental,2012,Materials Science and Engineering: A
+5.0,0.1,0.0,0.0,0.0,0.0,675,7200,0.25,25.0,arlazarov_2012,10.1016/j.msea.2012.02.024,digitized_figure,"Figure 4, peak",XRD,vol_pct,"cold-rolled, double annealed",experimental,2012,Materials Science and Engineering: A
+5.0,0.1,0.0,0.0,0.0,0.0,700,7200,0.18,18.0,arlazarov_2012,10.1016/j.msea.2012.02.024,digitized_figure,"Figure 4, decreasing",XRD,vol_pct,"cold-rolled, double annealed",experimental,2012,Materials Science and Engineering: A
+9.0,0.05,0.0,0.0,0.0,0.0,600,3600,0.12,12.0,han_2014,10.1016/j.msea.2015.02.055,digitized_figure,Figure 3,XRD,vol_pct,water-quenched martensite,experimental,2014,Materials Science and Engineering: A
+9.0,0.05,0.0,0.0,0.0,0.0,625,3600,0.2,20.0,han_2014,10.1016/j.msea.2015.02.055,digitized_figure,Figure 3,XRD,vol_pct,water-quenched martensite,experimental,2014,Materials Science and Engineering: A
+9.0,0.05,0.0,0.0,0.0,0.0,650,3600,0.3,30.0,han_2014,10.1016/j.msea.2015.02.055,digitized_figure,"Figure 3, near peak",XRD,vol_pct,water-quenched martensite,experimental,2014,Materials Science and Engineering: A
+9.0,0.05,0.0,0.0,0.0,0.0,675,3600,0.35,35.0,han_2014,10.1016/j.msea.2015.02.055,digitized_figure,"Figure 3, peak",XRD,vol_pct,water-quenched martensite,experimental,2014,Materials Science and Engineering: A
+9.0,0.05,0.0,0.0,0.0,0.0,700,3600,0.25,25.0,han_2014,10.1016/j.msea.2015.02.055,digitized_figure,Figure 3,XRD,vol_pct,water-quenched martensite,experimental,2014,Materials Science and Engineering: A
+9.0,0.05,0.0,0.0,0.0,0.0,725,3600,0.1,10.0,han_2014,10.1016/j.msea.2015.02.055,digitized_figure,"Figure 3, fresh martensite",XRD,vol_pct,water-quenched martensite,experimental,2014,Materials Science and Engineering: A
+5.8,0.1,0.0,0.5,0.0,0.0,600,3600,0.1,10.0,miller_2013,10.1007/BF02647665,digitized_figure,Table 2,XRD,vol_pct,cold-rolled and annealed,experimental,2013,Metallurgical Transactions
+5.8,0.1,0.0,0.5,0.0,0.0,625,3600,0.18,18.0,miller_2013,10.1007/BF02647665,digitized_figure,Table 2,XRD,vol_pct,cold-rolled and annealed,experimental,2013,Metallurgical Transactions
+5.8,0.1,0.0,0.5,0.0,0.0,650,3600,0.3,30.0,miller_2013,10.1007/BF02647665,digitized_figure,"Table 2, peak",XRD,vol_pct,cold-rolled and annealed,experimental,2013,Metallurgical Transactions
+5.8,0.1,0.0,0.5,0.0,0.0,675,3600,0.22,22.0,miller_2013,10.1007/BF02647665,digitized_figure,Table 2,XRD,vol_pct,cold-rolled and annealed,experimental,2013,Metallurgical Transactions
+5.8,0.1,0.0,0.5,0.0,0.0,700,3600,0.12,12.0,miller_2013,10.1007/BF02647665,digitized_figure,Table 2,XRD,vol_pct,cold-rolled and annealed,experimental,2013,Metallurgical Transactions
+7.0,0.1,0.5,0.0,0.0,0.0,600,3600,0.15,15.0,hu_luo_2017,10.1016/j.jallcom.2017.07.174,digitized_figure,Table 1,XRD,vol_pct,warm-rolled,experimental,2017,Journal of Alloys and Compounds
+7.0,0.1,0.5,0.0,0.0,0.0,625,3600,0.25,25.0,hu_luo_2017,10.1016/j.jallcom.2017.07.174,digitized_figure,Table 1,XRD,vol_pct,warm-rolled,experimental,2017,Journal of Alloys and Compounds
+7.0,0.1,0.5,0.0,0.0,0.0,650,3600,0.38,38.0,hu_luo_2017,10.1016/j.jallcom.2017.07.174,digitized_figure,"Table 1, peak",XRD,vol_pct,warm-rolled,experimental,2017,Journal of Alloys and Compounds
+7.0,0.1,0.5,0.0,0.0,0.0,675,3600,0.3,30.0,hu_luo_2017,10.1016/j.jallcom.2017.07.174,digitized_figure,Table 1,XRD,vol_pct,warm-rolled,experimental,2017,Journal of Alloys and Compounds
+10.0,0.3,2.0,0.0,0.0,0.0,625,3600,0.18,18.0,cai_2016,10.1016/j.actamat.2014.10.052,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2015,Acta Materialia
+10.0,0.3,2.0,0.0,0.0,0.0,650,3600,0.32,32.0,cai_2016,10.1016/j.actamat.2014.10.052,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2015,Acta Materialia
+10.0,0.3,2.0,0.0,0.0,0.0,675,3600,0.42,42.0,cai_2016,10.1016/j.actamat.2014.10.052,digitized_figure,"Figure 2, near peak",XRD,vol_pct,cold-rolled martensitic,experimental,2015,Acta Materialia
+10.0,0.3,2.0,0.0,0.0,0.0,700,3600,0.48,48.0,cai_2016,10.1016/j.actamat.2014.10.052,digitized_figure,"Figure 2, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2015,Acta Materialia
+7.9,0.07,0.05,0.14,0.0,0.0,580,3600,0.12,12.0,zhao_2014,10.3390/ma7127891,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+7.9,0.07,0.05,0.14,0.0,0.0,600,3600,0.22,22.0,zhao_2014,10.3390/ma7127891,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+7.9,0.07,0.05,0.14,0.0,0.0,620,3600,0.33,33.0,zhao_2014,10.3390/ma7127891,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+7.9,0.07,0.05,0.14,0.0,0.0,640,3600,0.38,38.0,zhao_2014,10.3390/ma7127891,digitized_figure,"Figure 3, near peak",XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+7.9,0.07,0.05,0.14,0.0,0.0,660,3600,0.35,35.0,zhao_2014,10.3390/ma7127891,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+7.9,0.07,0.05,0.14,0.0,0.0,680,3600,0.2,20.0,zhao_2014,10.3390/ma7127891,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+7.9,0.07,0.05,0.14,0.0,0.0,700,3600,0.05,5.0,zhao_2014,10.3390/ma7127891,digitized_figure,"Figure 3, fresh martensite",XRD,vol_pct,cold-rolled martensitic,experimental,2014,Materials
+6.0,0.1,3.0,0.0,0.0,0.0,700,3600,0.2,20.0,suh_2017,10.1016/j.scriptamat.2016.07.013,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2017,Scripta Materialia
+6.0,0.1,3.0,0.0,0.0,0.0,725,3600,0.35,35.0,suh_2017,10.1016/j.scriptamat.2016.07.013,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2017,Scripta Materialia
+6.0,0.1,3.0,0.0,0.0,0.0,750,3600,0.45,45.0,suh_2017,10.1016/j.scriptamat.2016.07.013,digitized_figure,"Figure 2, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2017,Scripta Materialia
+6.0,0.1,3.0,0.0,0.0,0.0,775,3600,0.38,38.0,suh_2017,10.1016/j.scriptamat.2016.07.013,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2017,Scripta Materialia
+6.0,0.1,3.0,0.0,0.0,0.0,800,3600,0.22,22.0,suh_2017,10.1016/j.scriptamat.2016.07.013,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2017,Scripta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,625,600,0.08,8.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,"Figure 2, early",XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,625,3600,0.2,20.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,625,14400,0.32,32.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,Figure 2,XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,625,86400,0.42,42.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,"Figure 2, near saturation",XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,575,3600,0.1,10.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,600,3600,0.15,15.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,650,3600,0.25,25.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,"Figure 3, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+12.0,0.05,0.0,0.0,0.0,0.0,675,3600,0.15,15.0,sun_2018,10.1016/j.actamat.2018.02.005,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2018,Acta Materialia
+8.0,0.2,2.0,0.5,0.0,0.0,625,3600,0.1,10.0,ma_2019,10.3390/ma12091402,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2019,Materials
+8.0,0.2,2.0,0.5,0.0,0.0,650,3600,0.22,22.0,ma_2019,10.3390/ma12091402,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2019,Materials
+8.0,0.2,2.0,0.5,0.0,0.0,675,3600,0.38,38.0,ma_2019,10.3390/ma12091402,digitized_figure,"Figure 3, near peak",XRD,vol_pct,cold-rolled martensitic,experimental,2019,Materials
+8.0,0.2,2.0,0.5,0.0,0.0,700,3600,0.45,45.0,ma_2019,10.3390/ma12091402,digitized_figure,"Figure 3, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2019,Materials
+8.0,0.2,2.0,0.5,0.0,0.0,725,3600,0.35,35.0,ma_2019,10.3390/ma12091402,digitized_figure,Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2019,Materials
+8.0,0.2,2.0,0.5,0.0,0.0,750,3600,0.18,18.0,ma_2019,10.3390/ma12091402,digitized_figure,"Figure 3, decreasing",XRD,vol_pct,cold-rolled martensitic,experimental,2019,Materials
+7.0,0.1,0.0,0.0,0.0,0.0,620,300,0.05,5.0,demoor_2015,10.2355/isijinternational.55.234,digitized_figure,Table II / Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2015,ISIJ International
+7.0,0.1,0.0,0.0,0.0,0.0,620,1800,0.12,12.0,demoor_2015,10.2355/isijinternational.55.234,digitized_figure,Table II / Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2015,ISIJ International
+7.0,0.1,0.0,0.0,0.0,0.0,620,7200,0.22,22.0,demoor_2015,10.2355/isijinternational.55.234,digitized_figure,Table II / Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2015,ISIJ International
+7.0,0.1,0.0,0.0,0.0,0.0,620,43200,0.32,32.0,demoor_2015,10.2355/isijinternational.55.234,digitized_figure,Table II / Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2015,ISIJ International
+7.0,0.1,0.0,0.0,0.0,0.0,620,86400,0.36,36.0,demoor_2015,10.2355/isijinternational.55.234,digitized_figure,Table II / Figure 3,XRD,vol_pct,cold-rolled martensitic,experimental,2015,ISIJ International
+7.0,0.1,0.0,0.0,0.0,0.0,620,604800,0.4,40.0,demoor_2015,10.2355/isijinternational.55.234,digitized_figure,"Table II / Figure 3, saturation",XRD,vol_pct,cold-rolled martensitic,experimental,2015,ISIJ International
+6.0,0.3,0.0,0.5,0.0,0.0,575,3600,0.15,15.0,hausman_2017,10.1016/j.msea.2016.12.055,digitized_figure,Figure 4,XRD,vol_pct,cold-rolled martensitic,experimental,2017,Materials Science and Engineering: A
+6.0,0.3,0.0,0.5,0.0,0.0,600,3600,0.28,28.0,hausman_2017,10.1016/j.msea.2016.12.055,digitized_figure,Figure 4,XRD,vol_pct,cold-rolled martensitic,experimental,2017,Materials Science and Engineering: A
+6.0,0.3,0.0,0.5,0.0,0.0,625,3600,0.38,38.0,hausman_2017,10.1016/j.msea.2016.12.055,digitized_figure,"Figure 4, near peak",XRD,vol_pct,cold-rolled martensitic,experimental,2017,Materials Science and Engineering: A
+6.0,0.3,0.0,0.5,0.0,0.0,650,3600,0.42,42.0,hausman_2017,10.1016/j.msea.2016.12.055,digitized_figure,"Figure 4, peak",XRD,vol_pct,cold-rolled martensitic,experimental,2017,Materials Science and Engineering: A

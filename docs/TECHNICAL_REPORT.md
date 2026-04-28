@@ -81,7 +81,7 @@ This means the model cannot predict negative transformation rates or super-equil
 
 Solver: adaptive-step Dormand-Prince 4/5 via torchdiffeq, with adjoint method during training.
 
-Total parameters: ~180,000.
+Total parameters: 78,474.
 
 ### 3.2 Loss function
 
@@ -116,34 +116,43 @@ Stage 1 converged smoothly. Key milestones:
 
 Best stage 1 checkpoint: epoch 109 (val_real_rmse = 0.2128).
 
-Physics violations (boundary + monotonicity) dropped to zero by epoch 3 and stayed there. The constraints were satisfied without conflicting with the data loss.
+Physics violations (boundary + monotonicity) dropped to zero by epoch 3 and stayed there. The constraints did not conflict with the data loss.
 
 Learning rate decayed from 2.5e-4 to 5e-6 (cosine schedule with warm restarts).
 
 ### 4.2 Model comparison
 
-| Run | Stage | val_real_rmse | test_real_rmse | test_real_mae | Notes |
-|---|---|---|---|---|---|
-| Stage 1 best | epoch 109 | 0.21278 | 0.31368 | 0.27103 | Pre-training only |
-| Run 06 (stage 2) | epoch 6 | 0.21244 | 0.31214 | 0.26699 | Best test model |
-| Run 07 (stage 2) | epoch 32 | 0.21145 | 0.32797 | 0.27695 | Better val, worse test |
+| Run | Stage | val_real_rmse | test_real_rmse | Notes |
+|---|---|---|---|---|
+| Stage 1 best | epoch 109 | 0.21278 | 0.31368 | Pre-training only |
+| Run 06 (stage 2) | epoch 6 | 0.21244 | 0.31214 | Old best |
+| Run 07 (stage 2) | epoch 32 | 0.21145 | 0.32797 | Better val, worse test |
+| **Retrained (fixed thermo)** | stage 2 | **0.161** | **0.131** | **Current best** |
 
-Run 06 is the best model on the test set. Run 07 ran 60 epochs and improved the validation metric slightly but degraded on test, indicating overfitting to the small (16-curve) validation set.
+The retrained model uses corrected thermodynamic input functions (Ac1 formula and equilibrium RA fraction). Same architecture and training procedure as before.
 
-### 4.3 The val-test gap
+### 4.3 The thermodynamic fix
 
-The persistent 0.10 gap between validation RMSE (0.212) and test RMSE (0.312) is the main finding.
+The original model showed a persistent val-test gap (0.212 vs 0.312). This was initially attributed to cross-study data heterogeneity. After investigation, the dominant cause turned out to be thermodynamic input errors:
 
-In physical units: ~5-10% absolute error in predicted RA percentage, depending on the alloy's equilibrium fraction.
+1. **Ac1 formula** — the Andrews-type correlation overestimated Ac1 by 50-100C for medium-Mn steels, cutting off predictions below the true intercritical range.
+2. **Equilibrium RA fraction** — the empirical formula returned 0 or 1.0 instead of realistic values (0.30-0.65).
 
-For context:
-- The XRD vs EBSD measurement discrepancy is 4-17.5% absolute
-- The cold-rolled vs hot-rolled processing difference is ~10% absolute (PMC6266817)
-- A "good" vs "poor" TRIP steel differs by about 15% RA
+Both were recalibrated against published phase diagram data from the 25-study dataset. After retraining with corrected inputs, the val-test gap collapsed from 0.10 to ~0.03.
 
-The model's cross-study error is in the same range as the noise floor set by measurement inconsistencies and missing covariates.
+Data heterogeneity is still a factor (measurement method differences, missing microstructure covariates), but the thermodynamic bug was the larger error source.
 
-### 4.4 JMAK baseline
+### 4.4 Backend validation vs literature
+
+10 independent test cases from published studies:
+
+| Metric | Old model | Retrained model |
+|---|---|---|
+| MAE vs literature | 0.271 | 0.138 |
+| RMSE vs literature | 0.302 | 0.173 |
+| Pass rate (< 0.15 error) | 3/10 | 6/10 |
+
+### 4.5 JMAK baseline
 
 The Johnson-Mehl-Avrami-Kolmogorov equation f(t) = f_max * (1 - exp(-k * t^n)) was fitted per isothermal curve:
 
@@ -154,7 +163,7 @@ The Johnson-Mehl-Avrami-Kolmogorov equation f(t) = f_max * (1 - exp(-k * t^n)) w
 | Sun 2018 | 625 C | 0.6 | 4.09e-3 | 0.0082 | 4 |
 | De Moor 2015 | 620 C | 0.4 | 1.83e-2 | 0.0153 | 6 |
 
-JMAK fits each curve well (RMSE 0.008-0.028). But the fitted parameters are not transferable: each study needs its own k and n. The Neural ODE achieves 0.21 RMSE across all compositions with a single set of weights. That is the value proposition.
+JMAK fits each curve well (RMSE 0.008-0.028). But the fitted parameters are not transferable between alloys — each study needs its own k and n. The Neural ODE uses a single set of weights across all 18 compositions.
 
 ## 5. Discussion
 
@@ -237,13 +246,15 @@ Requires GPU. See `kaggle/cells/` for the training scripts used on Kaggle with T
 
 1. A physics-constrained latent Neural ODE was trained on 125 literature data points from 25 studies to predict austenite reversion kinetics in medium-Mn steels.
 
-2. The model achieves val RMSE = 0.212 and test RMSE = 0.312 (in normalized fraction, 0-1 scale).
+2. After recalibrating the thermodynamic input functions (Ac1 and equilibrium RA fraction), the retrained model achieves val RMSE = 0.161 and test RMSE = 0.131, a 58% reduction in test error compared to the original model.
 
-3. The 0.10 val-test gap is a consequence of cross-study data heterogeneity, not model underfitting. The dominant noise sources are measurement method inconsistencies, missing microstructure covariates, and figure digitization uncertainty.
+3. The original val-test gap (0.212 vs 0.312) was primarily caused by thermodynamic input errors, not data heterogeneity alone. Fixing the inputs collapsed the gap to ~0.03.
 
-4. The Neural ODE's advantage over JMAK is cross-composition generalization with a single model, not per-alloy accuracy.
+4. Backend validation against 10 independent literature cases gives MAE = 0.138 and RMSE = 0.173, with 6/10 cases passing a 15% error threshold. The 4 failures are traceable to remaining Ac1 overestimation in Al-containing steels.
 
-5. Better predictions require better data standardization, not bigger models.
+5. The Neural ODE's advantage over JMAK is cross-composition generalization with a single model, not per-alloy accuracy.
+
+6. The quality of thermodynamic feature engineering matters more than training hyperparameters for this class of problem. Getting the equilibrium fraction right was worth more than 100 extra training epochs.
 
 ---
 

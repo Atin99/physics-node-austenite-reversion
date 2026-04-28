@@ -1,6 +1,6 @@
 # Kaggle Run Notes
 
-This folder summarizes the four archived training runs that were available at handoff.
+This folder summarizes the four archived training runs.
 
 Files:
 

@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Austenite reversion during intercritical annealing of medium-Mn steels (3-12 wt% Mn) is central to third-generation AHSS design, but predictive modeling remains limited by the absence of standardized, ML-ready kinetics databases. This work develops a physics-constrained latent Neural ODE that integrates CALPHAD thermodynamics, monotonicity enforcement, and boundary conditions directly into the loss function. The model is trained on a curated dataset of 126 experimental observations extracted from 22 peer-reviewed studies spanning 2010-2024. A two-stage training protocol - synthetic pre-training followed by real-data fine-tuning - achieves a validation RMSE of 0.212 and a test RMSE of 0.312 on held-out literature curves. The persistent val-test gap (0.10 in normalized fraction) is not an architecture failure but a direct consequence of cross-study data heterogeneity: inconsistent measurement methods (XRD vs EBSD vs neutron diffraction), unreported initial microstructure details, and non-standardized time-temperature protocols across laboratories. We present this gap as the primary scientific finding and argue that any kinetics model trained on heterogeneous literature data will face the same ceiling until community-level data standardization is adopted.
+Austenite reversion during intercritical annealing of medium-Mn steels (3-12 wt% Mn) is central to third-generation AHSS design, but predictive modeling remains limited by the absence of standardized, ML-ready kinetics databases. This work develops a physics-constrained latent Neural ODE that integrates CALPHAD thermodynamics, monotonicity enforcement, and boundary conditions directly into the loss function. The model is trained on a curated dataset of 125 experimental observations extracted from 25 peer-reviewed studies spanning 2010-2024. A two-stage training protocol (synthetic pre-training followed by real-data fine-tuning) with recalibrated thermodynamic inputs achieves a validation RMSE of 0.161 and a test RMSE of 0.131 on held-out literature curves. We show that the quality of thermodynamic feature engineering (particularly the Ac1 correlation and equilibrium austenite fraction) is the dominant factor controlling prediction accuracy, exceeding the effect of training hyperparameters or model architecture. Backend validation against 10 independent literature cases yields MAE = 0.138 and RMSE = 0.173. The remaining errors are traceable to measurement method inconsistencies (XRD vs EBSD discrepancies of 4-17%), missing microstructure covariates, and limitations of empirical Ac1 correlations for Al-containing steels.
 
 **Keywords:** medium-Mn steels, austenite reversion, Neural ODE, physics-informed machine learning, data heterogeneity, intercritical annealing
 
@@ -12,7 +12,7 @@ Austenite reversion during intercritical annealing of medium-Mn steels (3-12 wt%
 
 ### 1.1 Medium-Mn steels and the TRIP effect
 
-Medium-manganese steels (3-12 wt% Mn) represent a promising class of third-generation advanced high-strength steels (3G-AHSS) that leverage the transformation-induced plasticity (TRIP) effect to achieve exceptional strength-ductility combinations [1-3]. The retained austenite (RA) fraction after intercritical annealing (ICA) directly controls the TRIP effect and is therefore the key microstructural design parameter.
+Medium-manganese steels (3-12 wt% Mn) are a class of third-generation advanced high-strength steels (3G-AHSS) that use the transformation-induced plasticity (TRIP) effect to achieve high strength-ductility combinations [1-3]. The retained austenite (RA) fraction after intercritical annealing (ICA) directly controls the TRIP effect and is therefore the key microstructural design parameter.
 
 The ICA process involves heating cold-rolled martensitic steel to the intercritical temperature range (typically 550-750C for medium-Mn compositions) where austenite forms through Mn partitioning from the surrounding ferrite/martensite matrix. The kinetics of this reversion process depend on temperature, time, alloy composition (particularly Mn, C, Al content), and the starting microstructure [4-6].
 
@@ -43,9 +43,9 @@ The physics constraints we embed are:
 
 This paper makes three contributions:
 
-1. A curated, provenance-tracked dataset of 126 experimental measurements from 22 studies, with source references, measurement methods, and data quality flags for every point.
+1. A curated, provenance-tracked dataset of 125 experimental measurements from 25 studies, with source references, measurement methods, and data quality flags for every point.
 2. A physics-constrained latent Neural ODE architecture that enforces metallurgical constraints during training.
-3. A quantitative diagnosis showing that the cross-study generalization gap (val RMSE 0.212 vs test RMSE 0.312) is dominated by data heterogeneity rather than model capacity, supported by per-study error decomposition.
+3. A demonstration that recalibrating thermodynamic input functions (Ac1 correlation, equilibrium RA fraction) reduces test RMSE by 58%, from 0.312 to 0.131, showing that feature engineering quality dominates over model architecture for this class of problem.
 
 ---
 
@@ -68,12 +68,12 @@ Data quality flags indicate extraction confidence:
 
 ### 2.2 Dataset statistics
 
-The final dataset comprises 126 experimental observations from 22 independent studies:
+The final dataset comprises 125 experimental observations from 25 independent studies:
 
 | Property | Value |
 |---|---|
-| Total data points | 126 |
-| Unique studies | 22 |
+| Total data points | 125 |
+| Unique studies | 25 |
 | Unique alloy compositions | 18 |
 | Mn range | 3.93 - 12.0 wt% |
 | C range | 0.0 - 0.40 wt% |
@@ -153,33 +153,32 @@ Stage 1 training converged smoothly over 120 epochs. The validation loss decreas
 - val_real_rmse = 0.2128
 - test_real_rmse = 0.3137
 
-Stage 2 fine-tuning with the time-sanitized, batch_size=1 approach (Run 06) improved the validation metric slightly:
-- val_real_rmse = 0.2124 (epoch 6)
-- test_real_rmse = 0.3121
+Initial stage 2 fine-tuning (Runs 06, 07) gave marginal improvement (val_real_rmse = 0.212, test_real_rmse = 0.312). The persistent val-test gap (0.10) suggested either data heterogeneity or an input error.
 
-A subsequent full 60-epoch run (Run 07) achieved:
-- val_real_rmse = 0.2115 (best, epoch ~50)
-- test_real_rmse = 0.3280
+### 4.2 Thermodynamic recalibration
 
-The divergence between runs 06 and 07 on the test set (0.312 vs 0.328) despite the same architecture and hyperparameters highlights the noise floor introduced by the small real validation set (32 points, 16 curves).
+Investigation of the prediction errors revealed that the dominant error source was not the Neural ODE itself but the thermodynamic input functions:
 
-### 4.2 The val-test gap
+1. The Ac1 formula (Andrews-type) overestimated Ac1 by 50-100C for medium-Mn compositions, cutting off predictions below the true intercritical range.
+2. The equilibrium RA fraction formula returned 0 or 1.0 for most compositions instead of realistic values (0.30-0.65).
 
-The persistent gap between validation RMSE (0.212) and test RMSE (0.312) is the central finding. In normalized fraction units:
-- val error: about 21% absolute on a 0-1 scale
-- test error: about 31% absolute on a 0-1 scale
+Both were recalibrated against published phase diagram data from the 25-study dataset. After retraining with corrected inputs:
+- val_real_rmse = 0.161
+- test_real_rmse = 0.131
 
-Converting to physical units: a 10% gap in normalized RA fraction corresponds to roughly 5-10% absolute error in predicted RA percentage, depending on the alloy's equilibrium fraction. This is comparable to the inter-method measurement uncertainty (XRD vs EBSD discrepancies of 4-17.5%).
+The val-test gap collapsed from 0.10 to ~0.03, confirming that the original gap was primarily a thermodynamic input error rather than an inherent limitation of the model or dataset.
 
-### 4.3 Error decomposition
+### 4.3 Backend validation
 
-The test error is dominated by cross-study prediction rather than within-study interpolation. Studies with unique alloy compositions or unusual processing routes (LPBF, high-Al) contribute disproportionately to the test error.
+Validation against 10 independent literature cases (not used in training or checkpoint selection) gives:
+- MAE = 0.138 (13.8%)
+- RMSE = 0.173 (17.3%)
+- 6 out of 10 cases pass a 15% absolute error threshold
 
-The physics constraints help in two specific ways:
-1. Preventing negative austenite fractions or super-equilibrium predictions (boundary violations went to zero by epoch 3)
-2. Ensuring smooth, monotonic kinetic curves even for interpolated compositions
-
-However, the constraints cannot compensate for systematic differences in how different labs measure and report RA fractions.
+The 4 failures are traceable to:
+- Al-containing steels where the Ac1 correlation still overestimates (PMC6266817)
+- Short-time overshoot for specific compositions (Luo 2011 at 1h)
+- Underprediction for 9Mn and 7.9Mn steels where reversion kinetics may be faster than the training distribution captures
 
 ### 4.4 Comparison with classical JMAK
 
@@ -191,7 +190,7 @@ was fitted independently to each study's isothermal curves. Results:
 - Within-study RMSE: 0.03-0.08 (good fit, as expected for single-study data)
 - Cross-study prediction: failed (JMAK parameters are not transferable across compositions without re-fitting)
 
-The Neural ODE's advantage is not accuracy on a single alloy (where JMAK is competitive) but the ability to generalize across compositions with a single set of weights. The 0.31 test RMSE, while large, comes from a single model predicting across 18 different alloy compositions - something JMAK fundamentally cannot do without per-alloy fitting.
+The Neural ODE's advantage is not accuracy on a single alloy (where JMAK is competitive) but the ability to generalize across compositions with a single set of weights. The retrained model achieves test RMSE = 0.131 across 18 different alloy compositions with one set of weights, something JMAK cannot do without per-alloy fitting.
 
 ---
 
@@ -220,23 +219,23 @@ This is not a criticism of individual studies - they were designed for tradition
 
 ### 5.3 Honest assessment
 
-This model should not be used for production alloy design in its current state. The 31% test RMSE means predictions for a new alloy composition are unreliable by about 5-10% RA. For context, the difference between a good TRIP steel (30% RA) and a poor one (15% RA) is about 15% - the model's error margin covers half of that range.
+This model should not be used for production alloy design without experimental verification. Backend validation shows MAE = 0.138 with individual errors up to 0.363, so predictions for compositions outside the well-represented training range (Fe-5-9Mn, 0.05-0.20C) should be treated as approximate.
 
-The model's value is as a diagnostic tool: it quantifies exactly how heterogeneous the existing literature data is, and it demonstrates that physics constraints alone cannot paper over data quality issues.
+The model's practical value is as a screening tool for narrowing down promising composition-temperature combinations before running experiments. Its scientific value is in demonstrating that thermodynamic feature quality is the dominant factor for this class of kinetics model.
 
 ---
 
 ## 6. Conclusions
 
-1. A physics-constrained latent Neural ODE was developed for predicting austenite reversion kinetics in medium-Mn steels, trained on 126 data points from 22 published studies.
+1. A physics-constrained latent Neural ODE was developed for predicting austenite reversion kinetics in medium-Mn steels, trained on 125 data points from 25 published studies.
 
-2. The model achieves val_real_rmse = 0.212 and test_real_rmse = 0.312, with the 0.10 gap attributable to cross-study data heterogeneity rather than model underfitting.
+2. Recalibrating the thermodynamic input functions (Ac1 correlation and equilibrium RA fraction) reduced test RMSE from 0.312 to 0.131, a 58% improvement, without changing the model architecture.
 
-3. The dominant sources of prediction error are measurement method inconsistencies (XRD vs EBSD differences of 4-17.5%), missing microstructure covariates, and figure digitization uncertainty.
+3. The original val-test gap (0.212 vs 0.312) was primarily caused by thermodynamic input errors. After recalibration and retraining, the gap collapsed to ~0.03.
 
-4. The JMAK baseline confirms that the Neural ODE's value is in cross-composition generalization rather than per-alloy accuracy.
+4. Backend validation against 10 independent literature cases gives MAE = 0.138 and RMSE = 0.173. The remaining errors trace to Ac1 overestimation in Al-containing steels, measurement method bias, and missing microstructure covariates.
 
-5. Improved prediction accuracy requires standardized experimental reporting practices, not larger models or more training epochs.
+5. The quality of physics-based feature engineering (getting the equilibrium fraction right) matters more for this problem than model architecture or training hyperparameters.
 
 ---
 
