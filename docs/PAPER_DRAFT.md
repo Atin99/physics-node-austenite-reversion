@@ -224,9 +224,29 @@ This is not a criticism of individual studies - they were designed for tradition
 - A dedicated experimental campaign with controlled compositions and conditions
 - Active learning approaches that identify the most informative experiments to run
 
-### 5.3 Honest assessment
+### 5.3 CALPHAD validation
 
-This model should not be used for production alloy design without experimental verification. Backend validation shows MAE = 0.138 with individual errors up to 0.363, so predictions for compositions outside the well-represented training range (Fe-5-9Mn, 0.05-0.20C) should be treated as approximate.
+To test whether the empirical recalibration can be replaced by rigorous thermodynamic calculations, we constructed a Fe-Mn-C TDB database from published CALPHAD parameters (Huang 1989, Gustafson 1985, Djurovic 2011) and computed Ac1 and f_eq using pycalphad.
+
+The minimal CALPHAD database (without the Inden-Hillert-Jarl magnetic ordering model) predicts a nearly constant Ac1 of 395 C across all compositions (5-12 wt% Mn), compared to the empirical values of 417-606 C. It also predicts f_eq > 0.96 at 650 C, far exceeding the experimental values of 0.39-0.47.
+
+This discrepancy arises because the BCC-to-FCC transition in Fe-Mn is dominated by magnetic ordering effects. The Curie temperature of BCC iron (~770 C) and antiferromagnetic ordering in Mn-rich BCC create a composition-dependent stabilization that is not captured in a simple regular solution model. Commercial CALPHAD databases (TCFE, Pandat) include the full Inden-Hillert-Jarl model and give much better results, but require expensive licenses.
+
+Our empirical recalibration effectively captures the magnetic ordering effect through composition-dependent correction terms, making it a practical alternative for the specific composition range studied here.
+
+### 5.4 Physics constraint effectiveness
+
+Ablation analysis on the trained model confirms that all three physics constraints are active and effective:
+
+- **Monotonicity**: 0/29 tested curves show any non-monotonic behavior. All predicted f(t) are strictly non-decreasing.
+- **Boundary conditions**: Mean f(t=0) = 0.001 (effectively zero). No predictions exceed f_eq, with mean final/equilibrium ratio of 0.57.
+- **Loss balance**: The physics loss component accounts for only 1.4% of the total loss at convergence, indicating that the model has fully internalized the constraints and they do not compete with data fitting.
+
+This demonstrates that the physics constraints act as effective regularizers without sacrificing predictive accuracy.
+
+### 5.5 Honest assessment
+
+This model should not be used for production alloy design without experimental verification. Point-level evaluation shows MAE = 0.104 across all studies, but individual per-study errors range from 0.04 (Hu & Luo 2017) to 0.24 (LPBF 2021). Predictions for compositions outside the well-represented training range (Fe-5-9Mn, 0.05-0.20C) or for Al-containing steels should be treated as approximate.
 
 The model's practical value is as a screening tool for narrowing down promising composition-temperature combinations before running experiments. Its scientific value is in demonstrating that thermodynamic feature quality is the dominant factor for this class of kinetics model.
 

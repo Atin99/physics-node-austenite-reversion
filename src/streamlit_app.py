@@ -174,8 +174,9 @@ with st.sidebar:
     Trained on 125 experimental measurements from 25 published studies.
 
     **Best metrics:**
-    - Val RMSE: 0.161
-    - Test RMSE: 0.131
+    - Val RMSE: 0.157
+    - Test RMSE: 0.136
+    - Overall R\u00b2: 0.013
     """)
     st.markdown("---")
     st.markdown("### Model")

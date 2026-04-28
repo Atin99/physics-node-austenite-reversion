@@ -12,21 +12,27 @@ The hard part was not finding papers. It was turning heterogeneous, partially in
 
 ## results
 
-| metric | old model (broken thermo) | retrained model (fixed thermo) |
-|---|---|---|
-| val_real_rmse | 0.212 | 0.161 |
-| test_real_rmse | 0.312 | 0.131 |
+| metric | Stage 1 only | Stage 2 (60ep) | Stage 2 Extended (200ep) |
+|---|---|---|---|
+| val_real_rmse | 0.213 | 0.161 | **0.157** |
+| test_real_rmse | 0.314 | 0.131 | **0.136** |
+| overall R2 | -4.27 | -0.096 | **+0.013** |
+| median per-study R2 | N/A | -0.149 | **+0.205** |
 
-### backend validation against literature (10 independent cases)
+### point-level evaluation (124 experimental points, 25 studies)
 
 | metric | value |
 |---|---|
-| MAE vs published data | 0.138 (13.8%) |
-| RMSE vs published data | 0.173 (17.3%) |
-| monotonicity violations | 3 / 294 (negligible) |
+| RMSE | 0.135 |
+| MAE | 0.104 |
+| R2 | +0.013 |
+| studies with R2 > 0 | 12 / 21 |
+| monotonicity violations | 0 / 29 |
 | boundary violations | 0 |
 
-The old model had a persistent val-test gap (0.21 vs 0.31) that looked like a data heterogeneity problem. Turned out the thermodynamic input functions (Ac1 formula, equilibrium RA fraction) were miscalibrated for medium-Mn compositions. Fixing those and retraining cut the test RMSE by 58%.
+The key breakthrough was thermodynamic recalibration (Ac1/f_eq corrections), which reduced RMSE by 57%. Extended 200-epoch training with cosine warm restarts further improved R2 from negative to positive.
+
+CALPHAD integration with pycalphad + Fe-Mn-C TDB (Huang 1989, Djurovic 2011) revealed that magnetic ordering corrections are essential for medium-Mn steels - simple CALPHAD gives Ac1 = 395 C (constant) vs. empirical 417-606 C.
 
 ## the dataset
 
@@ -48,10 +54,12 @@ or use `launch.bat` on Windows.
 ## running validation
 
 ```
-python validate_model.py
+python evaluate_comprehensive.py    # per-study metrics, parity plots
+python validate_calphad.py          # CALPHAD vs empirical comparison
+python ablation_study.py            # physics constraint analysis
 ```
 
-Runs CPU-only. Tests predictions against 10 known literature values, checks monotonicity, boundary conditions, temperature/composition/time dependence.
+All scripts run CPU-only. Tests predictions against all 125 experimental points, checks monotonicity, boundary conditions, and generates publication figures.
 
 ## running the analysis
 

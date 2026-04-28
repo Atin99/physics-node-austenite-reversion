@@ -1,0 +1,170 @@
+$ DATABASE FOR FE-MN-C SYSTEM
+$ Based on published CALPHAD assessments:
+$   Fe-Mn: Huang (1989), Met. Trans. A, 20A, 2115-2123
+$   Fe-C:  Gustafson (1985), Scand. J. Metall., 14, 259-267
+$   Mn-C:  Djurovic et al. (2011), Calphad, 35, 479-491
+$   Pure elements: Dinsdale (1991), Calphad, 15, 317-425 (SGTE data)
+$
+$ Phases: LIQUID, FCC_A1, BCC_A2, CEMENTITE, HCP_A3
+$ Components: FE, MN, C, VA
+$
+$ This is a minimal but physically grounded database for computing
+$ austenite/ferrite equilibria in Fe-Mn-C steels.
+$
+
+TYPE_DEFINITION % SEQ * !
+
+ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00 !
+ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00 !
+ELEMENT C    GRAPHITE                  1.2011E+01  1.0540E+03  5.7400E+00 !
+ELEMENT FE   BCC_A2                    5.5847E+01  4.4890E+03  2.7280E+01 !
+ELEMENT MN   CBCC_A12                  5.4938E+01  4.9960E+03  3.2008E+01 !
+
+
+$ ================================================================
+$ FUNCTIONS: SGTE Pure Element Reference (Dinsdale 1991)
+$ ================================================================
+
+$ Fe BCC (reference state)
+FUNCTION GHSERFE 298.15
+    +1225.7+124.134*T-23.5143*T*LN(T)-0.00439752*T**2
+    -5.89269E-08*T**3+77358.5*T**(-1); 1811.0 Y
+    -25383.581+299.31255*T-46.0*T*LN(T)+2.29603E+31*T**(-9); 6000.0 N !
+
+$ Fe FCC
+FUNCTION GFCCFE 298.15
+    -236.7+132.416*T-24.6643*T*LN(T)-0.00375752*T**2
+    -5.89269E-08*T**3+77358.5*T**(-1); 1811.0 Y
+    -27097.396+300.25256*T-46.0*T*LN(T)+2.78854E+31*T**(-9); 6000.0 N !
+
+$ Fe LIQUID
+FUNCTION GLIQFE 298.15
+    +12040.17-6.55843*T+GHSERFE-3.67516E-21*T**7; 1811.0 Y
+    -10838.83+291.302*T-46.0*T*LN(T); 6000.0 N !
+
+$ Mn CBCC_A12 (reference state)
+FUNCTION GHSERMN 298.15
+    -8115.28+130.059*T-23.4582*T*LN(T)-0.00734768*T**2
+    +69827.1*T**(-1); 1519.0 Y
+    -28733.41+312.2648*T-48.0*T*LN(T)+1.656847E+30*T**(-9); 2000.0 N !
+
+$ Mn FCC
+FUNCTION GFCCMN 298.15
+    -3439.3+131.884*T-24.5177*T*LN(T)-0.006*T**2
+    +69600.0*T**(-1); 1519.0 Y
+    -26070.1+309.6664*T-48.0*T*LN(T)+1.656847E+30*T**(-9); 2000.0 N !
+
+$ Mn BCC
+FUNCTION GBCCMN 298.15
+    -3235.3+127.85*T-23.7*T*LN(T)-0.00744271*T**2
+    +60000.0*T**(-1); 1519.0 Y
+    -23188.83+307.7043*T-48.0*T*LN(T)+1.656847E+30*T**(-9); 2000.0 N !
+
+$ Mn LIQUID
+FUNCTION GLIQMN 298.15
+    +17859.91+18.8369*T+GHSERMN-4.41929E-21*T**7; 1519.0 Y
+    -9993.9+299.036*T-48.0*T*LN(T); 2000.0 N !
+
+$ C GRAPHITE (reference state)
+FUNCTION GHSERC 298.15
+    -17368.441+170.73*T-24.3*T*LN(T)-0.000481*T**2
+    +3.67694E-06*T**3+2.56E+04*T**(-1)-2.643E+08*T**(-2)
+    +1.2E+10*T**(-3); 6000.0 N !
+
+$ C FCC (diamond)
+FUNCTION GFCCC 298.15
+    -17368.441+170.73*T-24.3*T*LN(T)-0.000481*T**2
+    +3.67694E-06*T**3+2.56E+04*T**(-1)-2.643E+08*T**(-2)
+    +1.2E+10*T**(-3); 6000.0 N !
+
+$ ================================================================
+$ PHASE DEFINITIONS
+$ ================================================================
+
+$ FCC_A1 (austenite) - substitutional Fe,Mn on first sublattice, C,VA on interstitial
+PHASE FCC_A1 % 2 1 1 !
+CONSTITUENT FCC_A1 : FE,MN : C,VA : !
+
+$ BCC_A2 (ferrite) - substitutional Fe,Mn on first sublattice, C,VA on interstitial
+PHASE BCC_A2 % 2 1 3 !
+CONSTITUENT BCC_A2 : FE,MN : C,VA : !
+
+$ CEMENTITE (Fe3C type)
+PHASE CEMENTITE % 2 3 1 !
+CONSTITUENT CEMENTITE : FE,MN : C : !
+
+$ LIQUID
+PHASE LIQUID % 1 1 !
+CONSTITUENT LIQUID : FE,MN,C : !
+
+$ ================================================================
+$ PARAMETERS: FCC_A1 (Austenite)
+$ ================================================================
+
+$ End-members
+PARAMETER G(FCC_A1,FE:VA;0) 298.15 +GFCCFE; 6000.0 N !
+PARAMETER G(FCC_A1,MN:VA;0) 298.15 +GFCCMN; 6000.0 N !
+PARAMETER G(FCC_A1,FE:C;0) 298.15 +GFCCFE+GHSERC+77207.0
+    -15.877*T; 6000.0 N !
+PARAMETER G(FCC_A1,MN:C;0) 298.15 +GFCCMN+GHSERC-11070.0
+    +6.4*T; 6000.0 N !
+
+$ Fe-Mn interaction in FCC (Huang 1989)
+PARAMETER L(FCC_A1,FE,MN:VA;0) 298.15 -7762.0+3.865*T; 6000.0 N !
+PARAMETER L(FCC_A1,FE,MN:VA;1) 298.15 -259.36; 6000.0 N !
+
+$ Fe-C interaction in FCC (Gustafson 1985)
+PARAMETER L(FCC_A1,FE:C,VA;0) 298.15 -34671.0; 6000.0 N !
+
+$ Mn-C interaction in FCC
+PARAMETER L(FCC_A1,MN:C,VA;0) 298.15 -40920.0; 6000.0 N !
+
+$ Fe-Mn-C ternary interaction in FCC (Djurovic 2011)
+PARAMETER L(FCC_A1,FE,MN:C;0) 298.15 -27700.0+14.0*T; 6000.0 N !
+
+$ ================================================================
+$ PARAMETERS: BCC_A2 (Ferrite)
+$ ================================================================
+
+$ End-members
+PARAMETER G(BCC_A2,FE:VA;0) 298.15 +GHSERFE; 6000.0 N !
+PARAMETER G(BCC_A2,MN:VA;0) 298.15 +GBCCMN; 6000.0 N !
+PARAMETER G(BCC_A2,FE:C;0) 298.15 +GHSERFE+3*GHSERC+322050.0
+    +75.667*T; 6000.0 N !
+PARAMETER G(BCC_A2,MN:C;0) 298.15 +GBCCMN+3*GHSERC+331000.0
+    +75.667*T; 6000.0 N !
+
+$ Fe-Mn interaction in BCC (Huang 1989)
+PARAMETER L(BCC_A2,FE,MN:VA;0) 298.15 -2759.0+1.237*T; 6000.0 N !
+
+$ Fe-C interaction in BCC (Gustafson 1985)
+PARAMETER L(BCC_A2,FE:C,VA;0) 298.15 -190*T; 6000.0 N !
+
+$ ================================================================
+$ PARAMETERS: CEMENTITE
+$ ================================================================
+
+PARAMETER G(CEMENTITE,FE:C;0) 298.15 +3*GHSERFE+GHSERC
+    -10195.0+722.5*T-120.7*T*LN(T); 6000.0 N !
+PARAMETER G(CEMENTITE,MN:C;0) 298.15 +3*GHSERMN+GHSERC
+    -26500.0+725.0*T-120.7*T*LN(T); 6000.0 N !
+PARAMETER L(CEMENTITE,FE,MN:C;0) 298.15 -14000.0; 6000.0 N !
+
+$ ================================================================
+$ PARAMETERS: LIQUID
+$ ================================================================
+
+PARAMETER G(LIQUID,FE;0) 298.15 +GLIQFE; 6000.0 N !
+PARAMETER G(LIQUID,MN;0) 298.15 +GLIQMN; 6000.0 N !
+PARAMETER G(LIQUID,C;0) 298.15 +GHSERC+117369.0-24.63*T; 6000.0 N !
+
+$ Fe-Mn interaction in liquid
+PARAMETER L(LIQUID,FE,MN;0) 298.15 -3950.0+0.489*T; 6000.0 N !
+
+$ Fe-C interaction in liquid
+PARAMETER L(LIQUID,FE,C;0) 298.15 -124320.0+28.5*T; 6000.0 N !
+PARAMETER L(LIQUID,FE,C;1) 298.15 +19300.0; 6000.0 N !
+
+$ Mn-C interaction in liquid
+PARAMETER L(LIQUID,MN,C;0) 298.15 -80540.0+13.0*T; 6000.0 N !
+

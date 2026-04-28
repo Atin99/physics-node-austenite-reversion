@@ -268,12 +268,12 @@ if CALPHAD_AVAILABLE:
     from pycalphad import Database, equilibrium, variables as v
 
     # Check for TDB files
-    tdb_candidates = list((Path(__file__).parent / 'data' / 'calphad_tables').glob('*.tdb'))
+    tdb_candidates = list((Path(__file__).parent / 'src' / 'data' / 'calphad_tables').glob('*.tdb'))
     if not tdb_candidates:
         # Create a note about CALPHAD capability
         print("  No TDB file found, but pycalphad is integrated and ready.")
         print("  To enable full CALPHAD: place a Fe-Mn-C TDB file in data/calphad_tables/")
-        print("  The model will automatically use it via thermodynamics.py → get_equilibrium_RA_calphad()")
+        print("  The model will automatically use it via thermodynamics.py -> get_equilibrium_RA_calphad()")
     else:
         print(f"  Found TDB: {tdb_candidates[0].name}")
 

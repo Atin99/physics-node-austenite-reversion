@@ -473,3 +473,51 @@ The raw inputs are normalized before entering the model:
 | θ | Neural network parameters |
 | c | Conditioning vector |
 | L | Loss function |
+
+---
+
+## 7. CALPHAD Integration
+
+### 7.1 Thermodynamic Database
+
+A minimal Fe-Mn-C thermodynamic database (`FeMnC.tdb`) was constructed from published CALPHAD assessments:
+
+| Component | Reference |
+|-----------|-----------|
+| Pure elements (Fe, Mn, C) | Dinsdale (1991), SGTE data, Calphad 15, 317-425 |
+| Fe-Mn binary | Huang (1989), Met. Trans. A, 20A, 2115-2123 |
+| Fe-C binary | Gustafson (1985), Scand. J. Metall., 14, 259-267 |
+| Fe-Mn-C ternary | Djurovic et al. (2011), Calphad, 35, 479-491 |
+
+### 7.2 Sublattice Model
+
+The FCC_A1 (austenite) and BCC_A2 (ferrite) phases use a two-sublattice model:
+
+    (Fe, Mn)_1 (C, Va)_c
+
+where c = 1 for FCC and c = 3 for BCC (number of interstitial sites per substitutional site).
+
+The Gibbs energy per formula unit:
+
+    G_m = SUM_i SUM_j y_i * y_j * G_ij^ref + RT * [SUM_i y_i*ln(y_i) + c*SUM_j y_j*ln(y_j)] + G_excess
+
+where y_i are site fractions, G_ij^ref are end-member energies, and:
+
+    G_excess = SUM_{i<j} y_i * y_j * L_ij(T)
+
+with Redlich-Kister interaction parameters L_ij.
+
+### 7.3 Validation Finding: Magnetic Ordering is Critical
+
+The minimal TDB (without the Inden-Hillert-Jarl magnetic ordering model) produces:
+
+| Composition | Empirical Ac1 | CALPHAD Ac1 | Error |
+|-------------|--------------|-------------|-------|
+| Fe-5Mn-0.2C | 606 C | 395 C | -211 C |
+| Fe-7Mn-0.1C | 555 C | 395 C | -160 C |
+| Fe-12Mn-0.1C | 417 C | 395 C | -22 C |
+
+The CALPHAD Ac1 is nearly constant because the BCC->FCC transition in Fe-Mn is dominated by magnetic ordering. The Curie temperature of BCC iron (~770 C) and the antiferromagnetic ordering in Mn-rich compositions create a strong composition-dependent stabilization of BCC that is not captured in a simple regular solution model.
+
+**Implication:** For medium-Mn steels, the empirical recalibration used in this work effectively captures the magnetic ordering effect through composition-dependent correction terms, justifying its use over naive CALPHAD lookups with incomplete databases.
+
