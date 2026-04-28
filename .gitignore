@@ -47,3 +47,20 @@ docs/newplan_improvement.txt
 docs/stage2_retry_cells_summary.txt
 docs/RECOVER_FROM_STAGE1_CHECKPOINT.md
 docs/KAGGLE_RECOVERY_SETUP.txt
+
+# large synthetic data CSVs (regenerate with: python main.py --generate-data)
+# the small preview sample IS tracked for reference
+data/synthetic/synthetic_kinetics.csv
+data/synthetic/full_dataset.csv
+data/synthetic/train.csv
+data/synthetic/val.csv
+data/synthetic/test.csv
+src/data/synthetic/synthetic_kinetics.csv
+src/data/synthetic/full_dataset.csv
+src/data/synthetic/train.csv
+src/data/synthetic/val.csv
+src/data/synthetic/test.csv
+
+# temp generation scripts
+src/_gen_synthetic.py
+src/_gen_sample.py

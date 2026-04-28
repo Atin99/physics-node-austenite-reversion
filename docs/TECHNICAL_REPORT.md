@@ -53,10 +53,23 @@ The dataset has systematic issues that limit any model trained on it:
 
 ### 2.4 Data splits
 
-Split at the study level (not point level) to test cross-study generalization:
-- Training: ~73 curves (synthetic + real)
+Split at the study level (not point level) to test cross-study generalization.
+
+The full three-tier dataset used for Stage 1 pre-training:
+- Total: 2,605 curves (150,227 points)
+  - Tier 1 (Real): 105 curves, 227 points, provenance='experimental'
+  - Tier 2 (Calibrated Synthetic): 500 curves, 30,000 points, provenance='synthetic_calibrated'
+  - Tier 3 (Exploratory Synthetic): 2,000 curves, 120,000 points, provenance='synthetic_exploratory'
+- Training: ~1,823 curves (105,160 points)
+- Validation: ~391 curves (22,532 points)
+- Test: ~391 curves (22,535 points)
+
+For Stage 2 fine-tuning, only real data is used:
+- Training: 73 real curves (160 points)
 - Validation: 16 real curves (32 points)
 - Test: 16 real curves (35 points)
+
+Real data is upweighted 5× in the provenance-aware loss during Stage 1.
 
 ## 3. Model Architecture
 
@@ -96,9 +109,9 @@ The constraint weights are annealed during training.
 
 ### 3.3 Two-stage training
 
-**Stage 1 (synthetic pre-training):** 120 epochs on ~1055 synthetic curves (57,227 points) generated from physics-based kinetics models. This teaches the model basic sigmoidal behavior, temperature dependence, and composition effects.
+**Stage 1 (synthetic pre-training):** 120 epochs on the full three-tier dataset (~2,605 curves, 150,227 points) generated from a combination of curated literature data and physics-based JMAK kinetics models. The synthetic data is generated via Latin Hypercube Sampling across the full composition-temperature design space (Mn 4-12%, C 0.05-0.30%, Al 0-3%, Si 0-2%, T 575-750°C) with calibrated JMAK parameters and realistic measurement noise (σ = 0.015-0.04). Real data receives 5× loss upweighting via provenance-aware loss. This stage teaches the model basic sigmoidal behavior, temperature dependence, composition effects, and physics constraints — without being limited by the small real dataset.
 
-**Stage 2 (real-data fine-tuning):** 16-60 epochs on the 125 real experimental points only. Batch size = 1 (one curve per gradient step) to handle variable-length sequences. Learning rate reduced to 8e-5 with cosine decay.
+**Stage 2 (real-data fine-tuning):** 60-200 epochs on the 227 real experimental points only. Batch size = 1 (one curve per gradient step) to handle variable-length sequences. Learning rate reduced to 3e-5 with cosine warm restarts (T₀=40, T_mult=2). Checkpoint selection on `val_real_rmse`. This stage adapts the physics-plausible pre-trained model toward actual experimental accuracy.
 
 ## 4. Results
 
@@ -201,16 +214,23 @@ Despite the limitations, the model does several things that classical approaches
 
 ```
 project_4/
-    src/                     source code (v3, production)
-    data/                    CALPHAD tables, literature CSV, dataset card
+    src/                     source code (model, training, data pipeline, app)
+    data/
+        synthetic/           generated three-tier training data (~150K points)
+        literature_validation/   curated experimental CSV (125 points, 25 studies)
+        calphad_tables/      pre-computed thermodynamic lookup tables
+        user_experimental/   drop custom CSVs here
+        DATASET_CARD.md      full dataset documentation
     models/                  all checkpoints and training histories
-    figures/                 22 publication figures (PDF + PNG)
+    figures/                 publication figures (PDF + PNG)
     analysis.py              post-hoc analysis (CPU-only)
     analysis_results/        analysis output
-    kaggle/                  all 7 kaggle runs with logs and notebooks
-    docs/                    paper draft, notes, run registry
-    tests/                   unit tests
-    archive/                 old code versions
+    kaggle/
+        cells/               training scripts for Kaggle GPU sessions
+        runs/                all 8+ runs with logs, notebooks, result zips
+    docs/                    paper draft, technical report, run registry
+    tests/                   unit tests (physics constraints, data integrity)
+    archive/                 old code versions (v1, v2)
 ```
 
 ## 7. Reproducibility
