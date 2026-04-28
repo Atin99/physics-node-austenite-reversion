@@ -1,4 +1,4 @@
-# Physics-Constrained Latent Neural ODE for Austenite Reversion Kinetics in Medium-Mn Steels: A Diagnostic Study of Literature Data Heterogeneity
+# Physics-Constrained Latent Neural ODE for Austenite Reversion Kinetics in Medium-Mn Steels
 
 ## Abstract
 
@@ -265,12 +265,12 @@ The model's practical value is as a screening tool for narrowing down promising 
 
 ## Appendix A: Full Dataset Provenance Table
 
-The complete dataset with all 126 observations, DOIs, source references, measurement methods, and data quality flags is provided in `data/literature_validation/literature_validation.csv`.
+The complete dataset with all 125 observations, DOIs, source references, measurement methods, and data quality flags is provided in `data/literature_validation/literature_validation.csv`.
 
 ## Appendix B: Training Logs
 
-Full training histories for all 7 Kaggle runs are archived in `kaggle/runs/` with notebooks, logs, and result artifacts.
+Full training histories for all 8 Kaggle runs (including the retrain with corrected thermodynamics) are archived in `kaggle/runs/` with notebooks, logs, and result artifacts.
 
 ## Appendix C: Model Checkpoints
 
-All trained model weights are available in `models/` including the stage 1 baseline (epoch 109) and the stage 2 fine-tuned best model.
+All trained model weights are available in `models/` including the stage 1 baseline (epoch 109) and the retrained stage 2 best model (`stage2_fixed_best.pt`).

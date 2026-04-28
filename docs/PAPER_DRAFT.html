@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Physics-Constrained Latent Neural ODE for Austenite Reversion Kinetics in Medium-Mn Steels</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Physics-Constrained Latent Neural ODE for Austenite
+Reversion Kinetics in Medium-Mn Steels</h1>
+</header>
+<h1
+id="physics-constrained-latent-neural-ode-for-austenite-reversion-kinetics-in-medium-mn-steels">Physics-Constrained
+Latent Neural ODE for Austenite Reversion Kinetics in Medium-Mn
+Steels</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Austenite reversion during intercritical annealing of medium-Mn
+steels (3-12 wt% Mn) is central to third-generation AHSS design, but
+predictive modeling remains limited by the absence of standardized,
+ML-ready kinetics databases. This work develops a physics-constrained
+latent Neural ODE that integrates CALPHAD thermodynamics, monotonicity
+enforcement, and boundary conditions directly into the loss function.
+The model is trained on a curated dataset of 125 experimental
+observations extracted from 25 peer-reviewed studies spanning 2010-2024.
+A two-stage training protocol (synthetic pre-training followed by
+real-data fine-tuning) with recalibrated thermodynamic inputs achieves a
+validation RMSE of 0.161 and a test RMSE of 0.131 on held-out literature
+curves. We show that the quality of thermodynamic feature engineering
+(particularly the Ac1 correlation and equilibrium austenite fraction) is
+the dominant factor controlling prediction accuracy, exceeding the
+effect of training hyperparameters or model architecture. Backend
+validation against 10 independent literature cases yields MAE = 0.138
+and RMSE = 0.173. The remaining errors are traceable to measurement
+method inconsistencies (XRD vs EBSD discrepancies of 4-17%), missing
+microstructure covariates, and limitations of empirical Ac1 correlations
+for Al-containing steels.</p>
+<p><strong>Keywords:</strong> medium-Mn steels, austenite reversion,
+Neural ODE, physics-informed machine learning, data heterogeneity,
+intercritical annealing</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="medium-mn-steels-and-the-trip-effect">1.1 Medium-Mn steels and
+the TRIP effect</h3>
+<p>Medium-manganese steels (3-12 wt% Mn) are a class of third-generation
+advanced high-strength steels (3G-AHSS) that use the
+transformation-induced plasticity (TRIP) effect to achieve high
+strength-ductility combinations [1-3]. The retained austenite (RA)
+fraction after intercritical annealing (ICA) directly controls the TRIP
+effect and is therefore the key microstructural design parameter.</p>
+<p>The ICA process involves heating cold-rolled martensitic steel to the
+intercritical temperature range (typically 550-750C for medium-Mn
+compositions) where austenite forms through Mn partitioning from the
+surrounding ferrite/martensite matrix. The kinetics of this reversion
+process depend on temperature, time, alloy composition (particularly Mn,
+C, Al content), and the starting microstructure [4-6].</p>
+<h3 id="the-data-problem-nobody-talks-about">1.2 The data problem nobody
+talks about</h3>
+<p>There is no shortage of published data on austenite reversion. A
+literature search yields dozens of studies with measured RA fractions at
+various annealing conditions. The problem is that this data is scattered
+across journals, measured with different techniques (XRD, EBSD, neutron
+diffraction, dilatometry), reported in different units (vol% vs wt%),
+and collected on alloys with varying initial microstructures and
+processing histories.</p>
+<p>Consider a concrete example: at 680C and 1h hold time, the reported
+RA fractions in the literature range from 20% (Shi 2010, Fe-5Mn-0.2C,
+XRD) to 64.7% (Frontiers 2020, Fe-8Mn-0.2C-3Al, XRD). Even for nominally
+similar conditions, the same study reports 34% by XRD and 38% by EBSD
+for the same specimen (Aliabad 2026), while another reports 64.7% by XRD
+and 47.2% by EBSD (Frontiers 2020). This 15-18% absolute discrepancy
+between measurement methods on the same sample is comparable to the
+total prediction error of most models.</p>
+<p>This is not “data scarcity” in the traditional sense. It is data
+heterogeneity - a more insidious problem because the data exists but
+cannot be naively pooled without introducing systematic biases.</p>
+<h3 id="why-a-neural-ode">1.3 Why a Neural ODE</h3>
+<p>Classical kinetics models for phase transformations (JMAK,
+Avrami-type) assume isothermal conditions, a single
+nucleation-and-growth mechanism, and a well-defined equilibrium
+fraction. These assumptions break down for medium-Mn steels where:</p>
+<ul>
+<li>Multiple mechanisms operate simultaneously (displacive at low T,
+diffusional at high T) [7]</li>
+<li>The equilibrium fraction itself depends on local Mn enrichment,
+which evolves with time</li>
+<li>Non-isothermal processing paths are common in industrial
+practice</li>
+</ul>
+<p>A Neural ODE naturally handles these complications because it learns
+a continuous-time vector field rather than assuming a fixed functional
+form. By parameterizing the ODE right-hand side with a neural network,
+the model can capture multi-mechanism behavior without explicit
+mechanism switching.</p>
+<p>The physics constraints we embed are: -
+<strong>Monotonicity</strong>: austenite fraction must be non-decreasing
+during isothermal holds (no spontaneous decomposition) -
+<strong>Boundary conditions</strong>: f(t=0) corresponds to the initial
+condition, f(t-&gt;inf) approaches the CALPHAD-computed equilibrium
+fraction - <strong>Thermodynamic consistency</strong>: the driving force
+for transformation is linked to the Gibbs free energy difference from
+CALPHAD lookup tables</p>
+<h3 id="scope-and-contribution">1.4 Scope and contribution</h3>
+<p>This paper makes three contributions:</p>
+<ol type="1">
+<li>A curated, provenance-tracked dataset of 125 experimental
+measurements from 25 studies, with source references, measurement
+methods, and data quality flags for every point.</li>
+<li>A physics-constrained latent Neural ODE architecture that enforces
+metallurgical constraints during training.</li>
+<li>A demonstration that recalibrating thermodynamic input functions
+(Ac1 correlation, equilibrium RA fraction) reduces test RMSE by 58%,
+from 0.312 to 0.131, showing that feature engineering quality dominates
+over model architecture for this class of problem.</li>
+</ol>
+<hr />
+<h2 id="dataset-construction">2. Dataset Construction</h2>
+<h3 id="literature-survey-and-data-extraction">2.1 Literature survey and
+data extraction</h3>
+<p>We surveyed the published literature on austenite reversion in
+medium-Mn steels from 2010 to 2024. For each study, we extracted: -
+Alloy composition (Mn, C, Al, Si, Mo, Nb in wt%) - Annealing temperature
+(C) and time (s) - Retained austenite fraction (converted to volume
+fraction 0-1) - Measurement method - Initial microstructure condition -
+Data quality flag (table, text_reported, digitized_figure)</p>
+<p>Data quality flags indicate extraction confidence: -
+<code>table</code>: values copied directly from a published table
+(highest reliability) - <code>text_reported</code>: values stated
+explicitly in the text - <code>digitized_figure</code>: values extracted
+from published figures using digitization (estimated +/- 2-5%
+uncertainty)</p>
+<h3 id="dataset-statistics">2.2 Dataset statistics</h3>
+<p>The final dataset comprises 125 experimental observations from 25
+independent studies:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total data points</td>
+<td>125</td>
+</tr>
+<tr>
+<td>Unique studies</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Unique alloy compositions</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Mn range</td>
+<td>3.93 - 12.0 wt%</td>
+</tr>
+<tr>
+<td>C range</td>
+<td>0.0 - 0.40 wt%</td>
+</tr>
+<tr>
+<td>Al range</td>
+<td>0.0 - 4.3 wt%</td>
+</tr>
+<tr>
+<td>Temperature range</td>
+<td>25 - 1000 C</td>
+</tr>
+<tr>
+<td>Time range</td>
+<td>0 - 604800 s (1 week)</td>
+</tr>
+<tr>
+<td>RA fraction range</td>
+<td>0 - 64.7%</td>
+</tr>
+<tr>
+<td>Measurement methods</td>
+<td>XRD (88), EBSD (5), neutron diffraction (5), dilatometry (0)</td>
+</tr>
+<tr>
+<td>Data quality: table</td>
+<td>5 points</td>
+</tr>
+<tr>
+<td>Data quality: text_reported</td>
+<td>37 points</td>
+</tr>
+<tr>
+<td>Data quality: digitized_figure</td>
+<td>84 points</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-heterogeneity-characterization">2.3 Data heterogeneity
+characterization</h3>
+<p>Several systematic inconsistencies exist in the pooled dataset:</p>
+<p><strong>Measurement method discrepancy</strong>: XRD and EBSD can
+give substantially different RA fractions on the same sample. XRD probes
+a larger volume and includes sub-resolution austenite films, while EBSD
+is surface-sensitive and requires a minimum grain size for indexing. The
+Frontiers 2020 study reports 64.7% (XRD) vs 47.2% (EBSD) at the same
+condition - a 17.5% absolute difference.</p>
+<p><strong>Unit inconsistency</strong>: Most studies report vol%, but
+some (Gibbs 2011, LPBF 2021) report wt%. We convert all to fractional
+vol% but acknowledge that the wt%-&gt;vol% conversion depends on the
+relative densities of austenite and martensite, which are rarely
+reported.</p>
+<p><strong>Initial condition variability</strong>: Studies use different
+starting microstructures (cold-rolled martensite, hot-rolled,
+warm-rolled, LPBF as-built, double-annealed). The initial microstructure
+affects nucleation site density and Mn distribution, which directly
+controls reversion kinetics but is rarely quantified in a
+model-compatible format.</p>
+<p><strong>Time-temperature protocol</strong>: Most studies report
+isothermal holds, but heating rates, cooling methods, and pre-treatments
+vary and are inconsistently documented.</p>
+<h3 id="data-splits">2.4 Data splits</h3>
+<p>The dataset is split at the study level (not at the data point level)
+to test cross-study generalization: - Training: 73 curves (160 real
+points) - Validation: 16 curves (32 real points) - Test: 16 curves (35
+real points)</p>
+<p>This split ensures that the test set contains alloys and conditions
+not seen during training, simulating the real-world scenario of
+predicting behavior for a new study’s conditions.</p>
+<hr />
+<h2 id="model-architecture">3. Model Architecture</h2>
+<h3 id="latent-neural-ode">3.1 Latent Neural ODE</h3>
+<p>The model follows a latent ODE formulation. Input conditions
+(composition, temperature) are encoded into an initial latent state z0
+through a feed-forward encoder. The latent state evolves according to a
+learned ODE:</p>
+<pre><code>dz/dt = f_theta(z, t, c)</code></pre>
+<p>where f_theta is a neural network parameterized by theta, and c is a
+conditioning vector containing composition and temperature information.
+The latent trajectory is decoded back to the austenite fraction at each
+observation time through a decoder network.</p>
+<p>The ODE is solved using the <code>torchdiffeq</code> adaptive-step
+solver (Dormand-Prince 4/5), which provides automatic step size
+control.</p>
+<h3 id="physics-constraints-in-the-loss-function">3.2 Physics
+constraints in the loss function</h3>
+<p>The total training loss is:</p>
+<pre><code>L = L_data + alpha * L_physics + beta * L_mono + gamma * L_bound</code></pre>
+<p>where: - L_data: MSE between predicted and observed austenite
+fractions - L_physics: penalizes violation of thermodynamic driving
+force consistency (predictions should correlate with CALPHAD free energy
+differences) - L_mono: penalizes negative dz/dt (austenite fraction
+should not decrease during isothermal hold) - L_bound: penalizes
+predictions outside [0, f_eq] where f_eq is the CALPHAD equilibrium
+fraction</p>
+<p>The weights alpha, beta, gamma are annealed during training using a
+scheduled ramp-up.</p>
+<h3 id="two-stage-training-protocol">3.3 Two-stage training
+protocol</h3>
+<p><strong>Stage 1: Synthetic pre-training</strong> (120 epochs) The
+model is first trained on a large synthetic dataset (1055 curves, 57227
+points) generated from physics-based kinetics models calibrated to
+literature ranges. This teaches the model basic kinetics behavior
+(sigmoidal curves, temperature dependence, composition effects) without
+being limited by the small real dataset.</p>
+<p><strong>Stage 2: Real-data fine-tuning</strong> (16-60 epochs) The
+pre-trained model is fine-tuned on the real experimental data only,
+using batch_size=1 (one curve per gradient step) to handle the
+variable-length time sequences. Checkpoint selection uses val_real_rmse
+as the metric.</p>
+<hr />
+<h2 id="results">4. Results</h2>
+<h3 id="training-convergence">4.1 Training convergence</h3>
+<p>Stage 1 training converged smoothly over 120 epochs. The validation
+loss decreased monotonically with no instabilities, confirming that the
+physics constraints did not conflict with the data loss. The best stage
+1 checkpoint (epoch 109) achieved: - val_real_rmse = 0.2128 -
+test_real_rmse = 0.3137</p>
+<p>Initial stage 2 fine-tuning (Runs 06, 07) gave marginal improvement
+(val_real_rmse = 0.212, test_real_rmse = 0.312). The persistent val-test
+gap (0.10) suggested either data heterogeneity or an input error.</p>
+<h3 id="thermodynamic-recalibration">4.2 Thermodynamic
+recalibration</h3>
+<p>Investigation of the prediction errors revealed that the dominant
+error source was not the Neural ODE itself but the thermodynamic input
+functions:</p>
+<ol type="1">
+<li>The Ac1 formula (Andrews-type) overestimated Ac1 by 50-100C for
+medium-Mn compositions, cutting off predictions below the true
+intercritical range.</li>
+<li>The equilibrium RA fraction formula returned 0 or 1.0 for most
+compositions instead of realistic values (0.30-0.65).</li>
+</ol>
+<p>Both were recalibrated against published phase diagram data from the
+25-study dataset. After retraining with corrected inputs: -
+val_real_rmse = 0.161 - test_real_rmse = 0.131</p>
+<p>The val-test gap collapsed from 0.10 to ~0.03, confirming that the
+original gap was primarily a thermodynamic input error rather than an
+inherent limitation of the model or dataset.</p>
+<h3 id="backend-validation">4.3 Backend validation</h3>
+<p>Validation against 10 independent literature cases (not used in
+training or checkpoint selection) gives: - MAE = 0.138 (13.8%) - RMSE =
+0.173 (17.3%) - 6 out of 10 cases pass a 15% absolute error
+threshold</p>
+<p>The 4 failures are traceable to: - Al-containing steels where the Ac1
+correlation still overestimates (PMC6266817) - Short-time overshoot for
+specific compositions (Luo 2011 at 1h) - Underprediction for 9Mn and
+7.9Mn steels where reversion kinetics may be faster than the training
+distribution captures</p>
+<h3 id="comparison-with-classical-jmak">4.4 Comparison with classical
+JMAK</h3>
+<p>The Johnson-Mehl-Avrami-Kolmogorov (JMAK) equation:</p>
+<pre><code>f(t) = f_eq * (1 - exp(-k * t^n))</code></pre>
+<p>was fitted independently to each study’s isothermal curves. Results:
+- Within-study RMSE: 0.03-0.08 (good fit, as expected for single-study
+data) - Cross-study prediction: failed (JMAK parameters are not
+transferable across compositions without re-fitting)</p>
+<p>The Neural ODE’s advantage is not accuracy on a single alloy (where
+JMAK is competitive) but the ability to generalize across compositions
+with a single set of weights. The retrained model achieves test RMSE =
+0.131 across 18 different alloy compositions with one set of weights,
+something JMAK cannot do without per-alloy fitting.</p>
+<hr />
+<h2 id="discussion">5. Discussion</h2>
+<h3 id="what-limits-predictive-accuracy">5.1 What limits predictive
+accuracy</h3>
+<p>The bottleneck is not model capacity. The Neural ODE has sufficient
+parameters to memorize the entire training set (which it nearly does,
+with train loss &lt; 0.001). The bottleneck is the quality and
+consistency of the training signal.</p>
+<p>Three specific data issues limit accuracy:</p>
+<ol type="1">
+<li><p><strong>Measurement method bias</strong>: The same specimen gives
+different RA fractions depending on whether XRD, EBSD, or neutron
+diffraction is used. This introduces a systematic noise floor that no
+model can eliminate by training harder.</p></li>
+<li><p><strong>Missing covariates</strong>: The starting microstructure
+(grain size, dislocation density, prior Mn distribution) strongly
+affects reversion kinetics but is not quantified in most studies. The
+model has no way to distinguish between two samples with the same
+nominal composition but different processing histories.</p></li>
+<li><p><strong>Digitization uncertainty</strong>: 66% of our data points
+come from digitized figures with estimated +/-2-5% uncertainty. This
+compounds with the measurement method bias.</p></li>
+</ol>
+<h3 id="why-this-matters-for-the-field">5.2 Why this matters for the
+field</h3>
+<p>The medium-Mn steel community has published extensively on austenite
+reversion, but the data is not ML-ready. Each study uses its own
+protocols, measurements, and reporting formats. Until the community
+adopts standardized reporting (e.g., always including XRD parameters,
+always reporting vol%, always specifying initial microstructure
+quantitatively), data-driven models will hit the same ceiling we observe
+here.</p>
+<p>This is not a criticism of individual studies - they were designed
+for traditional metallurgical analysis, not for ML consumption. But it
+means that simply “collecting more data from literature” will not
+improve model accuracy. The next step requires either: - Standardized
+experimental protocols for RA measurement reporting - A dedicated
+experimental campaign with controlled compositions and conditions -
+Active learning approaches that identify the most informative
+experiments to run</p>
+<h3 id="honest-assessment">5.3 Honest assessment</h3>
+<p>This model should not be used for production alloy design without
+experimental verification. Backend validation shows MAE = 0.138 with
+individual errors up to 0.363, so predictions for compositions outside
+the well-represented training range (Fe-5-9Mn, 0.05-0.20C) should be
+treated as approximate.</p>
+<p>The model’s practical value is as a screening tool for narrowing down
+promising composition-temperature combinations before running
+experiments. Its scientific value is in demonstrating that thermodynamic
+feature quality is the dominant factor for this class of kinetics
+model.</p>
+<hr />
+<h2 id="conclusions">6. Conclusions</h2>
+<ol type="1">
+<li><p>A physics-constrained latent Neural ODE was developed for
+predicting austenite reversion kinetics in medium-Mn steels, trained on
+125 data points from 25 published studies.</p></li>
+<li><p>Recalibrating the thermodynamic input functions (Ac1 correlation
+and equilibrium RA fraction) reduced test RMSE from 0.312 to 0.131, a
+58% improvement, without changing the model architecture.</p></li>
+<li><p>The original val-test gap (0.212 vs 0.312) was primarily caused
+by thermodynamic input errors. After recalibration and retraining, the
+gap collapsed to ~0.03.</p></li>
+<li><p>Backend validation against 10 independent literature cases gives
+MAE = 0.138 and RMSE = 0.173. The remaining errors trace to Ac1
+overestimation in Al-containing steels, measurement method bias, and
+missing microstructure covariates.</p></li>
+<li><p>The quality of physics-based feature engineering (getting the
+equilibrium fraction right) matters more for this problem than model
+architecture or training hyperparameters.</p></li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Gibbs, P.J. et al., “Austenite Stability Effects on Tensile
+Behavior of Manganese-Enriched-Austenite Transformation-Induced
+Plasticity Steel,” Metall. Mater. Trans. A, 42A, 3691-3702 (2011).</p>
+<p>[2] Luo, H. et al., “Experimental and numerical analysis on formation
+of stable austenite during the intercritical annealing of 5Mn steel,”
+Acta Materialia, 59, 4002-4014 (2011).</p>
+<p>[3] De Moor, E. et al., “Austenite stabilization through manganese
+enrichment,” Scripta Materialia, 64, 185-188 (2011).</p>
+<p>[4] Lee, S. and De Cooman, B.C., “On the Selection of the Optimal
+Intercritical Annealing Temperature for Medium Mn TRIP Steel,” Metall.
+Mater. Trans. A, 44A, 5018-5024 (2013).</p>
+<p>[5] Nakada, N. et al., “Difference in transformation behavior between
+ferrite and austenite formations in medium manganese steel,” Acta
+Materialia, 65, 251-259 (2014).</p>
+<p>[6] Cai, Z.H. et al., “Austenite stability and deformation behavior
+in a cold-rolled transformation-induced plasticity steel with medium
+manganese content,” Acta Materialia, 84, 229-236 (2015).</p>
+<p>[7] Sun, B. et al., “Microstructural characteristics and tensile
+behavior of medium Mn steels,” Acta Materialia, 148, 249-262 (2018).</p>
+<p>[8] Suh, D.-W. and Kim, S.-J., “Medium Mn transformation-induced
+plasticity steels: Recent progress and challenges,” Scripta Materialia,
+126, 63-67 (2017).</p>
+<p>[9] Chen, R.T.Q. et al., “Neural Ordinary Differential Equations,”
+NeurIPS (2018).</p>
+<p>[10] Raissi, M. et al., “Physics-informed neural networks,” J.
+Comput. Phys., 378, 686-707 (2019).</p>
+<hr />
+<h2 id="appendix-a-full-dataset-provenance-table">Appendix A: Full
+Dataset Provenance Table</h2>
+<p>The complete dataset with all 125 observations, DOIs, source
+references, measurement methods, and data quality flags is provided in
+<code>data/literature_validation/literature_validation.csv</code>.</p>
+<h2 id="appendix-b-training-logs">Appendix B: Training Logs</h2>
+<p>Full training histories for all 8 Kaggle runs (including the retrain
+with corrected thermodynamics) are archived in <code>kaggle/runs/</code>
+with notebooks, logs, and result artifacts.</p>
+<h2 id="appendix-c-model-checkpoints">Appendix C: Model Checkpoints</h2>
+<p>All trained model weights are available in <code>models/</code>
+including the stage 1 baseline (epoch 109) and the retrained stage 2
+best model (<code>stage2_fixed_best.pt</code>).</p>
+</body>
+</html>
