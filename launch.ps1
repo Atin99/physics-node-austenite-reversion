@@ -20,8 +20,8 @@ try {
 $check = python -c "import streamlit" 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "  Installing dependencies..." -ForegroundColor Yellow
-    pip install -r requirements.txt
-    pip install streamlit
+    python -m pip install -r requirements.txt
+    python -m pip install streamlit
     Write-Host ""
 }
 
@@ -29,4 +29,4 @@ Write-Host "  Starting server at http://localhost:8501" -ForegroundColor Green
 Write-Host "  Press Ctrl+C to stop" -ForegroundColor DarkGray
 Write-Host ""
 
-streamlit run src/streamlit_app.py --server.port 8501 --server.headless false --browser.gatherUsageStats false
+python -m streamlit run src/streamlit_app.py --server.port 8501 --server.headless false --browser.gatherUsageStats false
