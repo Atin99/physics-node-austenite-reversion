@@ -1,0 +1,3555 @@
+7.6s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.6s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.6s 3 0.00s - to python to disable frozen modules.
+7.6s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.2s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.2s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.2s 7 0.00s - to python to disable frozen modules.
+8.2s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+21.8s 9 10:19:35 [INFO] ======================================================================
+21.8s 10 EXPERIMENTAL DATA SUMMARY
+21.8s 11 ======================================================================
+21.8s 12 
+21.8s 13 [gibbs_2011] Fe-7.1Mn-0.1C
+21.8s 14 Source: Metallurgical and Materials Transactions A (2011)
+21.8s 15 DOI: 10.1007/s11661-011-0736-2
+21.8s 16 Initial: cold-rolled, 50% reduction
+21.8s 17 Data: 5 points | T: 575-675°C | Quality: {'table'}
+21.8s 18 
+21.8s 19 [luo_2011] Fe-5.0Mn-0.2C
+21.8s 20 Source: Acta Materialia (2011)
+21.8s 21 DOI: 10.1016/j.actamat.2011.03.025
+21.8s 22 Initial: cold-rolled martensitic
+21.8s 23 Data: 7 points | T: 650-650°C | Quality: {'digitized_figure', 'text_reported'}
+21.8s 24 
+21.8s 25 [pmc11053108_2024] Fe-4.7Mn-0.16C-1.6Al-0.2Si-0.2Mo
+21.8s 26 Source: Open Access (PMC) (2024)
+21.8s 27 DOI: PMC11053108
+21.8s 28 Initial: cold-rolled
+21.8s 29 Data: 7 points | T: 640-1000°C | Quality: {'text_reported'}
+21.8s 30 
+21.8s 31 [pmc11173901_2024] Fe-9.4Mn-0.2C-4.3Al
+21.8s 32 Source: Open Access (PMC) (2024)
+21.8s 33 DOI: PMC11173901
+21.8s 34 Initial: not specified
+21.8s 35 Data: 3 points | T: 750-850°C | Quality: {'digitized_figure'}
+21.8s 36 
+21.8s 37 [pmc6266817_2018] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+21.8s 38 Source: Open Access (PMC) (2018)
+21.8s 39 DOI: PMC6266817
+21.8s 40 Initial: cold-rolled (CR)
+21.8s 41 Data: 6 points | T: 600-750°C | Quality: {'digitized_figure', 'text_reported'}
+21.8s 42 
+21.8s 43 [pmc6266817_2018_HR] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+21.8s 44 Source: Open Access (PMC) (2018)
+21.8s 45 DOI: PMC6266817
+21.8s 46 Initial: hot-rolled (HR)
+21.8s 47 Data: 4 points | T: 600-690°C | Quality: {'digitized_figure', 'text_reported'}
+21.8s 48 
+21.8s 49 [yan_2022] Fe-6.0Mn-0.15C-1.5Al-0.3Si
+21.8s 50 Source: MDPI Metals / EBSD study (2022)
+21.8s 51 DOI: yan_2022_EBSD
+21.8s 52 Initial: cold-rolled
+21.8s 53 Data: 3 points | T: 650-710°C | Quality: {'text_reported'}
+21.8s 54 
+21.8s 55 [aliabad_2026] Fe-6.0Mn-0.4C-2.0Al-1.0Si
+21.8s 56 Source: Open Access (2026)
+21.8s 57 DOI: aliabad_2026
+21.8s 58 Initial: not specified
+21.8s 59 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+21.8s 60 
+21.8s 61 [frontiers_2020] Fe-8.0Mn-0.2C-3.0Al
+21.8s 62 Source: Frontiers in Materials (2020)
+21.8s 63 DOI: frontiers_2020
+21.8s 64 Initial: not specified
+21.8s 65 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+21.8s 66 
+21.8s 67 [lpbf_2021] Fe-3.93Mn-0.23C-2.01Al-0.51Si
+21.8s 68 Source: Materials (MDPI) (2021)
+21.8s 69 DOI: MDPI_Materials_14_3081
+21.8s 70 Initial: LPBF as-built
+21.8s 71 Data: 3 points | T: 25-750°C | Quality: {'text_reported'}
+21.8s 72 
+21.8s 73 [demoor_2011] Fe-7.1Mn-0.11C
+21.8s 74 Source: Scripta Materialia (2011)
+21.8s 75 DOI: 10.1016/j.scriptamat.2010.09.040
+21.8s 76 Initial: cold-rolled martensitic
+21.8s 77 Data: 5 points | T: 600-600°C | Quality: {'digitized_figure'}
+21.8s 78 
+21.8s 79 [lee_decooman_2014] Fe-5.8Mn-0.12C-2.0Al
+21.8s 80 Source: Metallurgical and Materials Transactions A (2013)
+21.8s 81 DOI: 10.1007/s11661-013-1860-y
+21.8s 82 Initial: cold-rolled martensitic
+21.8s 83 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+21.8s 84 
+21.8s 85 [nakada_2014] Fe-6.0Mn
+21.8s 86 Source: Acta Materialia (2014)
+21.8s 87 DOI: 10.1016/j.actamat.2013.10.067
+21.8s 88 Initial: quenched martensite
+21.8s 89 Data: 7 points | T: 500-675°C | Quality: {'digitized_figure'}
+21.8s 90 
+21.8s 91 [shi_2010] Fe-5.0Mn-0.2C
+21.8s 92 Source: Scripta Materialia (2010)
+21.8s 93 DOI: 10.1016/j.scriptamat.2010.06.023
+21.8s 94 Initial: cold-rolled martensitic
+21.8s 95 Data: 5 points | T: 620-680°C | Quality: {'digitized_figure'}
+21.8s 96 
+21.8s 97 [arlazarov_2012] Fe-5.0Mn-0.1C
+21.8s 98 Source: Materials Science and Engineering: A (2012)
+21.8s 99 DOI: 10.1016/j.msea.2012.02.024
+21.8s 100 Initial: cold-rolled, double annealed
+21.8s 101 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+21.8s 102 
+21.8s 103 [han_2014] Fe-9.0Mn-0.05C
+21.8s 104 Source: Materials Science and Engineering: A (2014)
+21.8s 105 DOI: 10.1016/j.msea.2015.02.055
+21.8s 106 Initial: water-quenched martensite
+21.8s 107 Data: 6 points | T: 600-725°C | Quality: {'digitized_figure'}
+21.8s 108 
+21.8s 109 [miller_2013] Fe-5.8Mn-0.1C-0.5Si
+21.8s 110 Source: Metallurgical Transactions (2013)
+21.8s 111 DOI: 10.1007/BF02647665
+21.8s 112 Initial: cold-rolled and annealed
+21.8s 113 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+21.8s 114 
+21.8s 115 [hu_luo_2017] Fe-7.0Mn-0.1C-0.5Al
+21.8s 116 Source: Journal of Alloys and Compounds (2017)
+21.8s 117 DOI: 10.1016/j.jallcom.2017.07.174
+21.8s 118 Initial: warm-rolled
+21.8s 119 Data: 4 points | T: 600-675°C | Quality: {'digitized_figure'}
+21.8s 120 
+21.8s 121 [cai_2016] Fe-10.0Mn-0.3C-2.0Al
+21.8s 122 Source: Acta Materialia (2015)
+21.8s 123 DOI: 10.1016/j.actamat.2014.10.052
+21.8s 124 Initial: cold-rolled martensitic
+21.8s 125 Data: 4 points | T: 625-700°C | Quality: {'digitized_figure'}
+21.8s 126 
+21.8s 127 [zhao_2014] Fe-7.9Mn-0.07C-0.05Al-0.14Si
+21.8s 128 Source: Materials (2014)
+21.8s 129 DOI: 10.3390/ma7127891
+21.8s 130 Initial: cold-rolled martensitic
+21.8s 131 Data: 7 points | T: 580-700°C | Quality: {'digitized_figure'}
+21.8s 132 
+21.8s 133 [suh_2017] Fe-6.0Mn-0.1C-3.0Al
+21.8s 134 Source: Scripta Materialia (2017)
+21.8s 135 DOI: 10.1016/j.scriptamat.2016.07.013
+21.8s 136 Initial: cold-rolled martensitic
+21.8s 137 Data: 5 points | T: 700-800°C | Quality: {'digitized_figure'}
+21.8s 138 
+21.8s 139 [sun_2018] Fe-12.0Mn-0.05C
+21.8s 140 Source: Acta Materialia (2018)
+21.8s 141 DOI: 10.1016/j.actamat.2018.02.005
+21.8s 142 Initial: cold-rolled martensitic
+21.8s 143 Data: 8 points | T: 575-675°C | Quality: {'digitized_figure'}
+21.8s 144 
+21.8s 145 [ma_2019] Fe-8.0Mn-0.2C-2.0Al-0.5Si
+21.8s 146 Source: Materials (2019)
+21.8s 147 DOI: 10.3390/ma12091402
+21.8s 148 Initial: cold-rolled martensitic
+21.8s 149 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+21.8s 150 
+21.8s 151 [demoor_2015] Fe-7.0Mn-0.1C
+21.8s 152 Source: ISIJ International (2015)
+21.8s 153 DOI: 10.2355/isijinternational.55.234
+21.8s 154 Initial: cold-rolled martensitic
+21.8s 155 Data: 6 points | T: 620-620°C | Quality: {'digitized_figure'}
+21.8s 156 
+21.8s 157 [hausman_2017] Fe-6.0Mn-0.3C-0.5Si
+21.8s 158 Source: Materials Science and Engineering: A (2017)
+21.8s 159 DOI: 10.1016/j.msea.2016.12.055
+21.8s 160 Initial: cold-rolled martensitic
+21.8s 161 Data: 4 points | T: 575-650°C | Quality: {'digitized_figure'}
+21.8s 162 
+21.8s 163 ======================================================================
+21.8s 164 TOTAL: 125 experimental data points from 25 studies
+21.8s 165 ======================================================================
+21.8s 166 
+21.8s 167 10:19:35 [INFO] ======================================================================
+21.8s 168 EXPERIMENTAL DATA SUMMARY
+21.8s 169 ======================================================================
+21.8s 170 
+21.8s 171 [gibbs_2011] Fe-7.1Mn-0.1C
+21.8s 172 Source: Metallurgical and Materials Transactions A (2011)
+21.8s 173 DOI: 10.1007/s11661-011-0736-2
+21.8s 174 Initial: cold-rolled, 50% reduction
+21.8s 175 Data: 5 points | T: 575-675°C | Quality: {'table'}
+21.8s 176 
+21.8s 177 [luo_2011] Fe-5.0Mn-0.2C
+21.8s 178 Source: Acta Materialia (2011)
+21.8s 179 DOI: 10.1016/j.actamat.2011.03.025
+21.8s 180 Initial: cold-rolled martensitic
+21.8s 181 Data: 7 points | T: 650-650°C | Quality: {'digitized_figure', 'text_reported'}
+21.8s 182 
+21.8s 183 [pmc11053108_2024] Fe-4.7Mn-0.16C-1.6Al-0.2Si-0.2Mo
+21.8s 184 Source: Open Access (PMC) (2024)
+21.8s 185 DOI: PMC11053108
+21.8s 186 Initial: cold-rolled
+21.8s 187 Data: 7 points | T: 640-1000°C | Quality: {'text_reported'}
+21.8s 188 
+21.8s 189 [pmc11173901_2024] Fe-9.4Mn-0.2C-4.3Al
+21.8s 190 Source: Open Access (PMC) (2024)
+21.8s 191 DOI: PMC11173901
+21.8s 192 Initial: not specified
+21.8s 193 Data: 3 points | T: 750-850°C | Quality: {'digitized_figure'}
+21.8s 194 
+21.8s 195 [pmc6266817_2018] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+21.8s 196 Source: Open Access (PMC) (2018)
+21.8s 197 DOI: PMC6266817
+21.8s 198 Initial: cold-rolled (CR)
+21.8s 199 Data: 6 points | T: 600-750°C | Quality: {'digitized_figure', 'text_reported'}
+21.8s 200 
+21.8s 201 [pmc6266817_2018_HR] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+21.8s 202 Source: Open Access (PMC) (2018)
+21.8s 203 DOI: PMC6266817
+21.8s 204 Initial: hot-rolled (HR)
+21.8s 205 Data: 4 points | T: 600-690°C | Quality: {'digitized_figure', 'text_reported'}
+21.8s 206 
+21.8s 207 [yan_2022] Fe-6.0Mn-0.15C-1.5Al-0.3Si
+21.8s 208 Source: MDPI Metals / EBSD study (2022)
+21.8s 209 DOI: yan_2022_EBSD
+21.8s 210 Initial: cold-rolled
+21.8s 211 Data: 3 points | T: 650-710°C | Quality: {'text_reported'}
+21.8s 212 
+21.8s 213 [aliabad_2026] Fe-6.0Mn-0.4C-2.0Al-1.0Si
+21.8s 214 Source: Open Access (2026)
+21.8s 215 DOI: aliabad_2026
+21.8s 216 Initial: not specified
+21.8s 217 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+21.8s 218 
+21.8s 219 [frontiers_2020] Fe-8.0Mn-0.2C-3.0Al
+21.8s 220 Source: Frontiers in Materials (2020)
+21.8s 221 DOI: frontiers_2020
+21.8s 222 Initial: not specified
+21.8s 223 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+21.8s 224 
+21.8s 225 [lpbf_2021] Fe-3.93Mn-0.23C-2.01Al-0.51Si
+21.8s 226 Source: Materials (MDPI) (2021)
+21.8s 227 DOI: MDPI_Materials_14_3081
+21.8s 228 Initial: LPBF as-built
+21.8s 229 Data: 3 points | T: 25-750°C | Quality: {'text_reported'}
+21.8s 230 
+21.8s 231 [demoor_2011] Fe-7.1Mn-0.11C
+21.8s 232 Source: Scripta Materialia (2011)
+21.8s 233 DOI: 10.1016/j.scriptamat.2010.09.040
+21.8s 234 Initial: cold-rolled martensitic
+21.8s 235 Data: 5 points | T: 600-600°C | Quality: {'digitized_figure'}
+21.8s 236 
+21.8s 237 [lee_decooman_2014] Fe-5.8Mn-0.12C-2.0Al
+21.8s 238 Source: Metallurgical and Materials Transactions A (2013)
+21.8s 239 DOI: 10.1007/s11661-013-1860-y
+21.8s 240 Initial: cold-rolled martensitic
+21.8s 241 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+21.8s 242 
+21.8s 243 [nakada_2014] Fe-6.0Mn
+21.8s 244 Source: Acta Materialia (2014)
+21.8s 245 DOI: 10.1016/j.actamat.2013.10.067
+21.8s 246 Initial: quenched martensite
+21.8s 247 Data: 7 points | T: 500-675°C | Quality: {'digitized_figure'}
+21.8s 248 
+21.8s 249 [shi_2010] Fe-5.0Mn-0.2C
+21.8s 250 Source: Scripta Materialia (2010)
+21.8s 251 DOI: 10.1016/j.scriptamat.2010.06.023
+21.8s 252 Initial: cold-rolled martensitic
+21.8s 253 Data: 5 points | T: 620-680°C | Quality: {'digitized_figure'}
+21.8s 254 
+21.8s 255 [arlazarov_2012] Fe-5.0Mn-0.1C
+21.8s 256 Source: Materials Science and Engineering: A (2012)
+21.8s 257 DOI: 10.1016/j.msea.2012.02.024
+21.8s 258 Initial: cold-rolled, double annealed
+21.8s 259 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+21.8s 260 
+21.8s 261 [han_2014] Fe-9.0Mn-0.05C
+21.8s 262 Source: Materials Science and Engineering: A (2014)
+21.8s 263 DOI: 10.1016/j.msea.2015.02.055
+21.8s 264 Initial: water-quenched martensite
+21.8s 265 Data: 6 points | T: 600-725°C | Quality: {'digitized_figure'}
+21.8s 266 
+21.8s 267 [miller_2013] Fe-5.8Mn-0.1C-0.5Si
+21.8s 268 Source: Metallurgical Transactions (2013)
+21.8s 269 DOI: 10.1007/BF02647665
+21.8s 270 Initial: cold-rolled and annealed
+21.8s 271 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+21.8s 272 
+21.8s 273 [hu_luo_2017] Fe-7.0Mn-0.1C-0.5Al
+21.8s 274 Source: Journal of Alloys and Compounds (2017)
+21.8s 275 DOI: 10.1016/j.jallcom.2017.07.174
+21.8s 276 Initial: warm-rolled
+21.8s 277 Data: 4 points | T: 600-675°C | Quality: {'digitized_figure'}
+21.8s 278 
+21.8s 279 [cai_2016] Fe-10.0Mn-0.3C-2.0Al
+21.8s 280 Source: Acta Materialia (2015)
+21.8s 281 DOI: 10.1016/j.actamat.2014.10.052
+21.8s 282 Initial: cold-rolled martensitic
+21.8s 283 Data: 4 points | T: 625-700°C | Quality: {'digitized_figure'}
+21.8s 284 
+21.8s 285 [zhao_2014] Fe-7.9Mn-0.07C-0.05Al-0.14Si
+21.8s 286 Source: Materials (2014)
+21.8s 287 DOI: 10.3390/ma7127891
+21.8s 288 Initial: cold-rolled martensitic
+21.8s 289 Data: 7 points | T: 580-700°C | Quality: {'digitized_figure'}
+21.8s 290 
+21.8s 291 [suh_2017] Fe-6.0Mn-0.1C-3.0Al
+21.8s 292 Source: Scripta Materialia (2017)
+21.8s 293 DOI: 10.1016/j.scriptamat.2016.07.013
+21.8s 294 Initial: cold-rolled martensitic
+21.8s 295 Data: 5 points | T: 700-800°C | Quality: {'digitized_figure'}
+21.8s 296 
+21.8s 297 [sun_2018] Fe-12.0Mn-0.05C
+21.8s 298 Source: Acta Materialia (2018)
+21.8s 299 DOI: 10.1016/j.actamat.2018.02.005
+21.8s 300 Initial: cold-rolled martensitic
+21.8s 301 Data: 8 points | T: 575-675°C | Quality: {'digitized_figure'}
+21.8s 302 
+21.8s 303 [ma_2019] Fe-8.0Mn-0.2C-2.0Al-0.5Si
+21.8s 304 Source: Materials (2019)
+21.8s 305 DOI: 10.3390/ma12091402
+21.8s 306 Initial: cold-rolled martensitic
+21.8s 307 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+21.8s 308 
+21.8s 309 [demoor_2015] Fe-7.0Mn-0.1C
+21.8s 310 Source: ISIJ International (2015)
+21.8s 311 DOI: 10.2355/isijinternational.55.234
+21.8s 312 Initial: cold-rolled martensitic
+21.8s 313 Data: 6 points | T: 620-620°C | Quality: {'digitized_figure'}
+21.8s 314 
+21.8s 315 [hausman_2017] Fe-6.0Mn-0.3C-0.5Si
+21.8s 316 Source: Materials Science and Engineering: A (2017)
+21.8s 317 DOI: 10.1016/j.msea.2016.12.055
+21.8s 318 Initial: cold-rolled martensitic
+21.8s 319 Data: 4 points | T: 575-650°C | Quality: {'digitized_figure'}
+21.8s 320 
+21.8s 321 ======================================================================
+21.8s 322 TOTAL: 125 experimental data points from 25 studies
+21.8s 323 ======================================================================
+21.8s 324 10:19:35 [INFO] Loaded 125 experimental data points from 25 studies
+21.8s 325 
+21.8s 326 10:19:35 [INFO] Loaded 125 experimental data points from 25 studies
+21.8s 327 10:19:35 [INFO] No user CSV files found in /kaggle/working/medium_mn_neural_ode/data/user_experimental
+21.8s 328 
+21.8s 329 10:19:35 [INFO] No user CSV files found in /kaggle/working/medium_mn_neural_ode/data/user_experimental
+21.9s 330 10:19:35 [INFO] Converted 125 real measurements into 107 training curves (6206 total points)
+21.9s 331 
+21.9s 332 10:19:35 [INFO] Converted 125 real measurements into 107 training curves (6206 total points)
+21.9s 333 10:19:35 [INFO] TIER 1 (Real): 107 curves, 6206 points
+21.9s 334 
+21.9s 335 10:19:35 [INFO] TIER 1 (Real): 107 curves, 6206 points
+22.6s 336 10:19:35 [INFO] Generated 500 calibrated synthetic curves (30000 points) | provenance='synthetic_calibrated'
+22.6s 337 
+22.6s 338 10:19:35 [INFO] Generated 500 calibrated synthetic curves (30000 points) | provenance='synthetic_calibrated'
+22.6s 339 10:19:35 [INFO] TIER 2 (Calibrated Synthetic): 500 curves, 30000 points
+22.6s 340 
+22.6s 341 10:19:35 [INFO] TIER 2 (Calibrated Synthetic): 500 curves, 30000 points
+25.6s 342 10:19:38 [INFO] Generated 2000 exploratory synthetic curves (120000 points) | provenance='synthetic_exploratory'
+25.6s 343 
+25.6s 344 10:19:38 [INFO] Generated 2000 exploratory synthetic curves (120000 points) | provenance='synthetic_exploratory'
+25.7s 345 10:19:38 [INFO] TIER 3 (Exploratory Synthetic): 2000 curves, 120000 points
+25.7s 346 
+25.7s 347 10:19:38 [INFO] TIER 3 (Exploratory Synthetic): 2000 curves, 120000 points
+25.7s 348 10:19:38 [INFO]
+25.7s 349 ============================================================
+25.7s 350 
+25.7s 351 10:19:38 [INFO]
+25.7s 352 ============================================================
+25.7s 353 10:19:38 [INFO] FULL DATASET: 2607 curves, 156206 total points
+25.7s 354 
+25.7s 355 10:19:38 [INFO] FULL DATASET: 2607 curves, 156206 total points
+25.7s 356 10:19:38 [INFO]   synthetic_exploratory: 120000 points
+25.7s 357 
+25.7s 358 10:19:38 [INFO]   synthetic_exploratory: 120000 points
+25.7s 359 10:19:38 [INFO]   synthetic_calibrated: 30000 points
+25.7s 360 
+25.7s 361 10:19:38 [INFO]   synthetic_calibrated: 30000 points
+25.7s 362 10:19:38 [INFO]   experimental: 6206 points
+25.7s 363 
+25.7s 364 10:19:38 [INFO]   experimental: 6206 points
+25.7s 365 10:19:38 [INFO] ============================================================
+25.7s 366 
+25.7s 367 
+25.7s 368 10:19:38 [INFO] ============================================================
+25.7s 369 
+25.9s 370 
+25.9s 371 === 50-EPOCH PHYSICS-LOCKED V2 (CORRECT GATE) ===
+34.2s 372 10:19:47 [INFO] ============================================================
+34.2s 373 
+34.2s 374 10:19:47 [INFO] ============================================================
+34.3s 375 10:19:47 [INFO] Training on cuda | Epochs: 50 | Batch: 128 | LR: 0.0003
+34.3s 376 
+34.3s 377 10:19:47 [INFO] Training on cuda | Epochs: 50 | Batch: 128 | LR: 0.0003
+34.3s 378 10:19:47 [INFO] AMP: False | Adjoint: True | SWAG: False
+34.3s 379 
+34.3s 380 10:19:47 [INFO] AMP: False | Adjoint: True | SWAG: False
+34.3s 381 10:19:47 [INFO] ============================================================
+34.3s 382 
+34.3s 383 10:19:47 [INFO] ============================================================
+34.9s 384 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+34.9s 385 
+34.9s 386 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+34.9s 387 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+34.9s 388 
+34.9s 389 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+34.9s 390 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+34.9s 391 
+34.9s 392 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+34.9s 393 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+34.9s 394 
+34.9s 395 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+34.9s 396 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+34.9s 397 
+34.9s 398 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.0s 399 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.0s 400 
+35.0s 401 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.0s 402 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.0s 403 
+35.0s 404 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.0s 405 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.0s 406 
+35.0s 407 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.0s 408 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.0s 409 
+35.0s 410 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.0s 411 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.0s 412 
+35.0s 413 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.0s 414 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.0s 415 
+35.0s 416 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.0s 417 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.0s 418 
+35.0s 419 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.0s 420 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.0s 421 
+35.0s 422 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.0s 423 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.0s 424 
+35.0s 425 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.1s 426 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 427 
+35.1s 428 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 429 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 430 
+35.1s 431 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 432 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 433 
+35.1s 434 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 435 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 436 
+35.1s 437 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 438 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 439 
+35.1s 440 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 441 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 442 
+35.1s 443 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 444 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 445 
+35.1s 446 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.1s 447 10:19:48 [INFO] E   1 | T:0.00000 V:0.00000 | NFE:0 | Viol:0.00% | LR:3.0e-04
+35.1s 448 
+35.1s 449 10:19:48 [INFO] E   1 | T:0.00000 V:0.00000 | NFE:0 | Viol:0.00% | LR:3.0e-04
+35.1s 450 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.1s 451 
+35.1s 452 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.1s 453 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.1s 454 
+35.1s 455 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.1s 456 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.1s 457 
+35.1s 458 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.1s 459 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.1s 460 
+35.1s 461 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.1s 462 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.1s 463 
+35.1s 464 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.1s 465 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.1s 466 
+35.1s 467 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.1s 468 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.1s 469 
+35.1s 470 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.1s 471 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.1s 472 
+35.1s 473 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.2s 474 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.2s 475 
+35.2s 476 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.2s 477 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.2s 478 
+35.2s 479 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.2s 480 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.2s 481 
+35.2s 482 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.2s 483 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.2s 484 
+35.2s 485 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.2s 486 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.2s 487 
+35.2s 488 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.2s 489 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.2s 490 
+35.2s 491 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.2s 492 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 493 
+35.2s 494 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 495 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 496 
+35.2s 497 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 498 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 499 
+35.2s 500 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 501 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 502 
+35.2s 503 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 504 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 505 
+35.2s 506 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 507 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 508 
+35.2s 509 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 510 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 511 
+35.2s 512 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.2s 513 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.2s 514 
+35.2s 515 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.2s 516 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.2s 517 
+35.2s 518 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.2s 519 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.2s 520 
+35.2s 521 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.2s 522 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.2s 523 
+35.2s 524 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.2s 525 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.2s 526 
+35.2s 527 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.3s 528 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.3s 529 
+35.3s 530 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.3s 531 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.3s 532 
+35.3s 533 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.3s 534 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.3s 535 
+35.3s 536 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.3s 537 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.3s 538 
+35.3s 539 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.3s 540 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.3s 541 
+35.3s 542 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.3s 543 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.3s 544 
+35.3s 545 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.3s 546 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.3s 547 
+35.3s 548 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.3s 549 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.3s 550 
+35.3s 551 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.3s 552 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.3s 553 
+35.3s 554 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.3s 555 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 556 
+35.3s 557 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 558 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 559 
+35.3s 560 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 561 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 562 
+35.3s 563 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 564 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 565 
+35.3s 566 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 567 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 568 
+35.3s 569 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 570 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 571 
+35.3s 572 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 573 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 574 
+35.3s 575 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.3s 576 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.3s 577 
+35.3s 578 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.3s 579 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.3s 580 
+35.3s 581 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.3s 582 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.3s 583 
+35.3s 584 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.4s 585 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.4s 586 
+35.4s 587 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.4s 588 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.4s 589 
+35.4s 590 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.4s 591 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.4s 592 
+35.4s 593 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.4s 594 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.4s 595 
+35.4s 596 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.4s 597 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.4s 598 
+35.4s 599 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.4s 600 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.4s 601 
+35.4s 602 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.4s 603 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.4s 604 
+35.4s 605 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.4s 606 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.4s 607 
+35.4s 608 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.4s 609 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.4s 610 
+35.4s 611 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.4s 612 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.4s 613 
+35.4s 614 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.4s 615 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.4s 616 
+35.4s 617 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.4s 618 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 619 
+35.4s 620 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 621 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 622 
+35.4s 623 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 624 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 625 
+35.4s 626 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 627 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 628 
+35.4s 629 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 630 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 631 
+35.4s 632 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 633 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 634 
+35.4s 635 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 636 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.4s 637 
+35.4s 638 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 639 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.5s 640 
+35.5s 641 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.5s 642 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.5s 643 
+35.5s 644 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.5s 645 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.5s 646 
+35.5s 647 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.5s 648 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.5s 649 
+35.5s 650 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.5s 651 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.5s 652 
+35.5s 653 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.5s 654 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.5s 655 
+35.5s 656 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.5s 657 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.5s 658 
+35.5s 659 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.5s 660 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.5s 661 
+35.5s 662 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.5s 663 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.5s 664 
+35.5s 665 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.5s 666 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.5s 667 
+35.5s 668 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.5s 669 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.5s 670 
+35.5s 671 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.5s 672 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.5s 673 
+35.5s 674 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.5s 675 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.5s 676 
+35.5s 677 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.5s 678 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.5s 679 
+35.5s 680 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.5s 681 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 682 
+35.5s 683 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 684 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 685 
+35.5s 686 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 687 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 688 
+35.5s 689 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 690 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.5s 691 
+35.5s 692 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 693 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 694 
+35.6s 695 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 696 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 697 
+35.6s 698 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 699 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 700 
+35.6s 701 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 702 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.6s 703 
+35.6s 704 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.6s 705 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.6s 706 
+35.6s 707 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.6s 708 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.6s 709 
+35.6s 710 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.6s 711 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.6s 712 
+35.6s 713 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.6s 714 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.6s 715 
+35.6s 716 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.6s 717 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.6s 718 
+35.6s 719 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.6s 720 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.6s 721 
+35.6s 722 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.6s 723 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.6s 724 
+35.6s 725 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.6s 726 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.6s 727 
+35.6s 728 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.6s 729 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.6s 730 
+35.6s 731 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.6s 732 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.6s 733 
+35.6s 734 10:19:48 [WARNING] Skipped batch 10: name 'state' is not defined
+35.6s 735 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.6s 736 
+35.6s 737 10:19:48 [WARNING] Skipped batch 11: name 'state' is not defined
+35.6s 738 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.6s 739 
+35.6s 740 10:19:48 [WARNING] Skipped batch 12: name 'state' is not defined
+35.6s 741 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.6s 742 
+35.6s 743 10:19:48 [WARNING] Skipped batch 13: name 'state' is not defined
+35.6s 744 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.6s 745 
+35.6s 746 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 747 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 748 
+35.7s 749 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 750 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 751 
+35.7s 752 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 753 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 754 
+35.7s 755 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 756 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 757 
+35.7s 758 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 759 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 760 
+35.7s 761 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 762 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 763 
+35.7s 764 10:19:48 [WARNING] Validation batch error: name 'state' is not defined
+35.7s 765 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.7s 766 
+35.7s 767 10:19:48 [WARNING] Skipped batch 0: name 'state' is not defined
+35.7s 768 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.7s 769 
+35.7s 770 10:19:48 [WARNING] Skipped batch 1: name 'state' is not defined
+35.7s 771 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.7s 772 
+35.7s 773 10:19:48 [WARNING] Skipped batch 2: name 'state' is not defined
+35.7s 774 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.7s 775 
+35.7s 776 10:19:48 [WARNING] Skipped batch 3: name 'state' is not defined
+35.7s 777 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.7s 778 
+35.7s 779 10:19:48 [WARNING] Skipped batch 4: name 'state' is not defined
+35.7s 780 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.7s 781 
+35.7s 782 10:19:48 [WARNING] Skipped batch 5: name 'state' is not defined
+35.7s 783 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.7s 784 
+35.7s 785 10:19:48 [WARNING] Skipped batch 6: name 'state' is not defined
+35.7s 786 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.7s 787 
+35.7s 788 10:19:48 [WARNING] Skipped batch 7: name 'state' is not defined
+35.7s 789 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.7s 790 
+35.7s 791 10:19:48 [WARNING] Skipped batch 8: name 'state' is not defined
+35.7s 792 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.7s 793 
+35.7s 794 10:19:48 [WARNING] Skipped batch 9: name 'state' is not defined
+35.7s 795 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+35.7s 796 
+35.7s 797 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+35.8s 798 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+35.8s 799 
+35.8s 800 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+35.8s 801 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+35.8s 802 
+35.8s 803 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+35.8s 804 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+35.8s 805 
+35.8s 806 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+35.8s 807 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 808 
+35.8s 809 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 810 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 811 
+35.8s 812 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 813 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 814 
+35.8s 815 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 816 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 817 
+35.8s 818 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 819 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 820 
+35.8s 821 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 822 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 823 
+35.8s 824 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 825 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 826 
+35.8s 827 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.8s 828 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+35.8s 829 
+35.8s 830 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+35.8s 831 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+35.8s 832 
+35.8s 833 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+35.8s 834 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+35.8s 835 
+35.8s 836 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+35.8s 837 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+35.8s 838 
+35.8s 839 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+35.8s 840 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+35.8s 841 
+35.8s 842 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+35.8s 843 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+35.8s 844 
+35.8s 845 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+35.8s 846 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+35.8s 847 
+35.8s 848 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+35.8s 849 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+35.8s 850 
+35.8s 851 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+35.9s 852 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+35.9s 853 
+35.9s 854 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+35.9s 855 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+35.9s 856 
+35.9s 857 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+35.9s 858 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+35.9s 859 
+35.9s 860 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+35.9s 861 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+35.9s 862 
+35.9s 863 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+35.9s 864 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+35.9s 865 
+35.9s 866 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+35.9s 867 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+35.9s 868 
+35.9s 869 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+35.9s 870 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 871 
+35.9s 872 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 873 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 874 
+35.9s 875 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 876 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 877 
+35.9s 878 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 879 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 880 
+35.9s 881 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 882 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 883 
+35.9s 884 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 885 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 886 
+35.9s 887 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 888 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 889 
+35.9s 890 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+35.9s 891 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+35.9s 892 
+35.9s 893 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+35.9s 894 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+35.9s 895 
+35.9s 896 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+35.9s 897 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+35.9s 898 
+35.9s 899 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+35.9s 900 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+35.9s 901 
+35.9s 902 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+35.9s 903 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+35.9s 904 
+35.9s 905 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.0s 906 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.0s 907 
+36.0s 908 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.0s 909 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.0s 910 
+36.0s 911 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.0s 912 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.0s 913 
+36.0s 914 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.0s 915 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.0s 916 
+36.0s 917 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.0s 918 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.0s 919 
+36.0s 920 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.0s 921 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.0s 922 
+36.0s 923 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.0s 924 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.0s 925 
+36.0s 926 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.0s 927 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.0s 928 
+36.0s 929 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.0s 930 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.0s 931 
+36.0s 932 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.0s 933 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 934 
+36.0s 935 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 936 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 937 
+36.0s 938 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 939 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 940 
+36.0s 941 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 942 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 943 
+36.0s 944 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 945 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 946 
+36.0s 947 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 948 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 949 
+36.0s 950 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 951 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 952 
+36.0s 953 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.0s 954 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.0s 955 
+36.0s 956 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.1s 957 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.1s 958 
+36.1s 959 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.1s 960 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.1s 961 
+36.1s 962 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.1s 963 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.1s 964 
+36.1s 965 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.1s 966 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.1s 967 
+36.1s 968 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.1s 969 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.1s 970 
+36.1s 971 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.1s 972 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.1s 973 
+36.1s 974 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.1s 975 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.1s 976 
+36.1s 977 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.1s 978 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.1s 979 
+36.1s 980 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.1s 981 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.1s 982 
+36.1s 983 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.1s 984 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.1s 985 
+36.1s 986 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.1s 987 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.1s 988 
+36.1s 989 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.1s 990 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.1s 991 
+36.1s 992 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.1s 993 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.1s 994 
+36.1s 995 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.1s 996 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 997 
+36.1s 998 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 999 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 1000 
+36.1s 1001 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 1002 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 1003 
+36.1s 1004 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 1005 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.1s 1006 
+36.1s 1007 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1008 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1009 
+36.2s 1010 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1011 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1012 
+36.2s 1013 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1014 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1015 
+36.2s 1016 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.2s 1017 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.2s 1018 
+36.2s 1019 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.2s 1020 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.2s 1021 
+36.2s 1022 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.2s 1023 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.2s 1024 
+36.2s 1025 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.2s 1026 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.2s 1027 
+36.2s 1028 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.2s 1029 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.2s 1030 
+36.2s 1031 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.2s 1032 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.2s 1033 
+36.2s 1034 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.2s 1035 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.2s 1036 
+36.2s 1037 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.2s 1038 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.2s 1039 
+36.2s 1040 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.2s 1041 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.2s 1042 
+36.2s 1043 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.2s 1044 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.2s 1045 
+36.2s 1046 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.2s 1047 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.2s 1048 
+36.2s 1049 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.2s 1050 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.2s 1051 
+36.2s 1052 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.2s 1053 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.2s 1054 
+36.2s 1055 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.2s 1056 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.2s 1057 
+36.2s 1058 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.3s 1059 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1060 
+36.3s 1061 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1062 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1063 
+36.3s 1064 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1065 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1066 
+36.3s 1067 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1068 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1069 
+36.3s 1070 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1071 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1072 
+36.3s 1073 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1074 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1075 
+36.3s 1076 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1077 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1078 
+36.3s 1079 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.3s 1080 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.3s 1081 
+36.3s 1082 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.3s 1083 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.3s 1084 
+36.3s 1085 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.3s 1086 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.3s 1087 
+36.3s 1088 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.3s 1089 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.3s 1090 
+36.3s 1091 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.3s 1092 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.3s 1093 
+36.3s 1094 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.3s 1095 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.3s 1096 
+36.3s 1097 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.3s 1098 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.3s 1099 
+36.3s 1100 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.3s 1101 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.3s 1102 
+36.3s 1103 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.3s 1104 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.3s 1105 
+36.3s 1106 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.3s 1107 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.3s 1108 
+36.3s 1109 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.3s 1110 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.3s 1111 
+36.3s 1112 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.4s 1113 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.4s 1114 
+36.4s 1115 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.4s 1116 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.4s 1117 
+36.4s 1118 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.4s 1119 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.4s 1120 
+36.4s 1121 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.4s 1122 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1123 
+36.4s 1124 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1125 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1126 
+36.4s 1127 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1128 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1129 
+36.4s 1130 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1131 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1132 
+36.4s 1133 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1134 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1135 
+36.4s 1136 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1137 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1138 
+36.4s 1139 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1140 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1141 
+36.4s 1142 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.4s 1143 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.4s 1144 
+36.4s 1145 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.4s 1146 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.4s 1147 
+36.4s 1148 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.4s 1149 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.4s 1150 
+36.4s 1151 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.4s 1152 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.4s 1153 
+36.4s 1154 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.4s 1155 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.4s 1156 
+36.4s 1157 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.4s 1158 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.4s 1159 
+36.4s 1160 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.4s 1161 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.4s 1162 
+36.4s 1163 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.4s 1164 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.4s 1165 
+36.4s 1166 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.5s 1167 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.5s 1168 
+36.5s 1169 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.5s 1170 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.5s 1171 
+36.5s 1172 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.5s 1173 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.5s 1174 
+36.5s 1175 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.5s 1176 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.5s 1177 
+36.5s 1178 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.5s 1179 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.5s 1180 
+36.5s 1181 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.5s 1182 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.5s 1183 
+36.5s 1184 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.5s 1185 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1186 
+36.5s 1187 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1188 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1189 
+36.5s 1190 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1191 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1192 
+36.5s 1193 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1194 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1195 
+36.5s 1196 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1197 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1198 
+36.5s 1199 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1200 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1201 
+36.5s 1202 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1203 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1204 
+36.5s 1205 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.5s 1206 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.5s 1207 
+36.5s 1208 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.5s 1209 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.5s 1210 
+36.5s 1211 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.5s 1212 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.5s 1213 
+36.5s 1214 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.5s 1215 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.5s 1216 
+36.5s 1217 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.5s 1218 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.5s 1219 
+36.5s 1220 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.5s 1221 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.5s 1222 
+36.5s 1223 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.6s 1224 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.6s 1225 
+36.6s 1226 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.6s 1227 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.6s 1228 
+36.6s 1229 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.6s 1230 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.6s 1231 
+36.6s 1232 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.6s 1233 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.6s 1234 
+36.6s 1235 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.6s 1236 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.6s 1237 
+36.6s 1238 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.6s 1239 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.6s 1240 
+36.6s 1241 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.6s 1242 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.6s 1243 
+36.6s 1244 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.6s 1245 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.6s 1246 
+36.6s 1247 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.6s 1248 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1249 
+36.6s 1250 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1251 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1252 
+36.6s 1253 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1254 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1255 
+36.6s 1256 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1257 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1258 
+36.6s 1259 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1260 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1261 
+36.6s 1262 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1263 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1264 
+36.6s 1265 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1266 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1267 
+36.6s 1268 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.6s 1269 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.6s 1270 
+36.6s 1271 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.6s 1272 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.6s 1273 
+36.6s 1274 10:19:49 [WARNING] Skipped batch 1: name 'state' is not defined
+36.6s 1275 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.6s 1276 
+36.6s 1277 10:19:49 [WARNING] Skipped batch 2: name 'state' is not defined
+36.6s 1278 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.6s 1279 
+36.6s 1280 10:19:49 [WARNING] Skipped batch 3: name 'state' is not defined
+36.7s 1281 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.7s 1282 
+36.7s 1283 10:19:49 [WARNING] Skipped batch 4: name 'state' is not defined
+36.7s 1284 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.7s 1285 
+36.7s 1286 10:19:49 [WARNING] Skipped batch 5: name 'state' is not defined
+36.7s 1287 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.7s 1288 
+36.7s 1289 10:19:49 [WARNING] Skipped batch 6: name 'state' is not defined
+36.7s 1290 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.7s 1291 
+36.7s 1292 10:19:49 [WARNING] Skipped batch 7: name 'state' is not defined
+36.7s 1293 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.7s 1294 
+36.7s 1295 10:19:49 [WARNING] Skipped batch 8: name 'state' is not defined
+36.7s 1296 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.7s 1297 
+36.7s 1298 10:19:49 [WARNING] Skipped batch 9: name 'state' is not defined
+36.7s 1299 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.7s 1300 
+36.7s 1301 10:19:49 [WARNING] Skipped batch 10: name 'state' is not defined
+36.7s 1302 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.7s 1303 
+36.7s 1304 10:19:49 [WARNING] Skipped batch 11: name 'state' is not defined
+36.7s 1305 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.7s 1306 
+36.7s 1307 10:19:49 [WARNING] Skipped batch 12: name 'state' is not defined
+36.7s 1308 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.7s 1309 
+36.7s 1310 10:19:49 [WARNING] Skipped batch 13: name 'state' is not defined
+36.7s 1311 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1312 
+36.7s 1313 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1314 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1315 
+36.7s 1316 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1317 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1318 
+36.7s 1319 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1320 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1321 
+36.7s 1322 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1323 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1324 
+36.7s 1325 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1326 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1327 
+36.7s 1328 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1329 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1330 
+36.7s 1331 10:19:49 [WARNING] Validation batch error: name 'state' is not defined
+36.7s 1332 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.7s 1333 
+36.7s 1334 10:19:49 [WARNING] Skipped batch 0: name 'state' is not defined
+36.7s 1335 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+36.7s 1336 
+36.7s 1337 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+36.8s 1338 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+36.8s 1339 
+36.8s 1340 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+36.8s 1341 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+36.8s 1342 
+36.8s 1343 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+36.8s 1344 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+36.8s 1345 
+36.8s 1346 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+36.8s 1347 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+36.8s 1348 
+36.8s 1349 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+36.8s 1350 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+36.8s 1351 
+36.8s 1352 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+36.8s 1353 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+36.8s 1354 
+36.8s 1355 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+36.8s 1356 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+36.8s 1357 
+36.8s 1358 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+36.8s 1359 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+36.8s 1360 
+36.8s 1361 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+36.8s 1362 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+36.8s 1363 
+36.8s 1364 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+36.8s 1365 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+36.8s 1366 
+36.8s 1367 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+36.8s 1368 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+36.8s 1369 
+36.8s 1370 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+36.8s 1371 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+36.8s 1372 
+36.8s 1373 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+36.8s 1374 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1375 
+36.8s 1376 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1377 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1378 
+36.8s 1379 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1380 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1381 
+36.8s 1382 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1383 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1384 
+36.8s 1385 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1386 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1387 
+36.8s 1388 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1389 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1390 
+36.8s 1391 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1392 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.8s 1393 
+36.8s 1394 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.9s 1395 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+36.9s 1396 
+36.9s 1397 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+36.9s 1398 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+36.9s 1399 
+36.9s 1400 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+36.9s 1401 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+36.9s 1402 
+36.9s 1403 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+36.9s 1404 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+36.9s 1405 
+36.9s 1406 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+36.9s 1407 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+36.9s 1408 
+36.9s 1409 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+36.9s 1410 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+36.9s 1411 
+36.9s 1412 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+36.9s 1413 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+36.9s 1414 
+36.9s 1415 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+36.9s 1416 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+36.9s 1417 
+36.9s 1418 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+36.9s 1419 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+36.9s 1420 
+36.9s 1421 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+36.9s 1422 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+36.9s 1423 
+36.9s 1424 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+36.9s 1425 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+36.9s 1426 
+36.9s 1427 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+36.9s 1428 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+36.9s 1429 
+36.9s 1430 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+36.9s 1431 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+36.9s 1432 
+36.9s 1433 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+36.9s 1434 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+36.9s 1435 
+36.9s 1436 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+36.9s 1437 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.9s 1438 
+36.9s 1439 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.9s 1440 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.9s 1441 
+36.9s 1442 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.9s 1443 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+36.9s 1444 
+36.9s 1445 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1446 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1447 
+37.0s 1448 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1449 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1450 
+37.0s 1451 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1452 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1453 
+37.0s 1454 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1455 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1456 
+37.0s 1457 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.0s 1458 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.0s 1459 
+37.0s 1460 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.0s 1461 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.0s 1462 
+37.0s 1463 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.0s 1464 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.0s 1465 
+37.0s 1466 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.0s 1467 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.0s 1468 
+37.0s 1469 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.0s 1470 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.0s 1471 
+37.0s 1472 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.0s 1473 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.0s 1474 
+37.0s 1475 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.0s 1476 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.0s 1477 
+37.0s 1478 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.0s 1479 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.0s 1480 
+37.0s 1481 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.0s 1482 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.0s 1483 
+37.0s 1484 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.0s 1485 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.0s 1486 
+37.0s 1487 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.0s 1488 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.0s 1489 
+37.0s 1490 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.0s 1491 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.0s 1492 
+37.0s 1493 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.0s 1494 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.0s 1495 
+37.0s 1496 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.1s 1497 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.1s 1498 
+37.1s 1499 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.1s 1500 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1501 
+37.1s 1502 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1503 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1504 
+37.1s 1505 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1506 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1507 
+37.1s 1508 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1509 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1510 
+37.1s 1511 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1512 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1513 
+37.1s 1514 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1515 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1516 
+37.1s 1517 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1518 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1519 
+37.1s 1520 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.1s 1521 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.1s 1522 
+37.1s 1523 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.1s 1524 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.1s 1525 
+37.1s 1526 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.1s 1527 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.1s 1528 
+37.1s 1529 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.1s 1530 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.1s 1531 
+37.1s 1532 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.1s 1533 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.1s 1534 
+37.1s 1535 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.1s 1536 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.1s 1537 
+37.1s 1538 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.1s 1539 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.1s 1540 
+37.1s 1541 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.1s 1542 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.1s 1543 
+37.1s 1544 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.1s 1545 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.1s 1546 
+37.1s 1547 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.2s 1548 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.2s 1549 
+37.2s 1550 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.2s 1551 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.2s 1552 
+37.2s 1553 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.2s 1554 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.2s 1555 
+37.2s 1556 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.2s 1557 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.2s 1558 
+37.2s 1559 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.2s 1560 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.2s 1561 
+37.2s 1562 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.2s 1563 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1564 
+37.2s 1565 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1566 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1567 
+37.2s 1568 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1569 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1570 
+37.2s 1571 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1572 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1573 
+37.2s 1574 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1575 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1576 
+37.2s 1577 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1578 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1579 
+37.2s 1580 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1581 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1582 
+37.2s 1583 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.2s 1584 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.2s 1585 
+37.2s 1586 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.2s 1587 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.2s 1588 
+37.2s 1589 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.2s 1590 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.2s 1591 
+37.2s 1592 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.2s 1593 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.2s 1594 
+37.2s 1595 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.2s 1596 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.2s 1597 
+37.2s 1598 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.2s 1599 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.2s 1600 
+37.2s 1601 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.3s 1602 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.3s 1603 
+37.3s 1604 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.3s 1605 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.3s 1606 
+37.3s 1607 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.3s 1608 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.3s 1609 
+37.3s 1610 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.3s 1611 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.3s 1612 
+37.3s 1613 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.3s 1614 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.3s 1615 
+37.3s 1616 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.3s 1617 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.3s 1618 
+37.3s 1619 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.3s 1620 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.3s 1621 
+37.3s 1622 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.3s 1623 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.3s 1624 
+37.3s 1625 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.3s 1626 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1627 
+37.3s 1628 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1629 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1630 
+37.3s 1631 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1632 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1633 
+37.3s 1634 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1635 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1636 
+37.3s 1637 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1638 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1639 
+37.3s 1640 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1641 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1642 
+37.3s 1643 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1644 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1645 
+37.3s 1646 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.3s 1647 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.3s 1648 
+37.3s 1649 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.3s 1650 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.3s 1651 
+37.3s 1652 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.3s 1653 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.3s 1654 
+37.3s 1655 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.4s 1656 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.4s 1657 
+37.4s 1658 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.4s 1659 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.4s 1660 
+37.4s 1661 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.4s 1662 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.4s 1663 
+37.4s 1664 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.4s 1665 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.4s 1666 
+37.4s 1667 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.4s 1668 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.4s 1669 
+37.4s 1670 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.4s 1671 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.4s 1672 
+37.4s 1673 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.4s 1674 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.4s 1675 
+37.4s 1676 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.4s 1677 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.4s 1678 
+37.4s 1679 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.4s 1680 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.4s 1681 
+37.4s 1682 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.4s 1683 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.4s 1684 
+37.4s 1685 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.4s 1686 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.4s 1687 
+37.4s 1688 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.4s 1689 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1690 
+37.4s 1691 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1692 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1693 
+37.4s 1694 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1695 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1696 
+37.4s 1697 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1698 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1699 
+37.4s 1700 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1701 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1702 
+37.4s 1703 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1704 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1705 
+37.4s 1706 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1707 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.4s 1708 
+37.4s 1709 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1710 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.5s 1711 
+37.5s 1712 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.5s 1713 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.5s 1714 
+37.5s 1715 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.5s 1716 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.5s 1717 
+37.5s 1718 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.5s 1719 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.5s 1720 
+37.5s 1721 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.5s 1722 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.5s 1723 
+37.5s 1724 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.5s 1725 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.5s 1726 
+37.5s 1727 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.5s 1728 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.5s 1729 
+37.5s 1730 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.5s 1731 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.5s 1732 
+37.5s 1733 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.5s 1734 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.5s 1735 
+37.5s 1736 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.5s 1737 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.5s 1738 
+37.5s 1739 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.5s 1740 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.5s 1741 
+37.5s 1742 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.5s 1743 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.5s 1744 
+37.5s 1745 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.5s 1746 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.5s 1747 
+37.5s 1748 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.5s 1749 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.5s 1750 
+37.5s 1751 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.5s 1752 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1753 
+37.5s 1754 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1755 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1756 
+37.5s 1757 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1758 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1759 
+37.5s 1760 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1761 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.5s 1762 
+37.5s 1763 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1764 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1765 
+37.6s 1766 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1767 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1768 
+37.6s 1769 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1770 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1771 
+37.6s 1772 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.6s 1773 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.6s 1774 
+37.6s 1775 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.6s 1776 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.6s 1777 
+37.6s 1778 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.6s 1779 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.6s 1780 
+37.6s 1781 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.6s 1782 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.6s 1783 
+37.6s 1784 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.6s 1785 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.6s 1786 
+37.6s 1787 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.6s 1788 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.6s 1789 
+37.6s 1790 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.6s 1791 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.6s 1792 
+37.6s 1793 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.6s 1794 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.6s 1795 
+37.6s 1796 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.6s 1797 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.6s 1798 
+37.6s 1799 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.6s 1800 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.6s 1801 
+37.6s 1802 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.6s 1803 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.6s 1804 
+37.6s 1805 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.6s 1806 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.6s 1807 
+37.6s 1808 10:19:50 [WARNING] Skipped batch 11: name 'state' is not defined
+37.6s 1809 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.6s 1810 
+37.6s 1811 10:19:50 [WARNING] Skipped batch 12: name 'state' is not defined
+37.6s 1812 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.6s 1813 
+37.6s 1814 10:19:50 [WARNING] Skipped batch 13: name 'state' is not defined
+37.7s 1815 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1816 
+37.7s 1817 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1818 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1819 
+37.7s 1820 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1821 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1822 
+37.7s 1823 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1824 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1825 
+37.7s 1826 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1827 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1828 
+37.7s 1829 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1830 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1831 
+37.7s 1832 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1833 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1834 
+37.7s 1835 10:19:50 [WARNING] Validation batch error: name 'state' is not defined
+37.7s 1836 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.7s 1837 
+37.7s 1838 10:19:50 [WARNING] Skipped batch 0: name 'state' is not defined
+37.7s 1839 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.7s 1840 
+37.7s 1841 10:19:50 [WARNING] Skipped batch 1: name 'state' is not defined
+37.7s 1842 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.7s 1843 
+37.7s 1844 10:19:50 [WARNING] Skipped batch 2: name 'state' is not defined
+37.7s 1845 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.7s 1846 
+37.7s 1847 10:19:50 [WARNING] Skipped batch 3: name 'state' is not defined
+37.7s 1848 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.7s 1849 
+37.7s 1850 10:19:50 [WARNING] Skipped batch 4: name 'state' is not defined
+37.7s 1851 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.7s 1852 
+37.7s 1853 10:19:50 [WARNING] Skipped batch 5: name 'state' is not defined
+37.7s 1854 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.7s 1855 
+37.7s 1856 10:19:50 [WARNING] Skipped batch 6: name 'state' is not defined
+37.7s 1857 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.7s 1858 
+37.7s 1859 10:19:50 [WARNING] Skipped batch 7: name 'state' is not defined
+37.7s 1860 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.7s 1861 
+37.7s 1862 10:19:50 [WARNING] Skipped batch 8: name 'state' is not defined
+37.7s 1863 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.7s 1864 
+37.7s 1865 10:19:50 [WARNING] Skipped batch 9: name 'state' is not defined
+37.7s 1866 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.7s 1867 
+37.7s 1868 10:19:50 [WARNING] Skipped batch 10: name 'state' is not defined
+37.7s 1869 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+37.7s 1870 
+37.7s 1871 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+37.8s 1872 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+37.8s 1873 
+37.8s 1874 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+37.8s 1875 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+37.8s 1876 
+37.8s 1877 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+37.8s 1878 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1879 
+37.8s 1880 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1881 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1882 
+37.8s 1883 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1884 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1885 
+37.8s 1886 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1887 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1888 
+37.8s 1889 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1890 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1891 
+37.8s 1892 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1893 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1894 
+37.8s 1895 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1896 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1897 
+37.8s 1898 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.8s 1899 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+37.8s 1900 
+37.8s 1901 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+37.8s 1902 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+37.8s 1903 
+37.8s 1904 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+37.8s 1905 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+37.8s 1906 
+37.8s 1907 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+37.8s 1908 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+37.8s 1909 
+37.8s 1910 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+37.8s 1911 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+37.8s 1912 
+37.8s 1913 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+37.8s 1914 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+37.8s 1915 
+37.8s 1916 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+37.8s 1917 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+37.8s 1918 
+37.8s 1919 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+37.8s 1920 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+37.8s 1921 
+37.8s 1922 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+37.8s 1923 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+37.8s 1924 
+37.8s 1925 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+37.9s 1926 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+37.9s 1927 
+37.9s 1928 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+37.9s 1929 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+37.9s 1930 
+37.9s 1931 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+37.9s 1932 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+37.9s 1933 
+37.9s 1934 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+37.9s 1935 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+37.9s 1936 
+37.9s 1937 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+37.9s 1938 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+37.9s 1939 
+37.9s 1940 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+37.9s 1941 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1942 
+37.9s 1943 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1944 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1945 
+37.9s 1946 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1947 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1948 
+37.9s 1949 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1950 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1951 
+37.9s 1952 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1953 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1954 
+37.9s 1955 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1956 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1957 
+37.9s 1958 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1959 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1960 
+37.9s 1961 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+37.9s 1962 10:19:51 [INFO] E  25 | T:0.00000 V:0.00000 | NFE:0 | Viol:0.00% | LR:2.6e-04
+37.9s 1963 
+37.9s 1964 10:19:51 [INFO] E  25 | T:0.00000 V:0.00000 | NFE:0 | Viol:0.00% | LR:2.6e-04
+37.9s 1965 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+37.9s 1966 
+37.9s 1967 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+37.9s 1968 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+37.9s 1969 
+37.9s 1970 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+37.9s 1971 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+37.9s 1972 
+37.9s 1973 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+37.9s 1974 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+37.9s 1975 
+37.9s 1976 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+37.9s 1977 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+37.9s 1978 
+37.9s 1979 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+37.9s 1980 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+37.9s 1981 
+37.9s 1982 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.0s 1983 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.0s 1984 
+38.0s 1985 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.0s 1986 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.0s 1987 
+38.0s 1988 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.0s 1989 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.0s 1990 
+38.0s 1991 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.0s 1992 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.0s 1993 
+38.0s 1994 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.0s 1995 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.0s 1996 
+38.0s 1997 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.0s 1998 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.0s 1999 
+38.0s 2000 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.0s 2001 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.0s 2002 
+38.0s 2003 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.0s 2004 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.0s 2005 
+38.0s 2006 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.0s 2007 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2008 
+38.0s 2009 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2010 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2011 
+38.0s 2012 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2013 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2014 
+38.0s 2015 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2016 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2017 
+38.0s 2018 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2019 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2020 
+38.0s 2021 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2022 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2023 
+38.0s 2024 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2025 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2026 
+38.0s 2027 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.0s 2028 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.0s 2029 
+38.0s 2030 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.0s 2031 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.0s 2032 
+38.0s 2033 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.0s 2034 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.0s 2035 
+38.0s 2036 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.1s 2037 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.1s 2038 
+38.1s 2039 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.1s 2040 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.1s 2041 
+38.1s 2042 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.1s 2043 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.1s 2044 
+38.1s 2045 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.1s 2046 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.1s 2047 
+38.1s 2048 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.1s 2049 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.1s 2050 
+38.1s 2051 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.1s 2052 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.1s 2053 
+38.1s 2054 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.1s 2055 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.1s 2056 
+38.1s 2057 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.1s 2058 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.1s 2059 
+38.1s 2060 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.1s 2061 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.1s 2062 
+38.1s 2063 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.1s 2064 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.1s 2065 
+38.1s 2066 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.1s 2067 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.1s 2068 
+38.1s 2069 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.1s 2070 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2071 
+38.1s 2072 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2073 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2074 
+38.1s 2075 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2076 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2077 
+38.1s 2078 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2079 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2080 
+38.1s 2081 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2082 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2083 
+38.1s 2084 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2085 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2086 
+38.1s 2087 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2088 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2089 
+38.1s 2090 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.1s 2091 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.1s 2092 
+38.1s 2093 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.2s 2094 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.2s 2095 
+38.2s 2096 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.2s 2097 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.2s 2098 
+38.2s 2099 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.2s 2100 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.2s 2101 
+38.2s 2102 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.2s 2103 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.2s 2104 
+38.2s 2105 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.2s 2106 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.2s 2107 
+38.2s 2108 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.2s 2109 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.2s 2110 
+38.2s 2111 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.2s 2112 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.2s 2113 
+38.2s 2114 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.2s 2115 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.2s 2116 
+38.2s 2117 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.2s 2118 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.2s 2119 
+38.2s 2120 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.2s 2121 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.2s 2122 
+38.2s 2123 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.2s 2124 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.2s 2125 
+38.2s 2126 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.2s 2127 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.2s 2128 
+38.2s 2129 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.2s 2130 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.2s 2131 
+38.2s 2132 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.2s 2133 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2134 
+38.2s 2135 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2136 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2137 
+38.2s 2138 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2139 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2140 
+38.2s 2141 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2142 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.2s 2143 
+38.2s 2144 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2145 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2146 
+38.3s 2147 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2148 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2149 
+38.3s 2150 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2151 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2152 
+38.3s 2153 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.3s 2154 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.3s 2155 
+38.3s 2156 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.3s 2157 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.3s 2158 
+38.3s 2159 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.3s 2160 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.3s 2161 
+38.3s 2162 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.3s 2163 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.3s 2164 
+38.3s 2165 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.3s 2166 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.3s 2167 
+38.3s 2168 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.3s 2169 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.3s 2170 
+38.3s 2171 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.3s 2172 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.3s 2173 
+38.3s 2174 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.3s 2175 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.3s 2176 
+38.3s 2177 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.3s 2178 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.3s 2179 
+38.3s 2180 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.3s 2181 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.3s 2182 
+38.3s 2183 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.3s 2184 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.3s 2185 
+38.3s 2186 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.3s 2187 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.3s 2188 
+38.3s 2189 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.3s 2190 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.3s 2191 
+38.3s 2192 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.4s 2193 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.4s 2194 
+38.4s 2195 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.4s 2196 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2197 
+38.4s 2198 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2199 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2200 
+38.4s 2201 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2202 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2203 
+38.4s 2204 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2205 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2206 
+38.4s 2207 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2208 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2209 
+38.4s 2210 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2211 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2212 
+38.4s 2213 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2214 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2215 
+38.4s 2216 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.4s 2217 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.4s 2218 
+38.4s 2219 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.4s 2220 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.4s 2221 
+38.4s 2222 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.4s 2223 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.4s 2224 
+38.4s 2225 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.4s 2226 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.4s 2227 
+38.4s 2228 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.4s 2229 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.4s 2230 
+38.4s 2231 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.4s 2232 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.4s 2233 
+38.4s 2234 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.4s 2235 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.4s 2236 
+38.4s 2237 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.4s 2238 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.4s 2239 
+38.4s 2240 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.4s 2241 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.4s 2242 
+38.4s 2243 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.4s 2244 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.4s 2245 
+38.4s 2246 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.5s 2247 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.5s 2248 
+38.5s 2249 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.5s 2250 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.5s 2251 
+38.5s 2252 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.5s 2253 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.5s 2254 
+38.5s 2255 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.5s 2256 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.5s 2257 
+38.5s 2258 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.5s 2259 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2260 
+38.5s 2261 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2262 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2263 
+38.5s 2264 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2265 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2266 
+38.5s 2267 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2268 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2269 
+38.5s 2270 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2271 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2272 
+38.5s 2273 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2274 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2275 
+38.5s 2276 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2277 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2278 
+38.5s 2279 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.5s 2280 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.5s 2281 
+38.5s 2282 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.5s 2283 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.5s 2284 
+38.5s 2285 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.5s 2286 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.5s 2287 
+38.5s 2288 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.5s 2289 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.5s 2290 
+38.5s 2291 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.5s 2292 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.5s 2293 
+38.5s 2294 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.5s 2295 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.5s 2296 
+38.5s 2297 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.5s 2298 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.5s 2299 
+38.5s 2300 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.6s 2301 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.6s 2302 
+38.6s 2303 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.6s 2304 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.6s 2305 
+38.6s 2306 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.6s 2307 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.6s 2308 
+38.6s 2309 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.6s 2310 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.6s 2311 
+38.6s 2312 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.6s 2313 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.6s 2314 
+38.6s 2315 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.6s 2316 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.6s 2317 
+38.6s 2318 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.6s 2319 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.6s 2320 
+38.6s 2321 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.6s 2322 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2323 
+38.6s 2324 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2325 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2326 
+38.6s 2327 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2328 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2329 
+38.6s 2330 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2331 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2332 
+38.6s 2333 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2334 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2335 
+38.6s 2336 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2337 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2338 
+38.6s 2339 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2340 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2341 
+38.6s 2342 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.6s 2343 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.6s 2344 
+38.6s 2345 10:19:51 [WARNING] Skipped batch 0: name 'state' is not defined
+38.6s 2346 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.6s 2347 
+38.6s 2348 10:19:51 [WARNING] Skipped batch 1: name 'state' is not defined
+38.6s 2349 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.6s 2350 
+38.6s 2351 10:19:51 [WARNING] Skipped batch 2: name 'state' is not defined
+38.6s 2352 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.6s 2353 
+38.6s 2354 10:19:51 [WARNING] Skipped batch 3: name 'state' is not defined
+38.7s 2355 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.7s 2356 
+38.7s 2357 10:19:51 [WARNING] Skipped batch 4: name 'state' is not defined
+38.7s 2358 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.7s 2359 
+38.7s 2360 10:19:51 [WARNING] Skipped batch 5: name 'state' is not defined
+38.7s 2361 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.7s 2362 
+38.7s 2363 10:19:51 [WARNING] Skipped batch 6: name 'state' is not defined
+38.7s 2364 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.7s 2365 
+38.7s 2366 10:19:51 [WARNING] Skipped batch 7: name 'state' is not defined
+38.7s 2367 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.7s 2368 
+38.7s 2369 10:19:51 [WARNING] Skipped batch 8: name 'state' is not defined
+38.7s 2370 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.7s 2371 
+38.7s 2372 10:19:51 [WARNING] Skipped batch 9: name 'state' is not defined
+38.7s 2373 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.7s 2374 
+38.7s 2375 10:19:51 [WARNING] Skipped batch 10: name 'state' is not defined
+38.7s 2376 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.7s 2377 
+38.7s 2378 10:19:51 [WARNING] Skipped batch 11: name 'state' is not defined
+38.7s 2379 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.7s 2380 
+38.7s 2381 10:19:51 [WARNING] Skipped batch 12: name 'state' is not defined
+38.7s 2382 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.7s 2383 
+38.7s 2384 10:19:51 [WARNING] Skipped batch 13: name 'state' is not defined
+38.7s 2385 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2386 
+38.7s 2387 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2388 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2389 
+38.7s 2390 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2391 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2392 
+38.7s 2393 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2394 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2395 
+38.7s 2396 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2397 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2398 
+38.7s 2399 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2400 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2401 
+38.7s 2402 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2403 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2404 
+38.7s 2405 10:19:51 [WARNING] Validation batch error: name 'state' is not defined
+38.7s 2406 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+38.7s 2407 
+38.7s 2408 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+38.8s 2409 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+38.8s 2410 
+38.8s 2411 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+38.8s 2412 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+38.8s 2413 
+38.8s 2414 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+38.8s 2415 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+38.8s 2416 
+38.8s 2417 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+38.8s 2418 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+38.8s 2419 
+38.8s 2420 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+38.8s 2421 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+38.8s 2422 
+38.8s 2423 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+38.8s 2424 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+38.8s 2425 
+38.8s 2426 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+38.8s 2427 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+38.8s 2428 
+38.8s 2429 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+38.8s 2430 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+38.8s 2431 
+38.8s 2432 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+38.8s 2433 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+38.8s 2434 
+38.8s 2435 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+38.8s 2436 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+38.8s 2437 
+38.8s 2438 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+38.8s 2439 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+38.8s 2440 
+38.8s 2441 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+38.8s 2442 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+38.8s 2443 
+38.8s 2444 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+38.8s 2445 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+38.8s 2446 
+38.8s 2447 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+38.8s 2448 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2449 
+38.8s 2450 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2451 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2452 
+38.8s 2453 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2454 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2455 
+38.8s 2456 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2457 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.8s 2458 
+38.8s 2459 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2460 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2461 
+38.9s 2462 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2463 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2464 
+38.9s 2465 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2466 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2467 
+38.9s 2468 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+38.9s 2469 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+38.9s 2470 
+38.9s 2471 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+38.9s 2472 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+38.9s 2473 
+38.9s 2474 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+38.9s 2475 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+38.9s 2476 
+38.9s 2477 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+38.9s 2478 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+38.9s 2479 
+38.9s 2480 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+38.9s 2481 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+38.9s 2482 
+38.9s 2483 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+38.9s 2484 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+38.9s 2485 
+38.9s 2486 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+38.9s 2487 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+38.9s 2488 
+38.9s 2489 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+38.9s 2490 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+38.9s 2491 
+38.9s 2492 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+38.9s 2493 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+38.9s 2494 
+38.9s 2495 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+38.9s 2496 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+38.9s 2497 
+38.9s 2498 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+38.9s 2499 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+38.9s 2500 
+38.9s 2501 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+38.9s 2502 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+38.9s 2503 
+38.9s 2504 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+38.9s 2505 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+38.9s 2506 
+38.9s 2507 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+38.9s 2508 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+38.9s 2509 
+38.9s 2510 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.0s 2511 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2512 
+39.0s 2513 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2514 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2515 
+39.0s 2516 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2517 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2518 
+39.0s 2519 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2520 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2521 
+39.0s 2522 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2523 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2524 
+39.0s 2525 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2526 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2527 
+39.0s 2528 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2529 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2530 
+39.0s 2531 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.0s 2532 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.0s 2533 
+39.0s 2534 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.0s 2535 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.0s 2536 
+39.0s 2537 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.0s 2538 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.0s 2539 
+39.0s 2540 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.0s 2541 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.0s 2542 
+39.0s 2543 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.0s 2544 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.0s 2545 
+39.0s 2546 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.0s 2547 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.0s 2548 
+39.0s 2549 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.0s 2550 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.0s 2551 
+39.0s 2552 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.0s 2553 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.0s 2554 
+39.0s 2555 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.0s 2556 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.0s 2557 
+39.0s 2558 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.0s 2559 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.0s 2560 
+39.0s 2561 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.0s 2562 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.0s 2563 
+39.0s 2564 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.1s 2565 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.1s 2566 
+39.1s 2567 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.1s 2568 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.1s 2569 
+39.1s 2570 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.1s 2571 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.1s 2572 
+39.1s 2573 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.1s 2574 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2575 
+39.1s 2576 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2577 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2578 
+39.1s 2579 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2580 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2581 
+39.1s 2582 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2583 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2584 
+39.1s 2585 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2586 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2587 
+39.1s 2588 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2589 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2590 
+39.1s 2591 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2592 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2593 
+39.1s 2594 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.1s 2595 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.1s 2596 
+39.1s 2597 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.1s 2598 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.1s 2599 
+39.1s 2600 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.1s 2601 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.1s 2602 
+39.1s 2603 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.1s 2604 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.1s 2605 
+39.1s 2606 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.1s 2607 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.1s 2608 
+39.1s 2609 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.1s 2610 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.1s 2611 
+39.1s 2612 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.1s 2613 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.1s 2614 
+39.1s 2615 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.1s 2616 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.1s 2617 
+39.1s 2618 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.2s 2619 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.2s 2620 
+39.2s 2621 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.2s 2622 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.2s 2623 
+39.2s 2624 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.2s 2625 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.2s 2626 
+39.2s 2627 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.2s 2628 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.2s 2629 
+39.2s 2630 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.2s 2631 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.2s 2632 
+39.2s 2633 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.2s 2634 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.2s 2635 
+39.2s 2636 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.2s 2637 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2638 
+39.2s 2639 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2640 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2641 
+39.2s 2642 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2643 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2644 
+39.2s 2645 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2646 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2647 
+39.2s 2648 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2649 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2650 
+39.2s 2651 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2652 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2653 
+39.2s 2654 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2655 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2656 
+39.2s 2657 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.2s 2658 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.2s 2659 
+39.2s 2660 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.2s 2661 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.2s 2662 
+39.2s 2663 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.2s 2664 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.2s 2665 
+39.2s 2666 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.2s 2667 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.2s 2668 
+39.2s 2669 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.2s 2670 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.2s 2671 
+39.2s 2672 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.3s 2673 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.3s 2674 
+39.3s 2675 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.3s 2676 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.3s 2677 
+39.3s 2678 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.3s 2679 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.3s 2680 
+39.3s 2681 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.3s 2682 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.3s 2683 
+39.3s 2684 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.3s 2685 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.3s 2686 
+39.3s 2687 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.3s 2688 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.3s 2689 
+39.3s 2690 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.3s 2691 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.3s 2692 
+39.3s 2693 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.3s 2694 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.3s 2695 
+39.3s 2696 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.3s 2697 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.3s 2698 
+39.3s 2699 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.3s 2700 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2701 
+39.3s 2702 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2703 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2704 
+39.3s 2705 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2706 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2707 
+39.3s 2708 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2709 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2710 
+39.3s 2711 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2712 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2713 
+39.3s 2714 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2715 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2716 
+39.3s 2717 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2718 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2719 
+39.3s 2720 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.3s 2721 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.3s 2722 
+39.3s 2723 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.3s 2724 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.3s 2725 
+39.3s 2726 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.4s 2727 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.4s 2728 
+39.4s 2729 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.4s 2730 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.4s 2731 
+39.4s 2732 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.4s 2733 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.4s 2734 
+39.4s 2735 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.4s 2736 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.4s 2737 
+39.4s 2738 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.4s 2739 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.4s 2740 
+39.4s 2741 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.4s 2742 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.4s 2743 
+39.4s 2744 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.4s 2745 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.4s 2746 
+39.4s 2747 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.4s 2748 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.4s 2749 
+39.4s 2750 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.4s 2751 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.4s 2752 
+39.4s 2753 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.4s 2754 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.4s 2755 
+39.4s 2756 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.4s 2757 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.4s 2758 
+39.4s 2759 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.4s 2760 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.4s 2761 
+39.4s 2762 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.4s 2763 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2764 
+39.4s 2765 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2766 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2767 
+39.4s 2768 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2769 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2770 
+39.4s 2771 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2772 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2773 
+39.4s 2774 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2775 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2776 
+39.4s 2777 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2778 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2779 
+39.4s 2780 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2781 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.4s 2782 
+39.4s 2783 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2784 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.5s 2785 
+39.5s 2786 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.5s 2787 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.5s 2788 
+39.5s 2789 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.5s 2790 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.5s 2791 
+39.5s 2792 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.5s 2793 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.5s 2794 
+39.5s 2795 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.5s 2796 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.5s 2797 
+39.5s 2798 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.5s 2799 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.5s 2800 
+39.5s 2801 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.5s 2802 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.5s 2803 
+39.5s 2804 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.5s 2805 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.5s 2806 
+39.5s 2807 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.5s 2808 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.5s 2809 
+39.5s 2810 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.5s 2811 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.5s 2812 
+39.5s 2813 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.5s 2814 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.5s 2815 
+39.5s 2816 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.5s 2817 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.5s 2818 
+39.5s 2819 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.5s 2820 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.5s 2821 
+39.5s 2822 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.5s 2823 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.5s 2824 
+39.5s 2825 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.5s 2826 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2827 
+39.5s 2828 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2829 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2830 
+39.5s 2831 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2832 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2833 
+39.5s 2834 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2835 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.5s 2836 
+39.5s 2837 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2838 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2839 
+39.6s 2840 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2841 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2842 
+39.6s 2843 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2844 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2845 
+39.6s 2846 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2847 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.6s 2848 
+39.6s 2849 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.6s 2850 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.6s 2851 
+39.6s 2852 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.6s 2853 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.6s 2854 
+39.6s 2855 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.6s 2856 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.6s 2857 
+39.6s 2858 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.6s 2859 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.6s 2860 
+39.6s 2861 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.6s 2862 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.6s 2863 
+39.6s 2864 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.6s 2865 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.6s 2866 
+39.6s 2867 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.6s 2868 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.6s 2869 
+39.6s 2870 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.6s 2871 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.6s 2872 
+39.6s 2873 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.6s 2874 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.6s 2875 
+39.6s 2876 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.6s 2877 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.6s 2878 
+39.6s 2879 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.6s 2880 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.6s 2881 
+39.6s 2882 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.6s 2883 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.6s 2884 
+39.6s 2885 10:19:52 [WARNING] Skipped batch 12: name 'state' is not defined
+39.6s 2886 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.6s 2887 
+39.6s 2888 10:19:52 [WARNING] Skipped batch 13: name 'state' is not defined
+39.6s 2889 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2890 
+39.6s 2891 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2892 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.6s 2893 
+39.6s 2894 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2895 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2896 
+39.7s 2897 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2898 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2899 
+39.7s 2900 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2901 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2902 
+39.7s 2903 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2904 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2905 
+39.7s 2906 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2907 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2908 
+39.7s 2909 10:19:52 [WARNING] Validation batch error: name 'state' is not defined
+39.7s 2910 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.7s 2911 
+39.7s 2912 10:19:52 [WARNING] Skipped batch 0: name 'state' is not defined
+39.7s 2913 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.7s 2914 
+39.7s 2915 10:19:52 [WARNING] Skipped batch 1: name 'state' is not defined
+39.7s 2916 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.7s 2917 
+39.7s 2918 10:19:52 [WARNING] Skipped batch 2: name 'state' is not defined
+39.7s 2919 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.7s 2920 
+39.7s 2921 10:19:52 [WARNING] Skipped batch 3: name 'state' is not defined
+39.7s 2922 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.7s 2923 
+39.7s 2924 10:19:52 [WARNING] Skipped batch 4: name 'state' is not defined
+39.7s 2925 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.7s 2926 
+39.7s 2927 10:19:52 [WARNING] Skipped batch 5: name 'state' is not defined
+39.7s 2928 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.7s 2929 
+39.7s 2930 10:19:52 [WARNING] Skipped batch 6: name 'state' is not defined
+39.7s 2931 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.7s 2932 
+39.7s 2933 10:19:52 [WARNING] Skipped batch 7: name 'state' is not defined
+39.7s 2934 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.7s 2935 
+39.7s 2936 10:19:52 [WARNING] Skipped batch 8: name 'state' is not defined
+39.7s 2937 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.7s 2938 
+39.7s 2939 10:19:52 [WARNING] Skipped batch 9: name 'state' is not defined
+39.7s 2940 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.7s 2941 
+39.7s 2942 10:19:52 [WARNING] Skipped batch 10: name 'state' is not defined
+39.7s 2943 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.7s 2944 
+39.7s 2945 10:19:52 [WARNING] Skipped batch 11: name 'state' is not defined
+39.7s 2946 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+39.7s 2947 
+39.7s 2948 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+39.8s 2949 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+39.8s 2950 
+39.8s 2951 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+39.8s 2952 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2953 
+39.8s 2954 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2955 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2956 
+39.8s 2957 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2958 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2959 
+39.8s 2960 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2961 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2962 
+39.8s 2963 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2964 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2965 
+39.8s 2966 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2967 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2968 
+39.8s 2969 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2970 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2971 
+39.8s 2972 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.8s 2973 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+39.8s 2974 
+39.8s 2975 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+39.8s 2976 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+39.8s 2977 
+39.8s 2978 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+39.8s 2979 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+39.8s 2980 
+39.8s 2981 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+39.8s 2982 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+39.8s 2983 
+39.8s 2984 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+39.8s 2985 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+39.8s 2986 
+39.8s 2987 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+39.8s 2988 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+39.8s 2989 
+39.8s 2990 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+39.8s 2991 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+39.8s 2992 
+39.8s 2993 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+39.8s 2994 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+39.8s 2995 
+39.8s 2996 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+39.8s 2997 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+39.8s 2998 
+39.8s 2999 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+39.8s 3000 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+39.8s 3001 
+39.8s 3002 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+39.9s 3003 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+39.9s 3004 
+39.9s 3005 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+39.9s 3006 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+39.9s 3007 
+39.9s 3008 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+39.9s 3009 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+39.9s 3010 
+39.9s 3011 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+39.9s 3012 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+39.9s 3013 
+39.9s 3014 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+39.9s 3015 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3016 
+39.9s 3017 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3018 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3019 
+39.9s 3020 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3021 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3022 
+39.9s 3023 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3024 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3025 
+39.9s 3026 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3027 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3028 
+39.9s 3029 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3030 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3031 
+39.9s 3032 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3033 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3034 
+39.9s 3035 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+39.9s 3036 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+39.9s 3037 
+39.9s 3038 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+39.9s 3039 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+39.9s 3040 
+39.9s 3041 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+39.9s 3042 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+39.9s 3043 
+39.9s 3044 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+39.9s 3045 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+39.9s 3046 
+39.9s 3047 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+39.9s 3048 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+39.9s 3049 
+39.9s 3050 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+39.9s 3051 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+39.9s 3052 
+39.9s 3053 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+39.9s 3054 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+39.9s 3055 
+39.9s 3056 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.0s 3057 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.0s 3058 
+40.0s 3059 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.0s 3060 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.0s 3061 
+40.0s 3062 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.0s 3063 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.0s 3064 
+40.0s 3065 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.0s 3066 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.0s 3067 
+40.0s 3068 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.0s 3069 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.0s 3070 
+40.0s 3071 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.0s 3072 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.0s 3073 
+40.0s 3074 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.0s 3075 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.0s 3076 
+40.0s 3077 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.0s 3078 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3079 
+40.0s 3080 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3081 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3082 
+40.0s 3083 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3084 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3085 
+40.0s 3086 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3087 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3088 
+40.0s 3089 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3090 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3091 
+40.0s 3092 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3093 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3094 
+40.0s 3095 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3096 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3097 
+40.0s 3098 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.0s 3099 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.0s 3100 
+40.0s 3101 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.0s 3102 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.0s 3103 
+40.0s 3104 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.0s 3105 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.0s 3106 
+40.0s 3107 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.0s 3108 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.0s 3109 
+40.0s 3110 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.0s 3111 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.0s 3112 
+40.0s 3113 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.1s 3114 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.1s 3115 
+40.1s 3116 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.1s 3117 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.1s 3118 
+40.1s 3119 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.1s 3120 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.1s 3121 
+40.1s 3122 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.1s 3123 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.1s 3124 
+40.1s 3125 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.1s 3126 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.1s 3127 
+40.1s 3128 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.1s 3129 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.1s 3130 
+40.1s 3131 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.1s 3132 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.1s 3133 
+40.1s 3134 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.1s 3135 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.1s 3136 
+40.1s 3137 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.1s 3138 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.1s 3139 
+40.1s 3140 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.1s 3141 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3142 
+40.1s 3143 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3144 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3145 
+40.1s 3146 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3147 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3148 
+40.1s 3149 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3150 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3151 
+40.1s 3152 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3153 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3154 
+40.1s 3155 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3156 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3157 
+40.1s 3158 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3159 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3160 
+40.1s 3161 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.1s 3162 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.1s 3163 
+40.1s 3164 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.1s 3165 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.1s 3166 
+40.1s 3167 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.1s 3168 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.1s 3169 
+40.1s 3170 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.2s 3171 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.2s 3172 
+40.2s 3173 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.2s 3174 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.2s 3175 
+40.2s 3176 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.2s 3177 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.2s 3178 
+40.2s 3179 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.2s 3180 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.2s 3181 
+40.2s 3182 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.2s 3183 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.2s 3184 
+40.2s 3185 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.2s 3186 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.2s 3187 
+40.2s 3188 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.2s 3189 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.2s 3190 
+40.2s 3191 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.2s 3192 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.2s 3193 
+40.2s 3194 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.2s 3195 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.2s 3196 
+40.2s 3197 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.2s 3198 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.2s 3199 
+40.2s 3200 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.2s 3201 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.2s 3202 
+40.2s 3203 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.2s 3204 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3205 
+40.2s 3206 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3207 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3208 
+40.2s 3209 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3210 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3211 
+40.2s 3212 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3213 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3214 
+40.2s 3215 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3216 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3217 
+40.2s 3218 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3219 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3220 
+40.2s 3221 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3222 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3223 
+40.2s 3224 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.2s 3225 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.2s 3226 
+40.2s 3227 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.3s 3228 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.3s 3229 
+40.3s 3230 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.3s 3231 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.3s 3232 
+40.3s 3233 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.3s 3234 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.3s 3235 
+40.3s 3236 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.3s 3237 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.3s 3238 
+40.3s 3239 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.3s 3240 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.3s 3241 
+40.3s 3242 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.3s 3243 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.3s 3244 
+40.3s 3245 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.3s 3246 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.3s 3247 
+40.3s 3248 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.3s 3249 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.3s 3250 
+40.3s 3251 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.3s 3252 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.3s 3253 
+40.3s 3254 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.3s 3255 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.3s 3256 
+40.3s 3257 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.3s 3258 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.3s 3259 
+40.3s 3260 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.3s 3261 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.3s 3262 
+40.3s 3263 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.3s 3264 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.3s 3265 
+40.3s 3266 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.3s 3267 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3268 
+40.3s 3269 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3270 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3271 
+40.3s 3272 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3273 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3274 
+40.3s 3275 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3276 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3277 
+40.3s 3278 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3279 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.3s 3280 
+40.3s 3281 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.4s 3282 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.4s 3283 
+40.4s 3284 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.4s 3285 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.4s 3286 
+40.4s 3287 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.4s 3288 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.4s 3289 
+40.4s 3290 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.4s 3291 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.4s 3292 
+40.4s 3293 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.4s 3294 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.4s 3295 
+40.4s 3296 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.4s 3297 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.4s 3298 
+40.4s 3299 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.4s 3300 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.4s 3301 
+40.4s 3302 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.4s 3303 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.4s 3304 
+40.4s 3305 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.4s 3306 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.4s 3307 
+40.4s 3308 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.4s 3309 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.4s 3310 
+40.4s 3311 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.4s 3312 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.4s 3313 
+40.4s 3314 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.4s 3315 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.4s 3316 
+40.4s 3317 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.4s 3318 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.4s 3319 
+40.4s 3320 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.4s 3321 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.4s 3322 
+40.4s 3323 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.4s 3324 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.4s 3325 
+40.4s 3326 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.4s 3327 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.4s 3328 
+40.4s 3329 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.4s 3330 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.4s 3331 
+40.4s 3332 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3333 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3334 
+40.5s 3335 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3336 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3337 
+40.5s 3338 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3339 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3340 
+40.5s 3341 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3342 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3343 
+40.5s 3344 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3345 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3346 
+40.5s 3347 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3348 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3349 
+40.5s 3350 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.5s 3351 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.5s 3352 
+40.5s 3353 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.5s 3354 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.5s 3355 
+40.5s 3356 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.5s 3357 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.5s 3358 
+40.5s 3359 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.5s 3360 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.5s 3361 
+40.5s 3362 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.5s 3363 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.5s 3364 
+40.5s 3365 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.5s 3366 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.5s 3367 
+40.5s 3368 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.5s 3369 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.5s 3370 
+40.5s 3371 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.5s 3372 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.5s 3373 
+40.5s 3374 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.5s 3375 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.5s 3376 
+40.5s 3377 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.5s 3378 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.5s 3379 
+40.5s 3380 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.5s 3381 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.5s 3382 
+40.5s 3383 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.5s 3384 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.5s 3385 
+40.5s 3386 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.5s 3387 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.5s 3388 
+40.5s 3389 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.6s 3390 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.6s 3391 
+40.6s 3392 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.6s 3393 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3394 
+40.6s 3395 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3396 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3397 
+40.6s 3398 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3399 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3400 
+40.6s 3401 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3402 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3403 
+40.6s 3404 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3405 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3406 
+40.6s 3407 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3408 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3409 
+40.6s 3410 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3411 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3412 
+40.6s 3413 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.6s 3414 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.6s 3415 
+40.6s 3416 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.6s 3417 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.6s 3418 
+40.6s 3419 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.6s 3420 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.6s 3421 
+40.6s 3422 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.6s 3423 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.6s 3424 
+40.6s 3425 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.6s 3426 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.6s 3427 
+40.6s 3428 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.6s 3429 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.6s 3430 
+40.6s 3431 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.6s 3432 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.6s 3433 
+40.6s 3434 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.6s 3435 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.6s 3436 
+40.6s 3437 10:19:53 [WARNING] Skipped batch 7: name 'state' is not defined
+40.6s 3438 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.6s 3439 
+40.6s 3440 10:19:53 [WARNING] Skipped batch 8: name 'state' is not defined
+40.6s 3441 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.6s 3442 
+40.6s 3443 10:19:53 [WARNING] Skipped batch 9: name 'state' is not defined
+40.6s 3444 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.6s 3445 
+40.6s 3446 10:19:53 [WARNING] Skipped batch 10: name 'state' is not defined
+40.7s 3447 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.7s 3448 
+40.7s 3449 10:19:53 [WARNING] Skipped batch 11: name 'state' is not defined
+40.7s 3450 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.7s 3451 
+40.7s 3452 10:19:53 [WARNING] Skipped batch 12: name 'state' is not defined
+40.7s 3453 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.7s 3454 
+40.7s 3455 10:19:53 [WARNING] Skipped batch 13: name 'state' is not defined
+40.7s 3456 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3457 
+40.7s 3458 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3459 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3460 
+40.7s 3461 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3462 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3463 
+40.7s 3464 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3465 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3466 
+40.7s 3467 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3468 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3469 
+40.7s 3470 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3471 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3472 
+40.7s 3473 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3474 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3475 
+40.7s 3476 10:19:53 [WARNING] Validation batch error: name 'state' is not defined
+40.7s 3477 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.7s 3478 
+40.7s 3479 10:19:53 [WARNING] Skipped batch 0: name 'state' is not defined
+40.7s 3480 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.7s 3481 
+40.7s 3482 10:19:53 [WARNING] Skipped batch 1: name 'state' is not defined
+40.7s 3483 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.7s 3484 
+40.7s 3485 10:19:53 [WARNING] Skipped batch 2: name 'state' is not defined
+40.7s 3486 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.7s 3487 
+40.7s 3488 10:19:53 [WARNING] Skipped batch 3: name 'state' is not defined
+40.7s 3489 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.7s 3490 
+40.7s 3491 10:19:53 [WARNING] Skipped batch 4: name 'state' is not defined
+40.7s 3492 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.7s 3493 
+40.7s 3494 10:19:53 [WARNING] Skipped batch 5: name 'state' is not defined
+40.7s 3495 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.7s 3496 
+40.7s 3497 10:19:53 [WARNING] Skipped batch 6: name 'state' is not defined
+40.7s 3498 10:19:54 [WARNING] Skipped batch 7: name 'state' is not defined
+40.7s 3499 
+40.7s 3500 10:19:54 [WARNING] Skipped batch 7: name 'state' is not defined
+40.8s 3501 10:19:54 [WARNING] Skipped batch 8: name 'state' is not defined
+40.8s 3502 
+40.8s 3503 10:19:54 [WARNING] Skipped batch 8: name 'state' is not defined
+40.8s 3504 10:19:54 [WARNING] Skipped batch 9: name 'state' is not defined
+40.8s 3505 
+40.8s 3506 10:19:54 [WARNING] Skipped batch 9: name 'state' is not defined
+40.8s 3507 10:19:54 [WARNING] Skipped batch 10: name 'state' is not defined
+40.8s 3508 
+40.8s 3509 10:19:54 [WARNING] Skipped batch 10: name 'state' is not defined
+40.8s 3510 10:19:54 [WARNING] Skipped batch 11: name 'state' is not defined
+40.8s 3511 
+40.8s 3512 10:19:54 [WARNING] Skipped batch 11: name 'state' is not defined
+40.8s 3513 10:19:54 [WARNING] Skipped batch 12: name 'state' is not defined
+40.8s 3514 
+40.8s 3515 10:19:54 [WARNING] Skipped batch 12: name 'state' is not defined
+40.8s 3516 10:19:54 [WARNING] Skipped batch 13: name 'state' is not defined
+40.8s 3517 
+40.8s 3518 10:19:54 [WARNING] Skipped batch 13: name 'state' is not defined
+40.8s 3519 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3520 
+40.8s 3521 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3522 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3523 
+40.8s 3524 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3525 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3526 
+40.8s 3527 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3528 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3529 
+40.8s 3530 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3531 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3532 
+40.8s 3533 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3534 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3535 
+40.8s 3536 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3537 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3538 
+40.8s 3539 10:19:54 [WARNING] Validation batch error: name 'state' is not defined
+40.8s 3540 10:19:54 [INFO] E  50 | T:0.00000 V:0.00000 | NFE:0 | Viol:0.00% | LR:1.5e-04
+40.8s 3541 
+40.8s 3542 10:19:54 [INFO] E  50 | T:0.00000 V:0.00000 | NFE:0 | Viol:0.00% | LR:1.5e-04
+40.8s 3543 10:19:54 [INFO] Done in 0.1m | Best: 0.000000
+40.8s 3544 
+40.8s 3545 10:19:54 [INFO] Done in 0.1m | Best: 0.000000
+40.8s 3546 
+40.8s 3547 DONE! Saved: physics_node_50ep_v2.pt
+46.0s 3548 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+46.0s 3549 cells[i][c] = re.sub('\\\\\|', '|', cell)
+46.1s 3550 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+46.1s 3551 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+46.7s 3552 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+47.1s 3553 [NbConvertApp] Writing 97035 bytes to __notebook__.ipynb
+49.5s 3554 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+50.3s 3555 [NbConvertApp] Writing 372196 bytes to __results__.html

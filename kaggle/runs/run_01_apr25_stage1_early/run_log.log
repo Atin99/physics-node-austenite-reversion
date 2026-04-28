@@ -1,0 +1,544 @@
+10.2s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.2s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.2s 3 0.00s - to python to disable frozen modules.
+10.2s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.0s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+11.0s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+11.0s 7 0.00s - to python to disable frozen modules.
+11.0s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+31.4s 9 06:12:23 [INFO] ======================================================================
+31.4s 10 EXPERIMENTAL DATA SUMMARY
+31.4s 11 ======================================================================
+31.4s 12 
+31.4s 13 [gibbs_2011] Fe-7.1Mn-0.1C
+31.4s 14 Source: Metallurgical and Materials Transactions A (2011)
+31.4s 15 DOI: 10.1007/s11661-011-0736-2
+31.4s 16 Initial: cold-rolled, 50% reduction
+31.4s 17 Data: 5 points | T: 575-675°C | Quality: {'table'}
+31.4s 18 
+31.4s 19 [luo_2011] Fe-5.0Mn-0.2C
+31.4s 20 Source: Acta Materialia (2011)
+31.4s 21 DOI: 10.1016/j.actamat.2011.03.025
+31.4s 22 Initial: cold-rolled martensitic
+31.4s 23 Data: 7 points | T: 650-650°C | Quality: {'text_reported', 'digitized_figure'}
+31.4s 24 
+31.4s 25 [pmc11053108_2024] Fe-4.7Mn-0.16C-1.6Al-0.2Si-0.2Mo
+31.4s 26 Source: Open Access (PMC) (2024)
+31.4s 27 DOI: PMC11053108
+31.4s 28 Initial: cold-rolled
+31.4s 29 Data: 7 points | T: 640-1000°C | Quality: {'text_reported'}
+31.4s 30 
+31.4s 31 [pmc11173901_2024] Fe-9.4Mn-0.2C-4.3Al
+31.4s 32 Source: Open Access (PMC) (2024)
+31.4s 33 DOI: PMC11173901
+31.4s 34 Initial: not specified
+31.4s 35 Data: 3 points | T: 750-850°C | Quality: {'digitized_figure'}
+31.4s 36 
+31.4s 37 [pmc6266817_2018] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+31.4s 38 Source: Open Access (PMC) (2018)
+31.4s 39 DOI: PMC6266817
+31.4s 40 Initial: cold-rolled (CR)
+31.4s 41 Data: 6 points | T: 600-750°C | Quality: {'text_reported', 'digitized_figure'}
+31.4s 42 
+31.4s 43 [pmc6266817_2018_HR] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+31.4s 44 Source: Open Access (PMC) (2018)
+31.4s 45 DOI: PMC6266817
+31.4s 46 Initial: hot-rolled (HR)
+31.4s 47 Data: 4 points | T: 600-690°C | Quality: {'text_reported', 'digitized_figure'}
+31.4s 48 
+31.4s 49 [yan_2022] Fe-6.0Mn-0.15C-1.5Al-0.3Si
+31.4s 50 Source: MDPI Metals / EBSD study (2022)
+31.4s 51 DOI: yan_2022_EBSD
+31.4s 52 Initial: cold-rolled
+31.4s 53 Data: 3 points | T: 650-710°C | Quality: {'text_reported'}
+31.4s 54 
+31.4s 55 [aliabad_2026] Fe-6.0Mn-0.4C-2.0Al-1.0Si
+31.4s 56 Source: Open Access (2026)
+31.4s 57 DOI: aliabad_2026
+31.4s 58 Initial: not specified
+31.4s 59 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+31.4s 60 
+31.4s 61 [frontiers_2020] Fe-8.0Mn-0.2C-3.0Al
+31.4s 62 Source: Frontiers in Materials (2020)
+31.4s 63 DOI: frontiers_2020
+31.4s 64 Initial: not specified
+31.4s 65 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+31.4s 66 
+31.4s 67 [lpbf_2021] Fe-3.93Mn-0.23C-2.01Al-0.51Si
+31.4s 68 Source: Materials (MDPI) (2021)
+31.4s 69 DOI: MDPI_Materials_14_3081
+31.4s 70 Initial: LPBF as-built
+31.4s 71 Data: 3 points | T: 25-750°C | Quality: {'text_reported'}
+31.4s 72 
+31.4s 73 [demoor_2011] Fe-7.1Mn-0.11C
+31.4s 74 Source: Scripta Materialia (2011)
+31.4s 75 DOI: 10.1016/j.scriptamat.2010.09.040
+31.4s 76 Initial: cold-rolled martensitic
+31.4s 77 Data: 5 points | T: 600-600°C | Quality: {'digitized_figure'}
+31.4s 78 
+31.4s 79 [lee_decooman_2014] Fe-5.8Mn-0.12C-2.0Al
+31.4s 80 Source: Metallurgical and Materials Transactions A (2013)
+31.4s 81 DOI: 10.1007/s11661-013-1860-y
+31.4s 82 Initial: cold-rolled martensitic
+31.4s 83 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+31.4s 84 
+31.4s 85 [nakada_2014] Fe-6.0Mn
+31.4s 86 Source: Acta Materialia (2014)
+31.4s 87 DOI: 10.1016/j.actamat.2013.10.067
+31.4s 88 Initial: quenched martensite
+31.4s 89 Data: 7 points | T: 500-675°C | Quality: {'digitized_figure'}
+31.4s 90 
+31.4s 91 [shi_2010] Fe-5.0Mn-0.2C
+31.4s 92 Source: Scripta Materialia (2010)
+31.4s 93 DOI: 10.1016/j.scriptamat.2010.06.023
+31.4s 94 Initial: cold-rolled martensitic
+31.4s 95 Data: 5 points | T: 620-680°C | Quality: {'digitized_figure'}
+31.4s 96 
+31.4s 97 [arlazarov_2012] Fe-5.0Mn-0.1C
+31.4s 98 Source: Materials Science and Engineering: A (2012)
+31.4s 99 DOI: 10.1016/j.msea.2012.02.024
+31.4s 100 Initial: cold-rolled, double annealed
+31.4s 101 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+31.4s 102 
+31.4s 103 [han_2014] Fe-9.0Mn-0.05C
+31.4s 104 Source: Materials Science and Engineering: A (2014)
+31.4s 105 DOI: 10.1016/j.msea.2015.02.055
+31.4s 106 Initial: water-quenched martensite
+31.4s 107 Data: 6 points | T: 600-725°C | Quality: {'digitized_figure'}
+31.4s 108 
+31.4s 109 [miller_2013] Fe-5.8Mn-0.1C-0.5Si
+31.4s 110 Source: Metallurgical Transactions (2013)
+31.4s 111 DOI: 10.1007/BF02647665
+31.4s 112 Initial: cold-rolled and annealed
+31.4s 113 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+31.4s 114 
+31.4s 115 [hu_luo_2017] Fe-7.0Mn-0.1C-0.5Al
+31.4s 116 Source: Journal of Alloys and Compounds (2017)
+31.4s 117 DOI: 10.1016/j.jallcom.2017.07.174
+31.4s 118 Initial: warm-rolled
+31.4s 119 Data: 4 points | T: 600-675°C | Quality: {'digitized_figure'}
+31.4s 120 
+31.4s 121 [cai_2016] Fe-10.0Mn-0.3C-2.0Al
+31.4s 122 Source: Acta Materialia (2015)
+31.4s 123 DOI: 10.1016/j.actamat.2014.10.052
+31.4s 124 Initial: cold-rolled martensitic
+31.4s 125 Data: 4 points | T: 625-700°C | Quality: {'digitized_figure'}
+31.4s 126 
+31.4s 127 [zhao_2014] Fe-7.9Mn-0.07C-0.05Al-0.14Si
+31.4s 128 Source: Materials (2014)
+31.4s 129 DOI: 10.3390/ma7127891
+31.4s 130 Initial: cold-rolled martensitic
+31.4s 131 Data: 7 points | T: 580-700°C | Quality: {'digitized_figure'}
+31.4s 132 
+31.4s 133 [suh_2017] Fe-6.0Mn-0.1C-3.0Al
+31.4s 134 Source: Scripta Materialia (2017)
+31.4s 135 DOI: 10.1016/j.scriptamat.2016.07.013
+31.4s 136 Initial: cold-rolled martensitic
+31.4s 137 Data: 5 points | T: 700-800°C | Quality: {'digitized_figure'}
+31.4s 138 
+31.4s 139 [sun_2018] Fe-12.0Mn-0.05C
+31.4s 140 Source: Acta Materialia (2018)
+31.4s 141 DOI: 10.1016/j.actamat.2018.02.005
+31.4s 142 Initial: cold-rolled martensitic
+31.4s 143 Data: 8 points | T: 575-675°C | Quality: {'digitized_figure'}
+31.4s 144 
+31.4s 145 [ma_2019] Fe-8.0Mn-0.2C-2.0Al-0.5Si
+31.4s 146 Source: Materials (2019)
+31.4s 147 DOI: 10.3390/ma12091402
+31.4s 148 Initial: cold-rolled martensitic
+31.4s 149 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+31.4s 150 
+31.4s 151 [demoor_2015] Fe-7.0Mn-0.1C
+31.4s 152 Source: ISIJ International (2015)
+31.4s 153 DOI: 10.2355/isijinternational.55.234
+31.4s 154 Initial: cold-rolled martensitic
+31.4s 155 Data: 6 points | T: 620-620°C | Quality: {'digitized_figure'}
+31.4s 156 
+31.4s 157 [hausman_2017] Fe-6.0Mn-0.3C-0.5Si
+31.4s 158 Source: Materials Science and Engineering: A (2017)
+31.4s 159 DOI: 10.1016/j.msea.2016.12.055
+31.4s 160 Initial: cold-rolled martensitic
+31.4s 161 Data: 4 points | T: 575-650°C | Quality: {'digitized_figure'}
+31.4s 162 
+31.4s 163 ======================================================================
+31.4s 164 TOTAL: 125 experimental data points from 25 studies
+31.4s 165 ======================================================================
+31.4s 166 
+31.4s 167 06:12:23 [INFO] ======================================================================
+31.4s 168 EXPERIMENTAL DATA SUMMARY
+31.4s 169 ======================================================================
+31.4s 170 
+31.4s 171 [gibbs_2011] Fe-7.1Mn-0.1C
+31.4s 172 Source: Metallurgical and Materials Transactions A (2011)
+31.4s 173 DOI: 10.1007/s11661-011-0736-2
+31.4s 174 Initial: cold-rolled, 50% reduction
+31.4s 175 Data: 5 points | T: 575-675°C | Quality: {'table'}
+31.4s 176 
+31.4s 177 [luo_2011] Fe-5.0Mn-0.2C
+31.4s 178 Source: Acta Materialia (2011)
+31.4s 179 DOI: 10.1016/j.actamat.2011.03.025
+31.4s 180 Initial: cold-rolled martensitic
+31.4s 181 Data: 7 points | T: 650-650°C | Quality: {'text_reported', 'digitized_figure'}
+31.4s 182 
+31.4s 183 [pmc11053108_2024] Fe-4.7Mn-0.16C-1.6Al-0.2Si-0.2Mo
+31.4s 184 Source: Open Access (PMC) (2024)
+31.4s 185 DOI: PMC11053108
+31.4s 186 Initial: cold-rolled
+31.4s 187 Data: 7 points | T: 640-1000°C | Quality: {'text_reported'}
+31.4s 188 
+31.4s 189 [pmc11173901_2024] Fe-9.4Mn-0.2C-4.3Al
+31.4s 190 Source: Open Access (PMC) (2024)
+31.4s 191 DOI: PMC11173901
+31.4s 192 Initial: not specified
+31.4s 193 Data: 3 points | T: 750-850°C | Quality: {'digitized_figure'}
+31.4s 194 
+31.4s 195 [pmc6266817_2018] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+31.4s 196 Source: Open Access (PMC) (2018)
+31.4s 197 DOI: PMC6266817
+31.4s 198 Initial: cold-rolled (CR)
+31.4s 199 Data: 6 points | T: 600-750°C | Quality: {'text_reported', 'digitized_figure'}
+31.4s 200 
+31.4s 201 [pmc6266817_2018_HR] Fe-5.0Mn-0.12C-1.0Al-0.2Mo-0.05Nb
+31.4s 202 Source: Open Access (PMC) (2018)
+31.4s 203 DOI: PMC6266817
+31.4s 204 Initial: hot-rolled (HR)
+31.4s 205 Data: 4 points | T: 600-690°C | Quality: {'text_reported', 'digitized_figure'}
+31.4s 206 
+31.4s 207 [yan_2022] Fe-6.0Mn-0.15C-1.5Al-0.3Si
+31.4s 208 Source: MDPI Metals / EBSD study (2022)
+31.4s 209 DOI: yan_2022_EBSD
+31.4s 210 Initial: cold-rolled
+31.4s 211 Data: 3 points | T: 650-710°C | Quality: {'text_reported'}
+31.4s 212 
+31.4s 213 [aliabad_2026] Fe-6.0Mn-0.4C-2.0Al-1.0Si
+31.4s 214 Source: Open Access (2026)
+31.4s 215 DOI: aliabad_2026
+31.4s 216 Initial: not specified
+31.4s 217 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+31.4s 218 
+31.4s 219 [frontiers_2020] Fe-8.0Mn-0.2C-3.0Al
+31.4s 220 Source: Frontiers in Materials (2020)
+31.4s 221 DOI: frontiers_2020
+31.4s 222 Initial: not specified
+31.4s 223 Data: 2 points | T: 680-680°C | Quality: {'text_reported'}
+31.4s 224 
+31.4s 225 [lpbf_2021] Fe-3.93Mn-0.23C-2.01Al-0.51Si
+31.4s 226 Source: Materials (MDPI) (2021)
+31.4s 227 DOI: MDPI_Materials_14_3081
+31.4s 228 Initial: LPBF as-built
+31.4s 229 Data: 3 points | T: 25-750°C | Quality: {'text_reported'}
+31.4s 230 
+31.4s 231 [demoor_2011] Fe-7.1Mn-0.11C
+31.4s 232 Source: Scripta Materialia (2011)
+31.4s 233 DOI: 10.1016/j.scriptamat.2010.09.040
+31.4s 234 Initial: cold-rolled martensitic
+31.4s 235 Data: 5 points | T: 600-600°C | Quality: {'digitized_figure'}
+31.4s 236 
+31.4s 237 [lee_decooman_2014] Fe-5.8Mn-0.12C-2.0Al
+31.4s 238 Source: Metallurgical and Materials Transactions A (2013)
+31.4s 239 DOI: 10.1007/s11661-013-1860-y
+31.4s 240 Initial: cold-rolled martensitic
+31.4s 241 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+31.4s 242 
+31.4s 243 [nakada_2014] Fe-6.0Mn
+31.4s 244 Source: Acta Materialia (2014)
+31.4s 245 DOI: 10.1016/j.actamat.2013.10.067
+31.4s 246 Initial: quenched martensite
+31.4s 247 Data: 7 points | T: 500-675°C | Quality: {'digitized_figure'}
+31.4s 248 
+31.4s 249 [shi_2010] Fe-5.0Mn-0.2C
+31.4s 250 Source: Scripta Materialia (2010)
+31.4s 251 DOI: 10.1016/j.scriptamat.2010.06.023
+31.4s 252 Initial: cold-rolled martensitic
+31.4s 253 Data: 5 points | T: 620-680°C | Quality: {'digitized_figure'}
+31.4s 254 
+31.4s 255 [arlazarov_2012] Fe-5.0Mn-0.1C
+31.4s 256 Source: Materials Science and Engineering: A (2012)
+31.4s 257 DOI: 10.1016/j.msea.2012.02.024
+31.4s 258 Initial: cold-rolled, double annealed
+31.4s 259 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+31.4s 260 
+31.4s 261 [han_2014] Fe-9.0Mn-0.05C
+31.4s 262 Source: Materials Science and Engineering: A (2014)
+31.4s 263 DOI: 10.1016/j.msea.2015.02.055
+31.4s 264 Initial: water-quenched martensite
+31.4s 265 Data: 6 points | T: 600-725°C | Quality: {'digitized_figure'}
+31.4s 266 
+31.4s 267 [miller_2013] Fe-5.8Mn-0.1C-0.5Si
+31.4s 268 Source: Metallurgical Transactions (2013)
+31.4s 269 DOI: 10.1007/BF02647665
+31.4s 270 Initial: cold-rolled and annealed
+31.4s 271 Data: 5 points | T: 600-700°C | Quality: {'digitized_figure'}
+31.4s 272 
+31.4s 273 [hu_luo_2017] Fe-7.0Mn-0.1C-0.5Al
+31.4s 274 Source: Journal of Alloys and Compounds (2017)
+31.4s 275 DOI: 10.1016/j.jallcom.2017.07.174
+31.4s 276 Initial: warm-rolled
+31.4s 277 Data: 4 points | T: 600-675°C | Quality: {'digitized_figure'}
+31.4s 278 
+31.4s 279 [cai_2016] Fe-10.0Mn-0.3C-2.0Al
+31.4s 280 Source: Acta Materialia (2015)
+31.4s 281 DOI: 10.1016/j.actamat.2014.10.052
+31.4s 282 Initial: cold-rolled martensitic
+31.4s 283 Data: 4 points | T: 625-700°C | Quality: {'digitized_figure'}
+31.4s 284 
+31.4s 285 [zhao_2014] Fe-7.9Mn-0.07C-0.05Al-0.14Si
+31.4s 286 Source: Materials (2014)
+31.4s 287 DOI: 10.3390/ma7127891
+31.4s 288 Initial: cold-rolled martensitic
+31.4s 289 Data: 7 points | T: 580-700°C | Quality: {'digitized_figure'}
+31.4s 290 
+31.4s 291 [suh_2017] Fe-6.0Mn-0.1C-3.0Al
+31.4s 292 Source: Scripta Materialia (2017)
+31.4s 293 DOI: 10.1016/j.scriptamat.2016.07.013
+31.4s 294 Initial: cold-rolled martensitic
+31.4s 295 Data: 5 points | T: 700-800°C | Quality: {'digitized_figure'}
+31.4s 296 
+31.4s 297 [sun_2018] Fe-12.0Mn-0.05C
+31.4s 298 Source: Acta Materialia (2018)
+31.4s 299 DOI: 10.1016/j.actamat.2018.02.005
+31.4s 300 Initial: cold-rolled martensitic
+31.4s 301 Data: 8 points | T: 575-675°C | Quality: {'digitized_figure'}
+31.4s 302 
+31.4s 303 [ma_2019] Fe-8.0Mn-0.2C-2.0Al-0.5Si
+31.4s 304 Source: Materials (2019)
+31.4s 305 DOI: 10.3390/ma12091402
+31.4s 306 Initial: cold-rolled martensitic
+31.4s 307 Data: 6 points | T: 625-750°C | Quality: {'digitized_figure'}
+31.4s 308 
+31.4s 309 [demoor_2015] Fe-7.0Mn-0.1C
+31.4s 310 Source: ISIJ International (2015)
+31.4s 311 DOI: 10.2355/isijinternational.55.234
+31.4s 312 Initial: cold-rolled martensitic
+31.4s 313 Data: 6 points | T: 620-620°C | Quality: {'digitized_figure'}
+31.4s 314 
+31.4s 315 [hausman_2017] Fe-6.0Mn-0.3C-0.5Si
+31.4s 316 Source: Materials Science and Engineering: A (2017)
+31.4s 317 DOI: 10.1016/j.msea.2016.12.055
+31.4s 318 Initial: cold-rolled martensitic
+31.4s 319 Data: 4 points | T: 575-650°C | Quality: {'digitized_figure'}
+31.4s 320 
+31.4s 321 ======================================================================
+31.4s 322 TOTAL: 125 experimental data points from 25 studies
+31.4s 323 ======================================================================
+31.4s 324 06:12:23 [INFO] Loaded 125 experimental data points from 25 studies
+31.4s 325 
+31.4s 326 06:12:23 [INFO] Loaded 125 experimental data points from 25 studies
+31.4s 327 06:12:23 [INFO] No user CSV files found in /kaggle/working/medium_mn_neural_ode/data/user_experimental
+31.4s 328 
+31.4s 329 06:12:23 [INFO] No user CSV files found in /kaggle/working/medium_mn_neural_ode/data/user_experimental
+31.5s 330 06:12:23 [INFO] Converted 125 real measurements into 107 training curves (6206 total points)
+31.5s 331 
+31.5s 332 06:12:23 [INFO] Converted 125 real measurements into 107 training curves (6206 total points)
+31.5s 333 06:12:23 [INFO] TIER 1 (Real): 107 curves, 6206 points
+31.5s 334 
+31.5s 335 06:12:23 [INFO] TIER 1 (Real): 107 curves, 6206 points
+32.2s 336 06:12:24 [INFO] Generated 500 calibrated synthetic curves (30000 points) | provenance='synthetic_calibrated'
+32.2s 337 
+32.2s 338 06:12:24 [INFO] Generated 500 calibrated synthetic curves (30000 points) | provenance='synthetic_calibrated'
+32.2s 339 06:12:24 [INFO] TIER 2 (Calibrated Synthetic): 500 curves, 30000 points
+32.2s 340 
+32.2s 341 06:12:24 [INFO] TIER 2 (Calibrated Synthetic): 500 curves, 30000 points
+35.4s 342 06:12:27 [INFO] Generated 2000 exploratory synthetic curves (120000 points) | provenance='synthetic_exploratory'
+35.4s 343 
+35.4s 344 06:12:27 [INFO] Generated 2000 exploratory synthetic curves (120000 points) | provenance='synthetic_exploratory'
+35.4s 345 06:12:27 [INFO] TIER 3 (Exploratory Synthetic): 2000 curves, 120000 points
+35.4s 346 
+35.4s 347 06:12:27 [INFO] TIER 3 (Exploratory Synthetic): 2000 curves, 120000 points
+35.4s 348 06:12:27 [INFO]
+35.4s 349 ============================================================
+35.4s 350 
+35.4s 351 06:12:27 [INFO]
+35.4s 352 ============================================================
+35.4s 353 06:12:27 [INFO] FULL DATASET: 2607 curves, 156206 total points
+35.4s 354 
+35.4s 355 06:12:27 [INFO] FULL DATASET: 2607 curves, 156206 total points
+35.4s 356 06:12:27 [INFO]   synthetic_exploratory: 120000 points
+35.4s 357 
+35.4s 358 06:12:27 [INFO]   synthetic_exploratory: 120000 points
+35.4s 359 06:12:27 [INFO]   synthetic_calibrated: 30000 points
+35.4s 360 
+35.4s 361 06:12:27 [INFO]   synthetic_calibrated: 30000 points
+35.4s 362 06:12:27 [INFO]   experimental: 6206 points
+35.4s 363 
+35.4s 364 06:12:27 [INFO]   experimental: 6206 points
+35.4s 365 06:12:27 [INFO] ============================================================
+35.4s 366 
+35.4s 367 
+35.4s 368 06:12:27 [INFO] ============================================================
+35.4s 369 
+35.7s 370 --- STARTING NOTEBOOK 1: 50 EPOCHS ONLY ---
+45.3s 371 06:12:37 [INFO] ============================================================
+45.3s 372 
+45.3s 373 06:12:37 [INFO] ============================================================
+45.3s 374 06:12:37 [INFO] Training on cuda | Epochs: 50 | Batch: 64 | LR: 0.0003
+45.3s 375 
+45.3s 376 06:12:37 [INFO] Training on cuda | Epochs: 50 | Batch: 64 | LR: 0.0003
+45.3s 377 06:12:37 [INFO] AMP: False | Adjoint: True | SWAG: False
+45.3s 378 
+45.3s 379 06:12:37 [INFO] AMP: False | Adjoint: True | SWAG: False
+45.3s 380 06:12:37 [INFO] ============================================================
+45.3s 381 
+45.3s 382 06:12:37 [INFO] ============================================================
+247.2s 383 06:15:59 [INFO] E   1 | T:-0.01465 V:-0.03310 | NFE:1117 | Viol:0.00% | LR:3.0e-04
+247.2s 384 
+247.2s 385 06:15:59 [INFO] E   1 | T:-0.01465 V:-0.03310 | NFE:1117 | Viol:0.00% | LR:3.0e-04
+439.8s 386 06:19:11 [INFO] E   2 | T:-0.05317 V:-0.06662 | NFE:1078 | Viol:0.00% | LR:3.0e-04
+439.8s 387 
+439.8s 388 06:19:11 [INFO] E   2 | T:-0.05317 V:-0.06662 | NFE:1078 | Viol:0.00% | LR:3.0e-04
+635.9s 389 06:22:27 [INFO] E   3 | T:-0.08945 V:-0.10017 | NFE:1092 | Viol:0.00% | LR:3.0e-04
+635.9s 390 
+635.9s 391 06:22:27 [INFO] E   3 | T:-0.08945 V:-0.10017 | NFE:1092 | Viol:0.00% | LR:3.0e-04
+832.6s 392 06:25:44 [INFO] E   4 | T:-0.12589 V:-0.13355 | NFE:1102 | Viol:0.00% | LR:3.0e-04
+832.6s 393 
+832.6s 394 06:25:44 [INFO] E   4 | T:-0.12589 V:-0.13355 | NFE:1102 | Viol:0.00% | LR:3.0e-04
+1020.1s 395 06:28:52 [INFO] E   5 | T:-0.16175 V:-0.16709 | NFE:1052 | Viol:0.00% | LR:3.0e-04
+1020.1s 396 
+1020.1s 397 06:28:52 [INFO] E   5 | T:-0.16175 V:-0.16709 | NFE:1052 | Viol:0.00% | LR:3.0e-04
+1205.1s 398 06:31:57 [INFO] E   6 | T:-0.19807 V:-0.20046 | NFE:1024 | Viol:0.00% | LR:3.0e-04
+1205.1s 399 
+1205.1s 400 06:31:57 [INFO] E   6 | T:-0.19807 V:-0.20046 | NFE:1024 | Viol:0.00% | LR:3.0e-04
+1402.6s 401 06:35:14 [INFO] E   7 | T:-0.23383 V:-0.23376 | NFE:1085 | Viol:0.00% | LR:3.0e-04
+1402.6s 402 
+1402.6s 403 06:35:14 [INFO] E   7 | T:-0.23383 V:-0.23376 | NFE:1085 | Viol:0.00% | LR:3.0e-04
+1594.3s 404 06:38:26 [INFO] E   8 | T:-0.27029 V:-0.26690 | NFE:1070 | Viol:0.00% | LR:3.0e-04
+1594.3s 405 
+1594.3s 406 06:38:26 [INFO] E   8 | T:-0.27029 V:-0.26690 | NFE:1070 | Viol:0.00% | LR:3.0e-04
+1787.6s 407 06:41:39 [INFO] E   9 | T:-0.30580 V:-0.29998 | NFE:1068 | Viol:0.00% | LR:2.9e-04
+1787.6s 408 
+1787.6s 409 06:41:39 [INFO] E   9 | T:-0.30580 V:-0.29998 | NFE:1068 | Viol:0.00% | LR:2.9e-04
+1978.9s 410 06:44:50 [INFO] E  10 | T:-0.34107 V:-0.33280 | NFE:1068 | Viol:0.00% | LR:2.9e-04
+1978.9s 411 
+1978.9s 412 06:44:50 [INFO] E  10 | T:-0.34107 V:-0.33280 | NFE:1068 | Viol:0.00% | LR:2.9e-04
+2174.4s 413 06:48:06 [INFO] E  11 | T:-0.37743 V:-0.36539 | NFE:1077 | Viol:0.00% | LR:2.9e-04
+2174.4s 414 
+2174.4s 415 06:48:06 [INFO] E  11 | T:-0.37743 V:-0.36539 | NFE:1077 | Viol:0.00% | LR:2.9e-04
+2370.0s 416 06:51:22 [INFO] E  12 | T:-0.41267 V:-0.39821 | NFE:1079 | Viol:0.00% | LR:2.9e-04
+2370.0s 417 
+2370.0s 418 06:51:22 [INFO] E  12 | T:-0.41267 V:-0.39821 | NFE:1079 | Viol:0.00% | LR:2.9e-04
+2557.7s 419 06:54:29 [INFO] E  13 | T:-0.44751 V:-0.43048 | NFE:1057 | Viol:0.00% | LR:2.9e-04
+2557.7s 420 
+2557.7s 421 06:54:29 [INFO] E  13 | T:-0.44751 V:-0.43048 | NFE:1057 | Viol:0.00% | LR:2.9e-04
+2752.4s 422 06:57:44 [INFO] E  14 | T:-0.48134 V:-0.46275 | NFE:1103 | Viol:0.00% | LR:2.9e-04
+2752.4s 423 
+2752.4s 424 06:57:44 [INFO] E  14 | T:-0.48134 V:-0.46275 | NFE:1103 | Viol:0.00% | LR:2.9e-04
+2954.5s 425 07:01:06 [INFO] E  15 | T:-0.51759 V:-0.49470 | NFE:1142 | Viol:0.00% | LR:2.8e-04
+2954.5s 426 
+2954.5s 427 07:01:06 [INFO] E  15 | T:-0.51759 V:-0.49470 | NFE:1142 | Viol:0.00% | LR:2.8e-04
+3144.9s 428 07:04:16 [INFO] E  16 | T:-0.55153 V:-0.52649 | NFE:1066 | Viol:0.00% | LR:2.8e-04
+3144.9s 429 
+3144.9s 430 07:04:16 [INFO] E  16 | T:-0.55153 V:-0.52649 | NFE:1066 | Viol:0.00% | LR:2.8e-04
+3338.2s 431 07:07:30 [INFO] E  17 | T:-0.58386 V:-0.55792 | NFE:1079 | Viol:0.00% | LR:2.8e-04
+3338.2s 432 
+3338.2s 433 07:07:30 [INFO] E  17 | T:-0.58386 V:-0.55792 | NFE:1079 | Viol:0.00% | LR:2.8e-04
+3532.3s 434 07:10:44 [INFO] E  18 | T:-0.61956 V:-0.58914 | NFE:1075 | Viol:0.00% | LR:2.8e-04
+3532.3s 435 
+3532.3s 436 07:10:44 [INFO] E  18 | T:-0.61956 V:-0.58914 | NFE:1075 | Viol:0.00% | LR:2.8e-04
+3725.0s 437 07:13:57 [INFO] E  19 | T:-0.65390 V:-0.62000 | NFE:1082 | Viol:0.00% | LR:2.7e-04
+3725.0s 438 
+3725.0s 439 07:13:57 [INFO] E  19 | T:-0.65390 V:-0.62000 | NFE:1082 | Viol:0.00% | LR:2.7e-04
+3910.5s 440 07:17:02 [INFO] E  20 | T:-0.68648 V:-0.65074 | NFE:1040 | Viol:0.00% | LR:2.7e-04
+3910.5s 441 
+3910.5s 442 07:17:02 [INFO] E  20 | T:-0.68648 V:-0.65074 | NFE:1040 | Viol:0.00% | LR:2.7e-04
+4096.1s 443 07:20:08 [INFO] E  21 | T:-0.71803 V:-0.68110 | NFE:1034 | Viol:0.00% | LR:2.7e-04
+4096.1s 444 
+4096.1s 445 07:20:08 [INFO] E  21 | T:-0.71803 V:-0.68110 | NFE:1034 | Viol:0.00% | LR:2.7e-04
+4289.4s 446 07:23:21 [INFO] E  22 | T:-0.75214 V:-0.71118 | NFE:1070 | Viol:0.00% | LR:2.7e-04
+4289.4s 447 
+4289.4s 448 07:23:21 [INFO] E  22 | T:-0.75214 V:-0.71118 | NFE:1070 | Viol:0.00% | LR:2.7e-04
+4484.1s 449 07:26:36 [INFO] E  23 | T:-0.78449 V:-0.74081 | NFE:1056 | Viol:0.00% | LR:2.6e-04
+4484.1s 450 
+4484.1s 451 07:26:36 [INFO] E  23 | T:-0.78449 V:-0.74081 | NFE:1056 | Viol:0.00% | LR:2.6e-04
+4669.4s 452 07:29:41 [INFO] E  24 | T:-0.81563 V:-0.77010 | NFE:1006 | Viol:0.00% | LR:2.6e-04
+4669.4s 453 
+4669.4s 454 07:29:41 [INFO] E  24 | T:-0.81563 V:-0.77010 | NFE:1006 | Viol:0.00% | LR:2.6e-04
+4871.6s 455 07:33:03 [INFO] E  25 | T:-0.84794 V:-0.79911 | NFE:1125 | Viol:0.00% | LR:2.6e-04
+4871.6s 456 
+4871.6s 457 07:33:03 [INFO] E  25 | T:-0.84794 V:-0.79911 | NFE:1125 | Viol:0.00% | LR:2.6e-04
+5060.7s 458 07:36:12 [INFO] E  26 | T:-0.88009 V:-0.82773 | NFE:1050 | Viol:0.00% | LR:2.5e-04
+5060.7s 459 
+5060.7s 460 07:36:12 [INFO] E  26 | T:-0.88009 V:-0.82773 | NFE:1050 | Viol:0.00% | LR:2.5e-04
+5271.3s 461 07:39:43 [INFO] E  27 | T:-0.90905 V:-0.85597 | NFE:1174 | Viol:0.00% | LR:2.5e-04
+5271.3s 462 
+5271.3s 463 07:39:43 [INFO] E  27 | T:-0.90905 V:-0.85597 | NFE:1174 | Viol:0.00% | LR:2.5e-04
+5462.1s 464 07:42:54 [INFO] E  28 | T:-0.93936 V:-0.88393 | NFE:1067 | Viol:0.00% | LR:2.5e-04
+5462.1s 465 
+5462.1s 466 07:42:54 [INFO] E  28 | T:-0.93936 V:-0.88393 | NFE:1067 | Viol:0.00% | LR:2.5e-04
+5647.7s 467 07:45:59 [INFO] E  29 | T:-0.97131 V:-0.91142 | NFE:1022 | Viol:0.00% | LR:2.4e-04
+5647.7s 468 
+5647.7s 469 07:45:59 [INFO] E  29 | T:-0.97131 V:-0.91142 | NFE:1022 | Viol:0.00% | LR:2.4e-04
+5833.0s 470 07:49:05 [INFO] E  30 | T:-0.99878 V:-0.93856 | NFE:1015 | Viol:0.00% | LR:2.4e-04
+5833.0s 471 
+5833.0s 472 07:49:05 [INFO] E  30 | T:-0.99878 V:-0.93856 | NFE:1015 | Viol:0.00% | LR:2.4e-04
+6027.7s 473 07:52:19 [INFO] E  31 | T:-1.02891 V:-0.96518 | NFE:1062 | Viol:0.00% | LR:2.3e-04
+6027.7s 474 
+6027.7s 475 07:52:19 [INFO] E  31 | T:-1.02891 V:-0.96518 | NFE:1062 | Viol:0.00% | LR:2.3e-04
+6221.3s 476 07:55:33 [INFO] E  32 | T:-1.05528 V:-0.99138 | NFE:1055 | Viol:0.00% | LR:2.3e-04
+6221.3s 477 
+6221.3s 478 07:55:33 [INFO] E  32 | T:-1.05528 V:-0.99138 | NFE:1055 | Viol:0.00% | LR:2.3e-04
+6407.6s 479 07:58:39 [INFO] E  33 | T:-1.08555 V:-1.01716 | NFE:1009 | Viol:0.00% | LR:2.3e-04
+6407.6s 480 
+6407.6s 481 07:58:39 [INFO] E  33 | T:-1.08555 V:-1.01716 | NFE:1009 | Viol:0.00% | LR:2.3e-04
+6604.9s 482 08:01:57 [INFO] E  34 | T:-1.11319 V:-1.04251 | NFE:1095 | Viol:0.00% | LR:2.2e-04
+6604.9s 483 
+6604.9s 484 08:01:57 [INFO] E  34 | T:-1.11319 V:-1.04251 | NFE:1095 | Viol:0.00% | LR:2.2e-04
+6802.1s 485 08:05:14 [INFO] E  35 | T:-1.13919 V:-1.06740 | NFE:1102 | Viol:0.00% | LR:2.2e-04
+6802.1s 486 
+6802.1s 487 08:05:14 [INFO] E  35 | T:-1.13919 V:-1.06740 | NFE:1102 | Viol:0.00% | LR:2.2e-04
+7000.7s 488 08:08:32 [INFO] E  36 | T:-1.16704 V:-1.09168 | NFE:1111 | Viol:0.00% | LR:2.1e-04
+7000.7s 489 
+7000.7s 490 08:08:32 [INFO] E  36 | T:-1.16704 V:-1.09168 | NFE:1111 | Viol:0.00% | LR:2.1e-04
+7203.4s 491 08:11:55 [INFO] E  37 | T:-1.19250 V:-1.11570 | NFE:1128 | Viol:0.00% | LR:2.1e-04
+7203.4s 492 
+7203.4s 493 08:11:55 [INFO] E  37 | T:-1.19250 V:-1.11570 | NFE:1128 | Viol:0.00% | LR:2.1e-04
+7393.9s 494 08:15:05 [INFO] E  38 | T:-1.22003 V:-1.13918 | NFE:1052 | Viol:0.00% | LR:2.1e-04
+7393.9s 495 
+7393.9s 496 08:15:05 [INFO] E  38 | T:-1.22003 V:-1.13918 | NFE:1052 | Viol:0.00% | LR:2.1e-04
+7578.2s 497 08:18:10 [INFO] E  39 | T:-1.24009 V:-1.16203 | NFE:1008 | Viol:0.00% | LR:2.0e-04
+7578.2s 498 
+7578.2s 499 08:18:10 [INFO] E  39 | T:-1.24009 V:-1.16203 | NFE:1008 | Viol:0.00% | LR:2.0e-04
+7762.5s 500 08:21:14 [INFO] E  40 | T:-1.26846 V:-1.18451 | NFE:1017 | Viol:0.00% | LR:2.0e-04
+7762.5s 501 
+7762.5s 502 08:21:14 [INFO] E  40 | T:-1.26846 V:-1.18451 | NFE:1017 | Viol:0.00% | LR:2.0e-04
+7950.7s 503 08:24:22 [INFO] E  41 | T:-1.29115 V:-1.20648 | NFE:1052 | Viol:0.00% | LR:1.9e-04
+7950.7s 504 
+7950.7s 505 08:24:22 [INFO] E  41 | T:-1.29115 V:-1.20648 | NFE:1052 | Viol:0.00% | LR:1.9e-04
+8148.9s 506 08:27:41 [INFO] E  42 | T:-1.31050 V:-1.22793 | NFE:1093 | Viol:0.00% | LR:1.9e-04
+8148.9s 507 
+8148.9s 508 08:27:41 [INFO] E  42 | T:-1.31050 V:-1.22793 | NFE:1093 | Viol:0.00% | LR:1.9e-04
+8339.9s 509 08:30:52 [INFO] E  43 | T:-1.33607 V:-1.24887 | NFE:1069 | Viol:0.00% | LR:1.8e-04
+8339.9s 510 
+8339.9s 511 08:30:52 [INFO] E  43 | T:-1.33607 V:-1.24887 | NFE:1069 | Viol:0.00% | LR:1.8e-04
+8528.4s 512 08:34:00 [INFO] E  44 | T:-1.35838 V:-1.26927 | NFE:1058 | Viol:0.00% | LR:1.8e-04
+8528.4s 513 
+8528.4s 514 08:34:00 [INFO] E  44 | T:-1.35838 V:-1.26927 | NFE:1058 | Viol:0.00% | LR:1.8e-04
+8737.6s 515 08:37:29 [INFO] E  45 | T:-1.38164 V:-1.28906 | NFE:1169 | Viol:0.00% | LR:1.7e-04
+8737.6s 516 
+8737.6s 517 08:37:29 [INFO] E  45 | T:-1.38164 V:-1.28906 | NFE:1169 | Viol:0.00% | LR:1.7e-04
+8942.2s 518 08:40:54 [INFO] E  46 | T:-1.39990 V:-1.30851 | NFE:1130 | Viol:0.00% | LR:1.7e-04
+8942.2s 519 
+8942.2s 520 08:40:54 [INFO] E  46 | T:-1.39990 V:-1.30851 | NFE:1130 | Viol:0.00% | LR:1.7e-04
+9134.7s 521 08:44:06 [INFO] E  47 | T:-1.42055 V:-1.32734 | NFE:1065 | Viol:0.00% | LR:1.6e-04
+9134.7s 522 
+9134.7s 523 08:44:06 [INFO] E  47 | T:-1.42055 V:-1.32734 | NFE:1065 | Viol:0.00% | LR:1.6e-04
+9330.7s 524 08:47:22 [INFO] E  48 | T:-1.44656 V:-1.34572 | NFE:1091 | Viol:0.00% | LR:1.6e-04
+9330.7s 525 
+9330.7s 526 08:47:22 [INFO] E  48 | T:-1.44656 V:-1.34572 | NFE:1091 | Viol:0.00% | LR:1.6e-04
+9517.2s 527 08:50:29 [INFO] E  49 | T:-1.46624 V:-1.36355 | NFE:1024 | Viol:0.00% | LR:1.5e-04
+9517.2s 528 
+9517.2s 529 08:50:29 [INFO] E  49 | T:-1.46624 V:-1.36355 | NFE:1024 | Viol:0.00% | LR:1.5e-04
+9711.6s 530 08:53:43 [INFO] E  50 | T:-1.48220 V:-1.38091 | NFE:1061 | Viol:0.00% | LR:1.5e-04
+9711.6s 531 
+9711.6s 532 08:53:43 [INFO] E  50 | T:-1.48220 V:-1.38091 | NFE:1061 | Viol:0.00% | LR:1.5e-04
+9711.6s 533 08:53:43 [INFO] Done in 161.1m | Best: -1.380907
+9711.6s 534 
+9711.6s 535 08:53:43 [INFO] Done in 161.1m | Best: -1.380907
+9711.6s 536 DONE! Checkpoint safely saved as: physics_node_50ep_best.pt
+9717.5s 537 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+9717.5s 538 cells[i][c] = re.sub('\\\\\|', '|', cell)
+9717.8s 539 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+9717.8s 540 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+9718.5s 541 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+9718.8s 542 [NbConvertApp] Writing 18492 bytes to __notebook__.ipynb
+9721.2s 543 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+9722.1s 544 [NbConvertApp] Writing 295428 bytes to __results__.html

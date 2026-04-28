@@ -1,0 +1,190 @@
+{
+  "started_utc": "2026-04-28T02:33:48.063186+00:00",
+  "finished_utc": "2026-04-28T02:34:38.075489+00:00",
+  "runtime_minutes": 0.83,
+  "run_version": "2026-04-28-recover-stage1",
+  "recovered_checkpoint": "/kaggle/working/final_project_4_recovered_input/stage1_best.pt",
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
+  "dataset": {
+    "full": {
+      "name": "full",
+      "curves": 1055,
+      "points": 57227,
+      "points_by_provenance": {
+        "synthetic_exploratory": 42000,
+        "synthetic_calibrated": 15000,
+        "experimental": 227
+      },
+      "curves_by_provenance": {
+        "experimental": 105,
+        "synthetic_calibrated": 250,
+        "synthetic_exploratory": 700
+      }
+    },
+    "train": {
+      "name": "train",
+      "curves": 738,
+      "points": 40060,
+      "points_by_provenance": {
+        "synthetic_exploratory": 28980,
+        "synthetic_calibrated": 10920,
+        "experimental": 160
+      },
+      "curves_by_provenance": {
+        "experimental": 73,
+        "synthetic_calibrated": 182,
+        "synthetic_exploratory": 483
+      }
+    },
+    "val": {
+      "name": "val",
+      "curves": 158,
+      "points": 8552,
+      "points_by_provenance": {
+        "synthetic_exploratory": 6180,
+        "synthetic_calibrated": 2340,
+        "experimental": 32
+      },
+      "curves_by_provenance": {
+        "experimental": 16,
+        "synthetic_calibrated": 39,
+        "synthetic_exploratory": 103
+      }
+    },
+    "test": {
+      "name": "test",
+      "curves": 159,
+      "points": 8615,
+      "points_by_provenance": {
+        "synthetic_exploratory": 6840,
+        "synthetic_calibrated": 1740,
+        "experimental": 35
+      },
+      "curves_by_provenance": {
+        "experimental": 16,
+        "synthetic_calibrated": 29,
+        "synthetic_exploratory": 114
+      }
+    },
+    "train_real": {
+      "name": "train_real",
+      "curves": 73,
+      "points": 160,
+      "points_by_provenance": {
+        "experimental": 160
+      },
+      "curves_by_provenance": {
+        "experimental": 73
+      }
+    },
+    "val_real": {
+      "name": "val_real",
+      "curves": 16,
+      "points": 32,
+      "points_by_provenance": {
+        "experimental": 32
+      },
+      "curves_by_provenance": {
+        "experimental": 16
+      }
+    },
+    "test_real": {
+      "name": "test_real",
+      "curves": 16,
+      "points": 35,
+      "points_by_provenance": {
+        "experimental": 35
+      },
+      "curves_by_provenance": {
+        "experimental": 16
+      }
+    }
+  },
+  "evaluation": {
+    "val_full": {
+      "name": "val_full",
+      "loss_total": 0.0003483825982714604,
+      "loss_data": 0.00034557100817827243,
+      "loss_physics": 2.811585903015969e-05,
+      "loss_monotone": 0.0,
+      "loss_bound": 0.0,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.010918231913165278,
+        "rmse": 0.023443417783716215,
+        "real_mae": 0.18622897565364838,
+        "real_rmse": 0.21278220224300476,
+        "endpoint_mae": 0.03537334990245585,
+        "real_endpoint_mae": 0.1862289784476161,
+        "n_observed": 8536.0,
+        "n_real_observed": 16.0
+      },
+      "curves": 158,
+      "points": 8552
+    },
+    "test_full": {
+      "name": "test_full",
+      "loss_total": 0.0005696036241715774,
+      "loss_data": 0.0005250539044417175,
+      "loss_physics": 0.0004454716569983118,
+      "loss_monotone": 0.0,
+      "loss_bound": 5.098215690882821e-09,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.01255069126679684,
+        "rmse": 0.0281006653664426,
+        "real_mae": 0.27102907080399363,
+        "real_rmse": 0.31367722678183574,
+        "endpoint_mae": 0.04829492287361795,
+        "real_endpoint_mae": 0.2924069822765887,
+        "n_observed": 8599.0,
+        "n_real_observed": 19.0
+      },
+      "curves": 159,
+      "points": 8615
+    },
+    "val_real": {
+      "name": "val_real",
+      "loss_total": 0.019244659692049026,
+      "loss_data": 0.019244616851210594,
+      "loss_physics": 4.3750003442255547e-07,
+      "loss_monotone": 0.0,
+      "loss_bound": 0.0,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.1862296462059021,
+        "rmse": 0.2127822460118195,
+        "real_mae": 0.1862296462059021,
+        "real_rmse": 0.2127822460118195,
+        "endpoint_mae": 0.18622965645045042,
+        "real_endpoint_mae": 0.18622965645045042,
+        "n_observed": 16.0,
+        "n_real_observed": 16.0
+      },
+      "curves": 16,
+      "points": 32
+    },
+    "test_real": {
+      "name": "test_real",
+      "loss_total": 0.04492919519543648,
+      "loss_data": 0.03814563527703285,
+      "loss_physics": 0.0678330734372139,
+      "loss_monotone": 0.0,
+      "loss_bound": 5.078246658740682e-07,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.27102856887014287,
+        "rmse": 0.3136772367828376,
+        "real_mae": 0.27102856887014287,
+        "real_rmse": 0.3136772367828376,
+        "endpoint_mae": 0.292407491710037,
+        "real_endpoint_mae": 0.292407491710037,
+        "n_observed": 19.0,
+        "n_real_observed": 19.0
+      },
+      "curves": 16,
+      "points": 35
+    }
+  }
+}

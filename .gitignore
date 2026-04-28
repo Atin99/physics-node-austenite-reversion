@@ -1,0 +1,42 @@
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# pytorch models - track these with git lfs or keep them out
+# uncomment the next line if you dont want to push model weights
+# *.pt
+
+# env
+.env
+.venv
+venv/
+ENV/
+
+# ide
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# os
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# logs that get regenerated
+pipeline.log
+
+# jupyter
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage

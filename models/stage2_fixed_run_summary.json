@@ -1,0 +1,157 @@
+{
+  "started_utc": "2026-04-28T02:56:50.278537+00:00",
+  "finished_utc": "2026-04-28T03:05:08.084186+00:00",
+  "runtime_minutes": 8.3,
+  "run_version": "2026-04-28-stage2-retry-fixed",
+  "stage1_checkpoint": "/kaggle/working/recovered_stage1_bundle/stage1_best.pt",
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
+  "dataset": {
+    "full": {
+      "name": "full",
+      "curves": 1055,
+      "points": 57227,
+      "points_by_provenance": {
+        "synthetic_exploratory": 42000,
+        "synthetic_calibrated": 15000,
+        "experimental": 227
+      },
+      "curves_by_provenance": {
+        "experimental": 105,
+        "synthetic_calibrated": 250,
+        "synthetic_exploratory": 700
+      }
+    },
+    "train_real": {
+      "name": "train_real",
+      "curves": 72,
+      "points": 159,
+      "points_by_provenance": {
+        "experimental": 159
+      },
+      "curves_by_provenance": {
+        "experimental": 72
+      }
+    },
+    "val_real": {
+      "name": "val_real",
+      "curves": 16,
+      "points": 32,
+      "points_by_provenance": {
+        "experimental": 32
+      },
+      "curves_by_provenance": {
+        "experimental": 16
+      }
+    },
+    "test_real": {
+      "name": "test_real",
+      "curves": 16,
+      "points": 35,
+      "points_by_provenance": {
+        "experimental": 35
+      },
+      "curves_by_provenance": {
+        "experimental": 16
+      }
+    }
+  },
+  "best_metric_name": "val_real_rmse",
+  "best_metric_value": 0.21243568314962114,
+  "best_val_metrics": {
+    "mae": 0.18679325887933373,
+    "rmse": 0.21243568314962114,
+    "real_mae": 0.18679325887933373,
+    "real_rmse": 0.21243568314962114,
+    "endpoint_mae": 0.18679325887933373,
+    "real_endpoint_mae": 0.18679325887933373,
+    "n_observed": 16.0,
+    "n_real_observed": 16.0
+  },
+  "evaluation": {
+    "val_full": {
+      "name": "val_full",
+      "loss_total": 0.0021941748012333064,
+      "loss_data": 0.0021913144299427977,
+      "loss_physics": 2.860370720563418e-05,
+      "loss_monotone": 0.0,
+      "loss_bound": 0.0,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.011016794139974957,
+        "rmse": 0.023604047776761488,
+        "real_mae": 0.18679325887933373,
+        "real_rmse": 0.21243568314962114,
+        "endpoint_mae": 0.036347889359097316,
+        "real_endpoint_mae": 0.18679325887933373,
+        "n_observed": 8536.0,
+        "n_real_observed": 16.0
+      },
+      "curves": 158,
+      "points": 8552
+    },
+    "test_full": {
+      "name": "test_full",
+      "loss_total": 0.00412741885660088,
+      "loss_data": 0.003921466187901662,
+      "loss_physics": 0.0020591205325439397,
+      "loss_monotone": 0.0,
+      "loss_bound": 8.127433418094198e-08,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.012614827161646816,
+        "rmse": 0.028157952709248143,
+        "real_mae": 0.26698963304883555,
+        "real_rmse": 0.31214084079029536,
+        "endpoint_mae": 0.048441226753031356,
+        "real_endpoint_mae": 0.2867300589568913,
+        "n_observed": 8599.0,
+        "n_real_observed": 19.0
+      },
+      "curves": 159,
+      "points": 8615
+    },
+    "val_real": {
+      "name": "val_real",
+      "loss_total": 0.01920209534728201,
+      "loss_data": 0.019202051582396962,
+      "loss_physics": 4.375000486334102e-07,
+      "loss_monotone": 0.0,
+      "loss_bound": 0.0,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.18679325887933373,
+        "rmse": 0.21243568314962114,
+        "real_mae": 0.18679325887933373,
+        "real_rmse": 0.21243568314962114,
+        "endpoint_mae": 0.18679325887933373,
+        "real_endpoint_mae": 0.18679325887933373,
+        "n_observed": 16.0,
+        "n_real_observed": 16.0
+      },
+      "curves": 16,
+      "points": 32
+    },
+    "test_real": {
+      "name": "test_real",
+      "loss_total": 0.03802949143573642,
+      "loss_data": 0.03601150421309285,
+      "loss_physics": 0.0201758361316422,
+      "loss_monotone": 0.0,
+      "loss_bound": 8.076636959231109e-07,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.26698963304883555,
+        "rmse": 0.31214084079029536,
+        "real_mae": 0.26698963304883555,
+        "real_rmse": 0.31214084079029536,
+        "endpoint_mae": 0.2867300589568913,
+        "real_endpoint_mae": 0.2867300589568913,
+        "n_observed": 19.0,
+        "n_real_observed": 19.0
+      },
+      "curves": 16,
+      "points": 35
+    }
+  }
+}

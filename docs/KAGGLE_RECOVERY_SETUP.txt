@@ -1,0 +1,30 @@
+KAGGLE RECOVERY SETUP
+
+Inputs to add in the new Kaggle notebook:
+
+1. Your original project source input
+   - the same project zip/folder you used for the failed run
+
+2. The recovered bundle zip
+   - `recovered_stage1_bundle_v1.zip`
+
+Notebook cells:
+
+Cell 1
+```bash
+!unzip -q /kaggle/input/<your-recovered-bundle-dataset>/recovered_stage1_bundle_v1.zip -d /kaggle/working/recovered_stage1_bundle
+```
+
+Cell 2
+```bash
+!python /kaggle/working/recovered_stage1_bundle/kaggle_recover_from_stage1.py
+```
+
+What this does:
+
+- skips stage 1 retraining
+- skips broken stage 2
+- loads the saved `stage1_best.pt`
+- rebuilds dataset
+- runs evaluation
+- writes recovery artifacts and summary zip

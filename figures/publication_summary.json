@@ -1,0 +1,42 @@
+{
+  "checkpoint": "models\\checkpoints\\physics_node_smoke_last_cpu.pt",
+  "best_val_loss": 0.011620606295764446,
+  "n_val_curves": 783,
+  "representative_ids": [
+    87,
+    100302,
+    201125
+  ],
+  "parity_rmse": 0.16118131577968597,
+  "parity_r2": -39.50641632080078,
+  "consistency": {
+    "Mn": {
+      "passed": "True",
+      "correlation": 0.859294178363087,
+      "expected": "positive"
+    },
+    "C": {
+      "passed": "False",
+      "correlation": NaN,
+      "expected": "positive"
+    },
+    "Al": {
+      "passed": "False",
+      "correlation": NaN,
+      "expected": "negative"
+    },
+    "T": {
+      "passed": "True",
+      "correlation": 0.8673541096427918,
+      "expected": "positive"
+    }
+  },
+  "symbolic_best_equation": null,
+  "symbolic_best_loss": null,
+  "sensitivity_features": [
+    "Mn",
+    "C",
+    "Al",
+    "T"
+  ]
+}

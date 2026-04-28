@@ -1,0 +1,192 @@
+{
+  "utc_start": "2026-04-28T03:59:00.448234+00:00",
+  "utc_end": "2026-04-28T04:33:11.975984+00:00",
+  "runtime_min": 34.19,
+  "final_stage": "stage2",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "dataset": {
+    "full": {
+      "name": "full",
+      "curves": 1055,
+      "points": 57227,
+      "by_prov": {
+        "synthetic_exploratory": 42000,
+        "synthetic_calibrated": 15000,
+        "experimental": 227
+      }
+    },
+    "train": {
+      "name": "train",
+      "curves": 738,
+      "points": 40060,
+      "by_prov": {
+        "synthetic_exploratory": 28980,
+        "synthetic_calibrated": 10920,
+        "experimental": 160
+      }
+    },
+    "val": {
+      "name": "val",
+      "curves": 158,
+      "points": 8552,
+      "by_prov": {
+        "synthetic_exploratory": 6180,
+        "synthetic_calibrated": 2340,
+        "experimental": 32
+      }
+    },
+    "test": {
+      "name": "test",
+      "curves": 159,
+      "points": 8615,
+      "by_prov": {
+        "synthetic_exploratory": 6840,
+        "synthetic_calibrated": 1740,
+        "experimental": 35
+      }
+    },
+    "train_real": {
+      "name": "train_real",
+      "curves": 73,
+      "points": 160,
+      "by_prov": {
+        "experimental": 160
+      }
+    },
+    "val_real": {
+      "name": "val_real",
+      "curves": 16,
+      "points": 32,
+      "by_prov": {
+        "experimental": 32
+      }
+    },
+    "test_real": {
+      "name": "test_real",
+      "curves": 16,
+      "points": 35,
+      "by_prov": {
+        "experimental": 35
+      }
+    }
+  },
+  "stage1_baseline": {
+    "val_full": {
+      "name": "s1_val_full",
+      "loss_total": 0.0003483825982714604,
+      "rmse": 0.023443417783716215,
+      "real_rmse": 0.21278220224300476,
+      "mae": 0.010918231913165278,
+      "real_mae": 0.18622897565364838,
+      "endpoint_mae": 0.03537334990245585,
+      "real_endpoint_mae": 0.1862289784476161,
+      "n_obs": 8536,
+      "n_real_obs": 16,
+      "curves": 158,
+      "points": 8552
+    },
+    "test_full": {
+      "name": "s1_test_full",
+      "loss_total": 0.0005696036241715774,
+      "rmse": 0.0281006653664426,
+      "real_rmse": 0.31367722678183574,
+      "mae": 0.01255069126679684,
+      "real_mae": 0.27102907080399363,
+      "endpoint_mae": 0.04829492287361795,
+      "real_endpoint_mae": 0.2924069822765887,
+      "n_obs": 8599,
+      "n_real_obs": 19,
+      "curves": 159,
+      "points": 8615
+    },
+    "val_real": {
+      "name": "s1_val_real",
+      "loss_total": 0.019244659692049026,
+      "rmse": 0.2127822460118195,
+      "real_rmse": 0.2127822460118195,
+      "mae": 0.1862296462059021,
+      "real_mae": 0.1862296462059021,
+      "endpoint_mae": 0.18622965645045042,
+      "real_endpoint_mae": 0.18622965645045042,
+      "n_obs": 16,
+      "n_real_obs": 16,
+      "curves": 16,
+      "points": 32
+    },
+    "test_real": {
+      "name": "s1_test_real",
+      "loss_total": 0.04492919519543648,
+      "rmse": 0.3136772367828376,
+      "real_rmse": 0.3136772367828376,
+      "mae": 0.27102856887014287,
+      "real_mae": 0.27102856887014287,
+      "endpoint_mae": 0.292407491710037,
+      "real_endpoint_mae": 0.292407491710037,
+      "n_obs": 19,
+      "n_real_obs": 19,
+      "curves": 16,
+      "points": 35
+    }
+  },
+  "final_evaluation": {
+    "val_full": {
+      "name": "final_val_full",
+      "loss_total": 0.0003619522467488423,
+      "rmse": 0.024103780883742917,
+      "real_rmse": 0.2114535306908187,
+      "mae": 0.011090901597370695,
+      "real_mae": 0.1819138526916504,
+      "endpoint_mae": 0.03724029718948339,
+      "real_endpoint_mae": 0.18191385781392455,
+      "n_obs": 8536,
+      "n_real_obs": 16,
+      "curves": 158,
+      "points": 8552
+    },
+    "test_full": {
+      "name": "final_test_full",
+      "loss_total": 0.0005969240987074695,
+      "rmse": 0.029162323340361902,
+      "real_rmse": 0.32796573837158993,
+      "mae": 0.012717953364867668,
+      "real_mae": 0.27695264314350326,
+      "endpoint_mae": 0.050264284756391914,
+      "real_endpoint_mae": 0.2878739661537111,
+      "n_obs": 8599,
+      "n_real_obs": 19,
+      "curves": 159,
+      "points": 8615
+    },
+    "val_real": {
+      "name": "final_val_real",
+      "loss_total": 0.018956739455461502,
+      "rmse": 0.21145354830835447,
+      "real_rmse": 0.21145354830835447,
+      "mae": 0.18191391229629517,
+      "real_mae": 0.18191391229629517,
+      "endpoint_mae": 0.18191392626613379,
+      "real_endpoint_mae": 0.18191392626613379,
+      "n_obs": 16,
+      "n_real_obs": 16,
+      "curves": 16,
+      "points": 32
+    },
+    "test_real": {
+      "name": "final_test_real",
+      "loss_total": 0.04727498069405556,
+      "rmse": 0.32796625489670644,
+      "real_rmse": 0.32796625489670644,
+      "mae": 0.2769530446905839,
+      "real_mae": 0.2769530446905839,
+      "endpoint_mae": 0.28787426417693496,
+      "real_endpoint_mae": 0.28787426417693496,
+      "n_obs": 19,
+      "n_real_obs": 19,
+      "curves": 16,
+      "points": 35
+    }
+  },
+  "best_metric": "val_real_rmse",
+  "best_metric_value": 0.21145354830835447
+}
