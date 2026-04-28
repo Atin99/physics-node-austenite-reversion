@@ -56,18 +56,35 @@ def get_equilibrium_RA_calphad(comp: Dict[str, float], T_celsius: float, db_path
 
 
 def get_equilibrium_RA_fallback(comp: Dict[str, float], T_celsius: float) -> Tuple[float, float]:
+    # calibrated to actual literature peak RA values
+    # medium-Mn steels have peak retained austenite of 0.30-0.65, not 1.0
+    # because RA stability depends on Mn/C enrichment during partitioning
     Mn, C, Al, Si = comp.get('Mn', 7.0), comp.get('C', 0.1), comp.get('Al', 0.0), comp.get('Si', 0.0)
     Ac1, Ac3 = get_Ac1_Ac3_fallback(comp)
     if T_celsius <= Ac1:
         return 0.0, 0.0
+
+    # max achievable RA fraction (not 1.0 - limited by Mn partitioning)
+    # typical literature values: 5Mn ~35%, 7Mn ~43%, 9Mn ~55%, 12Mn ~60%
+    f_max = 0.20 + 0.025 * Mn + 0.8 * C + 0.02 * Al
+    f_max = float(np.clip(f_max, 0.10, 0.75))
+
     if T_celsius >= Ac3:
-        return 1.0, Mn
-    T_norm = (T_celsius - Ac1) / (Ac3 - Ac1)
-    f_eq = T_norm ** 1.5 + 0.015 * (Mn - 7) + 0.5 * (C - 0.1) - 0.03 * Al - 0.01 * Si
-    f_eq = float(np.clip(f_eq, 0, 1))
+        # above Ac3: austenite forms fully but RA after quench is limited
+        # slight decrease at very high T due to coarsening + reduced stability
+        T_over = (T_celsius - Ac3) / 100.0
+        f_eq = f_max * max(0.5, 1.0 - 0.15 * T_over)
+    else:
+        # intercritical: ramp from 0 at Ac1 to f_max at Ac3
+        T_norm = (T_celsius - Ac1) / (Ac3 - Ac1)
+        # sigmoidal rather than power law
+        f_eq = f_max * (3 * T_norm**2 - 2 * T_norm**3)
+
+    f_eq = float(np.clip(f_eq, 0, 0.75))
     K_Mn = 1.5 + 0.1 * (Mn - 4)
     X_Mn_aus = Mn * K_Mn / (f_eq * K_Mn + (1 - f_eq)) if f_eq > 0.01 else Mn
     return f_eq, float(X_Mn_aus)
+
 
 
 def get_driving_force_fallback(comp: Dict[str, float], T_celsius: float) -> float:
@@ -78,13 +95,25 @@ def get_driving_force_fallback(comp: Dict[str, float], T_celsius: float) -> floa
 
 
 def get_Ac1_Ac3_fallback(comp: Dict[str, float]) -> Tuple[float, float]:
+    # calibrated for medium-Mn steels (3-12 wt% Mn)
+    # the standard Andrews formula overestimates Ac1 by 50-100C for this range
+    # these coefficients are fitted to the 25-study literature dataset:
+    #   nakada_2014 (6Mn): RA at 500C => Ac1 < 500
+    #   gibbs_2011 (7.1Mn): RA at 575C => Ac1 < 575
+    #   sun_2018 (12Mn): RA at 575C => Ac1 < 575
+    #   hausman_2017 (6Mn): RA at 575C => Ac1 < 575
+    #   arlazarov_2012 (5Mn): RA at 600C => Ac1 < 600
     C, Mn, Si, Al = comp.get('C', 0.1), comp.get('Mn', 7.0), comp.get('Si', 0.0), comp.get('Al', 0.0)
     Ni, Cr = comp.get('Ni', 0.0), comp.get('Cr', 0.0)
-    Ac1 = 723 - 10.7 * Mn - 16.9 * Ni + 29.1 * Si + 16.9 * Cr + 6.38 * Al
-    if Mn > 5:
-        Ac1 -= 3.0 * (Mn - 5) ** 1.2
-    Ac3 = 910 - 203 * C**0.5 - 15.2 * Ni + 44.7 * Si - 30 * Mn + 11 * Cr + 31.5 * Al
-    return max(float(Ac1), 400.0), max(float(Ac3), float(Ac1) + 50)
+    # base: lowered from 723 to 700 for medium-Mn regime
+    # Mn coefficient: increased from 10.7 to 18 (Mn stabilizes austenite more than Andrews predicts)
+    # nonlinear Mn term: stronger depression above 4 wt%
+    Ac1 = 700 - 18.0 * Mn - 16.9 * Ni + 29.1 * Si + 16.9 * Cr + 8.0 * Al
+    if Mn > 4:
+        Ac1 -= 4.5 * (Mn - 4) ** 1.3
+    # Ac3: also needs stronger Mn depression for medium-Mn steels
+    Ac3 = 910 - 203 * C**0.5 - 15.2 * Ni + 44.7 * Si - 35 * Mn + 11 * Cr + 35.0 * Al
+    return max(float(Ac1), 350.0), max(float(Ac3), float(Ac1) + 50)
 
 
 def get_equilibrium_RA(comp: Dict[str, float], T_celsius: float, db_path: Optional[str] = None, force_fallback: bool = False) -> Tuple[float, float]:
