@@ -1,0 +1,103 @@
+{
+  "started_utc": "2026-04-28T11:26:58.149847+00:00",
+  "finished_utc": "2026-04-28T13:08:57.338421+00:00",
+  "runtime_minutes": 101.99,
+  "run_version": "2026-04-28-stage2-extended-200ep",
+  "source_checkpoint": "/kaggle/working/stage2_extended/stage2_fixed_best.pt",
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
+  "stage2_config": {
+    "learning_rate": 3e-05,
+    "max_epochs": 200,
+    "early_stopping_patience": 9999,
+    "scheduler": "cosine_warm_restarts",
+    "gradient_clip": 0.5
+  },
+  "best_metric_name": "val_real_rmse",
+  "best_metric_value": 0.15662545836828326,
+  "best_val_metrics": {
+    "mae": 0.12045491300523281,
+    "rmse": 0.15662545836828326,
+    "real_mae": 0.12045491300523281,
+    "real_rmse": 0.15662545836828326,
+    "endpoint_mae": 0.12045491300523281,
+    "real_endpoint_mae": 0.12045491300523281,
+    "n_observed": 16.0,
+    "n_real_observed": 16.0
+  },
+  "evaluation": {
+    "val_full": {
+      "name": "val_full",
+      "loss_total": 0.001834731476696728,
+      "loss_data": 0.0017603599065345221,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.019238468569431948,
+        "rmse": 0.037760402626823904,
+        "real_mae": 0.12045491300523281,
+        "real_rmse": 0.15662545836828326,
+        "endpoint_mae": 0.050135077453289136,
+        "real_endpoint_mae": 0.12045491300523281,
+        "n_observed": 8536.0,
+        "n_real_observed": 16.0
+      },
+      "curves": 158,
+      "points": 8552
+    },
+    "test_full": {
+      "name": "test_full",
+      "loss_total": 0.0018605772041487198,
+      "loss_data": 0.001740428820173733,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.021276982012689495,
+        "rmse": 0.04328448231270051,
+        "real_mae": 0.096315083535094,
+        "real_rmse": 0.13630893378353795,
+        "endpoint_mae": 0.05281803467305108,
+        "real_endpoint_mae": 0.098958277143538,
+        "n_observed": 8599.0,
+        "n_real_observed": 19.0
+      },
+      "curves": 159,
+      "points": 8615
+    },
+    "val_real": {
+      "name": "val_real",
+      "loss_total": 0.010861567142455897,
+      "loss_data": 0.010860871873831002,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.12045491300523281,
+        "rmse": 0.15662545836828326,
+        "real_mae": 0.12045491300523281,
+        "real_rmse": 0.15662545836828326,
+        "endpoint_mae": 0.12045491300523281,
+        "real_endpoint_mae": 0.12045491300523281,
+        "n_observed": 16.0,
+        "n_real_observed": 16.0
+      },
+      "curves": 16,
+      "points": 32
+    },
+    "test_real": {
+      "name": "test_real",
+      "loss_total": 0.009288949337587837,
+      "loss_data": 0.009040702766014874,
+      "violation_rate": 0.0,
+      "metrics": {
+        "mae": 0.096315083535094,
+        "rmse": 0.13630893378353795,
+        "real_mae": 0.096315083535094,
+        "real_rmse": 0.13630893378353795,
+        "endpoint_mae": 0.098958277143538,
+        "real_endpoint_mae": 0.098958277143538,
+        "n_observed": 19.0,
+        "n_real_observed": 19.0
+      },
+      "curves": 16,
+      "points": 35
+    }
+  },
+  "total_epochs_trained": 200
+}
