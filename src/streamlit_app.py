@@ -174,8 +174,8 @@ with st.sidebar:
     Trained on 125 experimental measurements from 25 published studies.
 
     **Best metrics:**
-    - Val RMSE: 0.212
-    - Test RMSE: 0.312
+    - Val RMSE: 0.161
+    - Test RMSE: 0.131
     """)
     st.markdown("---")
     st.markdown("### Model")
@@ -183,7 +183,7 @@ with st.sidebar:
     - Architecture: Latent Neural ODE
     - Solver: Dormand-Prince 4/5
     - Physics: monotonicity, boundary, thermodynamic
-    - Parameters: ~180k
+    - Parameters: 78,474
     - Checkpoint: {'loaded' if model_loaded else 'not found'}
     """)
 
