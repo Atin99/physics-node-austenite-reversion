@@ -148,6 +148,12 @@ def train_ml_model(model_type):
     }
     df = df.rename(columns=col_map)
 
+    # Fill NaN (Al and Si have missing values in some patent/thesis data)
+    for c in ['Al', 'Si']:
+        if c in df.columns:
+            df[c] = df[c].fillna(0.0)
+    df = df.dropna(subset=['Mn', 'C', 'T_celsius', 't_seconds'])
+
     feat_cols = [c for c in ['Mn','C','Al','Si','T_celsius','t_seconds'] if c in df.columns]
     target = 'f_RA' if 'f_RA' in df.columns else ('f_RA_pct' if 'f_RA_pct' in df.columns else 'RA_fraction')
     X = df[feat_cols].values
