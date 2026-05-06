@@ -5,15 +5,24 @@ import os
 import torch
 
 PROJECT_ROOT = Path(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = PROJECT_ROOT / "data"
-SYNTHETIC_DIR = DATA_DIR / "synthetic"
-LITERATURE_DIR = DATA_DIR / "literature_validation"
-CALPHAD_DIR = DATA_DIR / "calphad_tables"
-USER_DATA_DIR = DATA_DIR / "user_experimental"
-MODEL_DIR = PROJECT_ROOT / "models"
-CHECKPOINT_DIR = MODEL_DIR / "checkpoints"
-FIGURE_DIR = PROJECT_ROOT / "figures"
-LOG_DIR = PROJECT_ROOT / "logs"
+_PARENT = PROJECT_ROOT.parent
+
+def _resolve_dir(*candidates):
+    """Return the first existing directory from candidates, or the last one."""
+    for c in candidates:
+        if c.exists():
+            return c
+    return candidates[-1]
+
+DATA_DIR = _resolve_dir(PROJECT_ROOT / "data", _PARENT / "data")
+SYNTHETIC_DIR = _resolve_dir(DATA_DIR / "synthetic")
+LITERATURE_DIR = _resolve_dir(DATA_DIR / "literature_validation", DATA_DIR / "literature")
+CALPHAD_DIR = _resolve_dir(DATA_DIR / "calphad_tables", DATA_DIR / "calphad")
+USER_DATA_DIR = _resolve_dir(DATA_DIR / "user_experimental")
+MODEL_DIR = _resolve_dir(PROJECT_ROOT / "models", _PARENT / "models")
+CHECKPOINT_DIR = _resolve_dir(MODEL_DIR / "checkpoints", MODEL_DIR)
+FIGURE_DIR = _resolve_dir(PROJECT_ROOT / "figures", _PARENT / "figures")
+LOG_DIR = _resolve_dir(PROJECT_ROOT / "logs", _PARENT / "logs")
 
 for d in [SYNTHETIC_DIR, LITERATURE_DIR, CALPHAD_DIR, USER_DATA_DIR, CHECKPOINT_DIR, FIGURE_DIR, LOG_DIR]:
     d.mkdir(parents=True, exist_ok=True)
@@ -156,6 +165,8 @@ class DataConfig:
     provenance_aware_loss: bool = True
     real_only: bool = False  # train exclusively on real data
     real_curve_group_min_points: int = 2
+    ode_time_transform: str = "raw"
+    ode_time_log_scale: float = 6.0
 
 
 @dataclass
@@ -212,8 +223,94 @@ class Config:
     wandb_project: str = "medium-mn-node"
 
 
+def _env_bool(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return str(raw).strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _env_int(name: str, default: int) -> int:
+    raw = os.environ.get(name)
+    if raw is None or str(raw).strip() == "":
+        return default
+    return int(raw)
+
+
+def _env_float(name: str, default: float) -> float:
+    raw = os.environ.get(name)
+    if raw is None or str(raw).strip() == "":
+        return default
+    return float(raw)
+
+
+def _apply_profile_overrides(cfg: Config) -> None:
+    profile = os.environ.get("PROJECT43_PROFILE", "").strip().lower()
+    if profile in {"deadline", "fast"}:
+        cfg.model.adjoint = False
+        cfg.model.use_amp = True
+        cfg.model.use_spectral_norm = False
+        cfg.model.batch_size = 32
+        cfg.model.rtol = 3e-4
+        cfg.model.atol = 1e-6
+        cfg.model.max_num_steps = 2000
+        cfg.model.augmented_dim = 2
+        cfg.model.hidden_dims = [96, 96, 64]
+        cfg.data.n_time_points = 36
+        cfg.data.synthetic_calibration_samples = 180
+        cfg.data.synthetic_exploration_samples = 700
+        cfg.data.ode_time_transform = "log10"
+    elif profile in {"balanced", "kaggle"}:
+        cfg.model.adjoint = False
+        cfg.model.use_amp = True
+        cfg.model.use_spectral_norm = False
+        cfg.model.batch_size = 24
+        cfg.model.rtol = 2e-4
+        cfg.model.atol = 1e-6
+        cfg.model.max_num_steps = 2500
+        cfg.model.augmented_dim = 3
+        cfg.model.hidden_dims = [128, 96, 64]
+        cfg.data.n_time_points = 42
+        cfg.data.synthetic_calibration_samples = 240
+        cfg.data.synthetic_exploration_samples = 900
+        cfg.data.ode_time_transform = "log10"
+
+
+def _apply_env_overrides(cfg: Config) -> None:
+    cfg.model.adjoint = _env_bool("PROJECT43_MODEL_ADJOINT", cfg.model.adjoint)
+    cfg.model.use_amp = _env_bool("PROJECT43_MODEL_USE_AMP", cfg.model.use_amp)
+    cfg.model.use_spectral_norm = _env_bool("PROJECT43_MODEL_USE_SN", cfg.model.use_spectral_norm)
+    cfg.model.solver = os.environ.get("PROJECT43_MODEL_SOLVER", cfg.model.solver)
+    cfg.model.rtol = _env_float("PROJECT43_MODEL_RTOL", cfg.model.rtol)
+    cfg.model.atol = _env_float("PROJECT43_MODEL_ATOL", cfg.model.atol)
+    cfg.model.max_num_steps = _env_int("PROJECT43_MODEL_MAX_STEPS", cfg.model.max_num_steps)
+    cfg.model.batch_size = _env_int("PROJECT43_MODEL_BATCH_SIZE", cfg.model.batch_size)
+    cfg.model.max_epochs = _env_int("PROJECT43_MODEL_MAX_EPOCHS", cfg.model.max_epochs)
+    cfg.model.augmented_dim = _env_int("PROJECT43_MODEL_AUG_DIM", cfg.model.augmented_dim)
+
+    hidden_raw = os.environ.get("PROJECT43_MODEL_HIDDEN_DIMS")
+    if hidden_raw:
+        values = [v.strip() for v in hidden_raw.split(",") if v.strip()]
+        cfg.model.hidden_dims = [int(v) for v in values]
+
+    cfg.data.n_time_points = _env_int("PROJECT43_DATA_N_TIME_POINTS", cfg.data.n_time_points)
+    cfg.data.synthetic_calibration_samples = _env_int(
+        "PROJECT43_DATA_SYNTH_CALIB", cfg.data.synthetic_calibration_samples
+    )
+    cfg.data.synthetic_exploration_samples = _env_int(
+        "PROJECT43_DATA_SYNTH_EXPLORE", cfg.data.synthetic_exploration_samples
+    )
+    cfg.data.real_data_weight = _env_float("PROJECT43_DATA_REAL_WEIGHT", cfg.data.real_data_weight)
+    cfg.data.real_only = _env_bool("PROJECT43_DATA_REAL_ONLY", cfg.data.real_only)
+    cfg.data.ode_time_transform = os.environ.get("PROJECT43_ODE_TIME_TRANSFORM", cfg.data.ode_time_transform)
+    cfg.data.ode_time_log_scale = _env_float("PROJECT43_ODE_TIME_LOG_SCALE", cfg.data.ode_time_log_scale)
+
+
 def get_config() -> Config:
-    return Config()
+    cfg = Config()
+    _apply_profile_overrides(cfg)
+    _apply_env_overrides(cfg)
+    return cfg
 
 
 if __name__ == "__main__":

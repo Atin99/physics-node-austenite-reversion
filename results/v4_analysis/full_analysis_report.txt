@@ -1,0 +1,126 @@
+======================================================================
+DATASET ANALYSIS
+======================================================================
+Total data points: 125
+Unique studies: 25
+
+Study                     Points    Mn     C    Al     T range (C)     Method         Quality
+----------------------------------------------------------------------------------------------------
+aliabad_2026                   2   6.0  0.40   2.0    680-   680    EBSD,XRD   text_reported
+arlazarov_2012                 5   5.0  0.10   0.0    600-   700         XRD digitized_figure
+cai_2016                       4  10.0  0.30   2.0    625-   700         XRD digitized_figure
+demoor_2011                    5   7.1  0.11   0.0    600-   600         XRD digitized_figure
+demoor_2015                    6   7.0  0.10   0.0    620-   620         XRD digitized_figure
+frontiers_2020                 2   8.0  0.20   3.0    680-   680    EBSD,XRD   text_reported
+gibbs_2011                     5   7.1  0.10   0.0    575-   675  neutron_diffraction,XRD           table
+han_2014                       6   9.0  0.05   0.0    600-   725         XRD digitized_figure
+hausman_2017                   4   6.0  0.30   0.0    575-   650         XRD digitized_figure
+hu_luo_2017                    4   7.0  0.10   0.5    600-   675         XRD digitized_figure
+lee_decooman_2014              6   5.8  0.12   2.0    625-   750         XRD digitized_figure
+lpbf_2021                      3   3.9  0.23   2.0     25-   750         XRD   text_reported
+luo_2011                       7   5.0  0.20   0.0    650-   650         XRD text_reported,digitized_figure
+ma_2019                        6   8.0  0.20   2.0    625-   750         XRD digitized_figure
+miller_2013                    5   5.8  0.10   0.0    600-   700         XRD digitized_figure
+nakada_2014                    7   6.0  0.00   0.0    500-   675         XRD digitized_figure
+pmc11053108_2024               7   4.7  0.16   1.6    640-  1000         XRD   text_reported
+pmc11173901_2024               3   9.4  0.20   4.3    750-   850         XRD digitized_figure
+pmc6266817_2018                6   5.0  0.12   1.0    600-   750         XRD text_reported,digitized_figure
+pmc6266817_2018_HR             4   5.0  0.12   1.0    600-   690         XRD text_reported,digitized_figure
+shi_2010                       5   5.0  0.20   0.0    620-   680         XRD digitized_figure
+suh_2017                       5   6.0  0.10   3.0    700-   800         XRD digitized_figure
+sun_2018                       8  12.0  0.05   0.0    575-   675         XRD digitized_figure
+yan_2022                       3   6.0  0.15   1.5    650-   710        EBSD   text_reported
+zhao_2014                      7   7.9  0.07   0.1    580-   700         XRD digitized_figure
+
+Measurement methods:
+  XRD: 116 points (92.8%)
+  EBSD: 5 points (4.0%)
+  neutron_diffraction: 4 points (3.2%)
+Data quality flags:
+  digitized_figure: 96 points (76.8%)
+  text_reported: 24 points (19.2%)
+  table: 5 points (4.0%)
+
+Composition ranges:
+  Mn: 3.93 - 12.00
+  C: 0.00 - 0.40
+  Al: 0.00 - 4.30
+  Si: 0.00 - 1.00
+  Mo: 0.00 - 0.20
+  Nb: 0.00 - 0.05
+  T_celsius: 25 - 1000
+  t_seconds: 0 - 604800 (168 hours)
+  f_RA: 0.000 - 0.647
+
+MEASUREMENT METHOD DISCREPANCY (same condition, different methods):
+  aliabad @ 680C, 3600s:
+    XRD: 34.0% (study: aliabad_2026)
+    EBSD: 38.0% (study: aliabad_2026)
+  frontiers @ 680C, 3600s:
+    XRD: 64.7% (study: frontiers_2020)
+    EBSD: 47.2% (study: frontiers_2020)
+
+======================================================================
+TRAINING DYNAMICS
+======================================================================
+Stage 1: 120 epochs
+  First epoch val_real_rmse: 0.35651
+  Best epoch val_real_rmse: 0.21278 (epoch 108)
+  Last epoch val_real_rmse: 0.21466
+  LR: 0.000250 -> 0.000005
+  Physics violations: 0.0010 -> 0.0000
+  NFE (neural function evals): 1195 -> 1220
+  Convergence milestones:
+    val_real_rmse < 0.3: epoch 2
+    val_real_rmse < 0.25: epoch 12
+    val_real_rmse < 0.22: epoch 18
+    val_real_rmse < 0.215: epoch 54
+    val_real_rmse < 0.213: epoch 69
+
+Stage 2 Fixed (Run 06): 16 epochs
+  Best epoch: 6 with val_real_rmse = 0.21244
+
+Stage 2 Run 07 (60 epochs): 60 epochs
+  Best epoch: 32 with val_real_rmse = 0.21145
+  Last epoch val_real_rmse: 0.21204
+  LR: 0.00007995 -> 0.00000100
+  Skipped batches: 0
+
+======================================================================
+MODEL COMPARISON (Run 06 vs Run 07)
+======================================================================
+
+Run 06 (fixed):
+
+Run 07 (latest):
+  Stage 1 baseline:
+    val_real_rmse:  0.21278
+    test_real_rmse: 0.31368
+  After stage 2:
+    val_real_rmse:  0.21145
+    test_real_rmse: 0.32797
+    val_real_mae:   0.18191
+    test_real_mae:  0.27695
+  Runtime: 34.2 min on Tesla T4
+
+KEY OBSERVATION:
+  Run 06 has better TEST metrics (0.312 vs 0.328)
+  Run 07 has better VAL metrics (0.211 vs 0.212)
+  This is expected with 16-curve validation sets - noise dominates
+  Run 06 remains the best model for deployment
+
+======================================================================
+JMAK BASELINE ANALYSIS
+======================================================================
+Fitting f(t) = f_max * (1 - exp(-k * t^n)) per isothermal curve
+
+Found 4 isothermal curves with 3+ time points
+
+  luo_2011 @ 650C: n=0.7, k=9.12e-04, RMSE=0.0285 (7 points)
+  demoor_2011 @ 600C: n=0.4, k=1.83e-02, RMSE=0.0119 (5 points)
+  sun_2018 @ 625C: n=0.6, k=4.09e-03, RMSE=0.0082 (4 points)
+  demoor_2015 @ 620C: n=0.4, k=1.83e-02, RMSE=0.0153 (6 points)
+
+NOTE: JMAK fits well within a single study's isothermal curve.
+But JMAK parameters are NOT transferable across compositions.
+The Neural ODE's value is cross-composition generalization.

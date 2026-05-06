@@ -47,7 +47,7 @@ def step_generate_data(config):
     return df_train, df_val
 
 
-def step_train(config, df_train=None, df_val=None):
+def step_train(config, df_train=None, df_val=None, resume_last=False):
     logger.info("STEP 2: Train PhysicsNODE")
     import pandas as pd
     from model import PhysicsNODE
@@ -65,6 +65,10 @@ def step_train(config, df_train=None, df_val=None):
     logger.info(model.get_model_summary())
     tr, va = create_data_loaders(df_train, df_val, config)
     trainer = Trainer(model, config)
+    last_ckpt = config.checkpoint_dir / "physics_node_last.pt"
+    if resume_last and last_ckpt.exists():
+        logger.info(f"Resuming from {last_ckpt}")
+        trainer.load_checkpoint("last")
     history = trainer.train(tr, va)
     return model, history
 
@@ -150,6 +154,7 @@ def main():
     parser.add_argument('--n-samples', type=int, default=None)
     parser.add_argument('--epochs', type=int, default=None)
     parser.add_argument('--device', type=str, default=None)
+    parser.add_argument('--resume-last', action='store_true', help='Resume training from physics_node_last.pt when present')
     args = parser.parse_args()
 
     if not any(vars(args).values()):
@@ -168,6 +173,23 @@ def main():
         config.device = torch.device(args.device)
 
     logger.info(f"Device: {config.device} | Adjoint: {config.model.adjoint} | AMP: {config.model.use_amp}")
+    logger.info(
+        "Config: solver=%s rtol=%s atol=%s max_steps=%s batch=%s n_time=%s synth_cal=%s synth_exp=%s hidden=%s aug=%s sn=%s time=%s"
+        % (
+            config.model.solver,
+            config.model.rtol,
+            config.model.atol,
+            config.model.max_num_steps,
+            config.model.batch_size,
+            config.data.n_time_points,
+            config.data.synthetic_calibration_samples,
+            config.data.synthetic_exploration_samples,
+            config.model.hidden_dims,
+            config.model.augmented_dim,
+            config.model.use_spectral_norm,
+            config.data.ode_time_transform,
+        )
+    )
     if args.real_only:
         config.data.real_only = True
         logger.info("MODE: Real-data-only (no synthetic augmentation)")
@@ -178,7 +200,7 @@ def main():
     if args.generate_data:
         df_train, df_val = step_generate_data(config)
     if args.train:
-        model, history = step_train(config, df_train, df_val)
+        model, history = step_train(config, df_train, df_val, resume_last=args.resume_last)
     if args.optimize:
         opt_results = step_optimize(config, model)
     if args.explain:

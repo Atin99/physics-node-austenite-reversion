@@ -1,0 +1,197 @@
+6.4s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.4s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.4s 3 0.00s - to python to disable frozen modules.
+6.4s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.0s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.0s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.0s 7 0.00s - to python to disable frozen modules.
+7.0s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.1s 9 PROJECT 4.3 HIFI EVAL-ONLY REPAIR
+8.1s 10 This cell does not train. It only restores checkpoint aliases and reruns evaluation/export.
+8.1s 11 [setup] Installing torchdiffeq ...
+12.7s 12 [repair] Workspace: /kaggle/working/project43_latent_stage2_real_only
+12.7s 13 [repair] Checkpoint: /kaggle/working/project43_latent_stage2_real_only/src/models/checkpoints/physics_node_best.pt
+12.7s 14 [skip] validate_calphad.py: optional pycalphad package is not installed.
+34.3s 15 [skip] evaluate_comprehensive.py returned 1; full output saved to /kaggle/working/project_4_3_hifi_eval_repair/logs/evaluate_comprehensive.py.log
+34.4s 16 ======================================================================
+34.4s 17 DATASET ANALYSIS
+34.4s 18 ======================================================================
+34.4s 19 Total data points: 125
+34.4s 20 Unique studies: 25
+34.4s 21 
+34.4s 22 Study                     Points    Mn     C    Al     T range (C)     Method         Quality
+34.4s 23 ----------------------------------------------------------------------------------------------------
+34.4s 24 aliabad_2026                   2   6.0  0.40   2.0    680-   680    EBSD,XRD   text_reported
+34.4s 25 arlazarov_2012                 5   5.0  0.10   0.0    600-   700         XRD digitized_figure
+34.4s 26 cai_2016                       4  10.0  0.30   2.0    625-   700         XRD digitized_figure
+34.4s 27 demoor_2011                    5   7.1  0.11   0.0    600-   600         XRD digitized_figure
+34.4s 28 demoor_2015                    6   7.0  0.10   0.0    620-   620         XRD digitized_figure
+34.4s 29 frontiers_2020                 2   8.0  0.20   3.0    680-   680    EBSD,XRD   text_reported
+34.4s 30 gibbs_2011                     5   7.1  0.10   0.0    575-   675  neutron_diffraction,XRD           table
+34.4s 31 han_2014                       6   9.0  0.05   0.0    600-   725         XRD digitized_figure
+34.4s 32 hausman_2017                   4   6.0  0.30   0.0    575-   650         XRD digitized_figure
+34.4s 33 hu_luo_2017                    4   7.0  0.10   0.5    600-   675         XRD digitized_figure
+34.4s 34 lee_decooman_2014              6   5.8  0.12   2.0    625-   750         XRD digitized_figure
+34.4s 35 lpbf_2021                      3   3.9  0.23   2.0     25-   750         XRD   text_reported
+34.4s 36 luo_2011                       7   5.0  0.20   0.0    650-   650         XRD text_reported,digitized_figure
+34.4s 37 ma_2019                        6   8.0  0.20   2.0    625-   750         XRD digitized_figure
+34.4s 38 miller_2013                    5   5.8  0.10   0.0    600-   700         XRD digitized_figure
+34.4s 39 nakada_2014                    7   6.0  0.00   0.0    500-   675         XRD digitized_figure
+34.4s 40 pmc11053108_2024               7   4.7  0.16   1.6    640-  1000         XRD   text_reported
+34.4s 41 pmc11173901_2024               3   9.4  0.20   4.3    750-   850         XRD digitized_figure
+34.4s 42 pmc6266817_2018                6   5.0  0.12   1.0    600-   750         XRD text_reported,digitized_figure
+34.4s 43 pmc6266817_2018_HR             4   5.0  0.12   1.0    600-   690         XRD text_reported,digitized_figure
+34.4s 44 shi_2010                       5   5.0  0.20   0.0    620-   680         XRD digitized_figure
+34.4s 45 suh_2017                       5   6.0  0.10   3.0    700-   800         XRD digitized_figure
+34.4s 46 sun_2018                       8  12.0  0.05   0.0    575-   675         XRD digitized_figure
+34.4s 47 yan_2022                       3   6.0  0.15   1.5    650-   710        EBSD   text_reported
+34.4s 48 zhao_2014                      7   7.9  0.07   0.1    580-   700         XRD digitized_figure
+34.4s 49 
+34.4s 50 Measurement methods:
+34.4s 51 XRD: 116 points (92.8%)
+34.4s 52 EBSD: 5 points (4.0%)
+34.4s 53 neutron_diffraction: 4 points (3.2%)
+34.4s 54 Data quality flags:
+34.4s 55 digitized_figure: 96 points (76.8%)
+34.4s 56 text_reported: 24 points (19.2%)
+34.4s 57 table: 5 points (4.0%)
+34.4s 58 
+34.4s 59 Composition ranges:
+34.4s 60 Mn: 3.93 - 12.00
+34.4s 61 C: 0.00 - 0.40
+34.4s 62 Al: 0.00 - 4.30
+34.4s 63 Si: 0.00 - 1.00
+34.4s 64 Mo: 0.00 - 0.20
+34.4s 65 Nb: 0.00 - 0.05
+34.4s 66 T_celsius: 25 - 1000
+34.4s 67 t_seconds: 0 - 604800 (168 hours)
+34.4s 68 f_RA: 0.000 - 0.647
+34.4s 69 
+34.4s 70 MEASUREMENT METHOD DISCREPANCY (same condition, different methods):
+34.4s 71 aliabad @ 680C, 3600s:
+34.4s 72 XRD: 34.0% (study: aliabad_2026)
+34.4s 73 EBSD: 38.0% (study: aliabad_2026)
+34.4s 74 frontiers @ 680C, 3600s:
+34.4s 75 XRD: 64.7% (study: frontiers_2020)
+34.4s 76 EBSD: 47.2% (study: frontiers_2020)
+34.4s 77 
+34.4s 78 ======================================================================
+34.4s 79 TRAINING DYNAMICS
+34.4s 80 ======================================================================
+34.4s 81 Stage 1: 0 epochs
+34.4s 82 
+34.4s 83 Stage 2 Fixed (Run 06): 0 epochs
+34.4s 84 
+34.4s 85 Stage 2 Run 07 (60 epochs): 0 epochs
+34.4s 86 
+34.4s 87 ======================================================================
+34.4s 88 MODEL COMPARISON (Run 06 vs Run 07)
+34.4s 89 ======================================================================
+34.4s 90 
+34.4s 91 KEY OBSERVATION:
+34.4s 92 Run 06 has better TEST metrics (0.312 vs 0.328)
+34.4s 93 Run 07 has better VAL metrics (0.211 vs 0.212)
+34.4s 94 This is expected with 16-curve validation sets - noise dominates
+34.4s 95 Run 06 remains the best model for deployment
+34.4s 96 
+34.4s 97 ======================================================================
+34.4s 98 JMAK BASELINE ANALYSIS
+34.4s 99 ======================================================================
+34.4s 100 Fitting f(t) = f_max * (1 - exp(-k * t^n)) per isothermal curve
+34.4s 101 
+34.4s 102 Found 4 isothermal curves with 3+ time points
+34.4s 103 
+34.4s 104 luo_2011 @ 650C: n=0.7, k=9.12e-04, RMSE=0.0285 (7 points)
+34.4s 105 demoor_2011 @ 600C: n=0.4, k=1.83e-02, RMSE=0.0119 (5 points)
+34.4s 106 sun_2018 @ 625C: n=0.6, k=4.09e-03, RMSE=0.0082 (4 points)
+34.4s 107 demoor_2015 @ 620C: n=0.4, k=1.83e-02, RMSE=0.0153 (6 points)
+34.4s 108 
+34.4s 109 NOTE: JMAK fits well within a single study's isothermal curve.
+34.4s 110 But JMAK parameters are NOT transferable across compositions.
+34.4s 111 The Neural ODE's value is cross-composition generalization.
+34.4s 112 
+34.4s 113 Report saved to: /kaggle/working/project43_latent_stage2_real_only/analysis_results/full_analysis_report.txt
+45.2s 114 Loaded: stage2_extended_best.pt
+45.2s 115 Loaded 125 experimental points
+45.2s 116 
+45.2s 117 ======================================================================
+45.2s 118 ABLATION 1: MONOTONICITY CONSTRAINT ANALYSIS
+45.2s 119 ======================================================================
+45.2s 120 Curves tested: 29
+45.2s 121 Monotonicity violations: 0 (0.0%)
+45.2s 122 All curves are monotonically non-decreasing (constraint effective)
+45.2s 123 
+45.2s 124 ======================================================================
+45.2s 125 ABLATION 2: BOUNDARY CONDITION ANALYSIS
+45.2s 126 ======================================================================
+45.2s 127 Initial condition f(0) ~ 0:
+45.2s 128 OK (<0.05): 29
+45.2s 129 Fail (>0.05): 0
+45.2s 130 Mean f(0): 0.0010
+45.2s 131 
+45.2s 132 Final/Equilibrium ratio:
+45.2s 133 Mean: 1.020
+45.2s 134 Fraction within [0, 1.1]: 100.0%
+45.2s 135 Fraction exceeding f_eq by >10%: 0.0%
+45.2s 136 
+45.2s 137 ======================================================================
+45.2s 138 ABLATION 3: LOSS COMPONENT ANALYSIS (from training history)
+45.2s 139 ======================================================================
+45.2s 140 Training history not found
+45.2s 141 
+45.2s 142 Generating ablation summary figure...
+45.2s 143 Saved fig13_ablation_study.png/pdf
+45.2s 144 
+45.2s 145 ======================================================================
+45.2s 146 ABLATION STUDY COMPLETE
+45.2s 147 ======================================================================
+45.2s 148 
+45.2s 149 Summary:
+45.2s 150 - Monotonicity: 0/29 violations (0.0%)
+45.2s 151 - Boundary (f(0)~0): 29/29 pass
+45.2s 152 - Boundary (f/f_eq ratio): mean=1.020
+45.2s 153 - Physics loss fraction: tracks data loss closely (well-balanced)
+45.2s 154 
+45.4s 155 HIFI EVAL-ONLY REPAIR FINISHED
+45.4s 156 {
+45.4s 157 "status": "finished",
+45.4s 158 "finished_utc": "2026-05-06T17:52:35.844734+00:00",
+45.4s 159 "source": {
+45.4s 160 "source_kind": "extracted",
+45.4s 161 "source_path": "/kaggle/input/datasets/atindatta3/project-4-3-hifi-eval-repair-input-zip-3-56-mb/project43_latent_stage2_real_only"
+45.4s 162 },
+45.4s 163 "alias_info": {
+45.4s 164 "checkpoint": "/kaggle/working/project43_latent_stage2_real_only/src/models/checkpoints/physics_node_best.pt",
+45.4s 165 "aliases": {
+45.4s 166 "stage2_fixed_best.pt": "/kaggle/working/project43_latent_stage2_real_only/models/stage2_fixed_best.pt",
+45.4s 167 "stage2_extended_best.pt": "/kaggle/working/project43_latent_stage2_real_only/models/stage2_extended_best.pt"
+45.4s 168 }
+45.4s 169 },
+45.4s 170 "scripts": [
+45.4s 171 {
+45.4s 172 "script": "evaluate_comprehensive.py",
+45.4s 173 "status": "skipped",
+45.4s 174 "return_code": 1,
+45.4s 175 "log": "/kaggle/working/project_4_3_hifi_eval_repair/logs/evaluate_comprehensive.py.log"
+45.4s 176 },
+45.4s 177 {
+45.4s 178 "script": "analysis.py",
+45.4s 179 "status": "completed",
+45.4s 180 "log": "/kaggle/working/project_4_3_hifi_eval_repair/logs/analysis.py.log"
+45.4s 181 },
+45.4s 182 {
+45.4s 183 "script": "ablation_study.py",
+45.4s 184 "status": "completed",
+45.4s 185 "log": "/kaggle/working/project_4_3_hifi_eval_repair/logs/ablation_study.py.log"
+45.4s 186 }
+45.4s 187 ],
+45.4s 188 "output_zip": "/kaggle/working/project_4_3_hifi_eval_repair_outputs.zip"
+45.4s 189 }
+47.7s 190 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+47.7s 191 cells[i][c] = re.sub('\\\\\|', '|', cell)
+47.8s 192 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+47.8s 193 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+48.4s 194 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+48.7s 195 [NbConvertApp] Writing 22608 bytes to __notebook__.ipynb
+51.0s 196 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+51.9s 197 [NbConvertApp] Writing 320668 bytes to __results__.html

@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-05-06T13:59:20.431291+00:00",
+  "finished_utc": "2026-05-06T15:05:10.045236+00:00",
+  "elapsed_hours": 1.0971,
+  "artifact_root": "/kaggle/working/project_4_3_final_artifacts",
+  "snapshot_zip": "/kaggle/working/project_4_3_final_artifacts_snapshot.zip",
+  "done_stages": [
+    "00_setup_extract",
+    "01_baselines_ml_basic_nn",
+    "02_latent_stage1_generate_full",
+    "03_latent_stage1_train_40ep",
+    "04_latent_stage2_generate_real_only",
+    "05_latent_stage2_train_70ep_real_only",
+    "06_evaluate_export"
+  ],
+  "failed_stages": [],
+  "continue_on_stage_error": true
+}

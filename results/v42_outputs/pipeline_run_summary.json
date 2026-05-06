@@ -1,0 +1,111 @@
+{
+  "split_summary": {
+    "master_rows_all": 409,
+    "experimental_core_exact": 88,
+    "experimental_digitized": 96,
+    "transfer_real_weak_labels": 189,
+    "candidate_or_not_ready": 29,
+    "legacy_unverified": 7,
+    "ml_ready_real_pool": 184,
+    "ml_ready_with_transfer": 373,
+    "ml_ready_strict_nonlegacy": 66,
+    "unique_studies_master": 56,
+    "unique_studies_ml_ready_real": 33
+  },
+  "synthetic_rows_generated": 5000,
+  "synthetic_csv": "C:\\project 4\\project_4.2\\data\\synthetic\\synthetic_calphad_surrogate.csv",
+  "combined_csv": "C:\\project 4\\project_4.2\\data\\processed\\ml_ready_with_transfer_plus_synth.csv",
+  "baseline_runs": {
+    "real_only": {
+      "dataset": "C:\\project 4\\project_4.2\\data\\processed\\ml_ready_real_pool.csv",
+      "rows_used": 184,
+      "studies_used": 33,
+      "predictions_file": "C:\\project 4\\project_4.2\\outputs\\scenario_real_only_loso_predictions.csv",
+      "metrics_file": "C:\\project 4\\project_4.2\\outputs\\scenario_real_only_metrics.csv",
+      "weights_file": "C:\\project 4\\project_4.2\\outputs\\scenario_real_only_fusion_weights.json",
+      "metrics": [
+        {
+          "model": "ols",
+          "rmse": 0.15259636128211757,
+          "mae": 0.12401407407836393,
+          "r2": -0.3018409747203743,
+          "n": 184
+        },
+        {
+          "model": "ridge",
+          "rmse": 0.15172853091655517,
+          "mae": 0.12325677866877256,
+          "r2": -0.28707568748471024,
+          "n": 184
+        },
+        {
+          "model": "knn",
+          "rmse": 0.12984898868406053,
+          "mae": 0.1068724936869815,
+          "r2": 0.057358134857265264,
+          "n": 184
+        },
+        {
+          "model": "basic_nn",
+          "rmse": 0.1671983116552846,
+          "mae": 0.12994930550723743,
+          "r2": -0.5629077917067691,
+          "n": 184
+        },
+        {
+          "model": "fusion",
+          "rmse": 0.1353294285939974,
+          "mae": 0.11112546677389477,
+          "r2": -0.02389182880894447,
+          "n": 184
+        }
+      ]
+    },
+    "real_plus_transfer": {
+      "dataset": "C:\\project 4\\project_4.2\\data\\processed\\ml_ready_with_transfer.csv",
+      "rows_used": 373,
+      "studies_used": 47,
+      "predictions_file": "C:\\project 4\\project_4.2\\outputs\\scenario_real_plus_transfer_loso_predictions.csv",
+      "metrics_file": "C:\\project 4\\project_4.2\\outputs\\scenario_real_plus_transfer_metrics.csv",
+      "weights_file": "C:\\project 4\\project_4.2\\outputs\\scenario_real_plus_transfer_fusion_weights.json",
+      "metrics": [
+        {
+          "model": "ols",
+          "rmse": 0.11364712266005739,
+          "mae": 0.09204047109455829,
+          "r2": 0.3450638437977812,
+          "n": 373
+        },
+        {
+          "model": "ridge",
+          "rmse": 0.11345316774664298,
+          "mae": 0.09194577951679932,
+          "r2": 0.34729741886394194,
+          "n": 373
+        },
+        {
+          "model": "knn",
+          "rmse": 0.1121565878752932,
+          "mae": 0.08976864860390049,
+          "r2": 0.3621307682949755,
+          "n": 373
+        },
+        {
+          "model": "basic_nn",
+          "rmse": 0.13829399928927127,
+          "mae": 0.10568206178145029,
+          "r2": 0.03018532952870956,
+          "n": 373
+        },
+        {
+          "model": "fusion",
+          "rmse": 0.10916130805567532,
+          "mae": 0.0865718406123255,
+          "r2": 0.39574599236885255,
+          "n": 373
+        }
+      ]
+    },
+    "real_transfer_synth": null
+  }
+}

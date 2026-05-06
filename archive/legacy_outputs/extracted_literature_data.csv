@@ -1,0 +1,22 @@
+Study,Year,Measurement_Method,Mn_wt,C_wt,Al_wt,Si_wt,T_anneal_C,Time_sec,RA_fraction,Notes
+Lee_et_al,2011,XRD,6.0,0.1,0.0,0.0,600,3600,0.35,Isothermal hold
+Lee_et_al,2011,XRD,6.0,0.1,0.0,0.0,600,36000,0.40,Extended hold
+Lee_et_al,2011,XRD,6.0,0.1,0.0,0.0,650,3600,0.25,Higher temp shifts eq
+Miller,1972,XRD,5.8,0.11,0.0,0.0,600,57600,0.30,Legacy TRIP baseline
+Suh_et_al,2014,XRD,5.0,0.1,0.0,0.0,650,360,0.15,C-partitioning stage
+Suh_et_al,2014,XRD,5.0,0.1,0.0,0.0,650,3600,0.22,Transition stage
+Suh_et_al,2014,XRD,5.0,0.1,0.0,0.0,650,36000,0.28,Mn-partitioning stage
+De_Moor_et_al,2011,XRD,3.0,0.1,0.0,0.0,600,3600,0.12,Lean alloy
+De_Moor_et_al,2011,XRD,5.0,0.1,0.0,0.0,600,3600,0.18,Lean alloy
+Gibbs_et_al,2011,XRD,7.0,0.1,0.0,0.0,600,3600,0.38,High stability
+Gibbs_et_al,2011,XRD,7.0,0.1,0.0,0.0,650,3600,0.25,High stability
+Luo_et_al,2011,XRD,5.0,0.1,0.0,0.0,650,3600,0.30,Concurrent recrystallization
+Ryu_et_al,2014,XRD,6.0,0.1,0.0,0.0,600,3600,0.32,Thermal stability study
+Ryu_et_al,2014,XRD,6.0,0.1,0.0,0.0,650,3600,0.20,Thermal stability study
+Kuzmina_et_al,2015,APT/XRD,9.0,0.1,0.0,0.0,600,86400,0.42,Local equilibrium established
+Hu_et_al,2017,XRD,7.0,0.1,2.0,0.0,650,3600,0.20,Al delays kinetics
+Hu_et_al,2017,XRD,7.0,0.1,2.0,0.0,700,3600,0.35,Al shifts Ac1 higher
+Arlazarov_et_al,2012,XRD,5.0,0.1,0.0,0.0,650,1800,0.24,Heating rate effect
+Aydin_et_al,2013,XRD,6.0,0.1,0.0,0.0,625,3600,0.33,Isothermal hold
+Wang_et_al,2013,XRD,5.0,0.2,0.0,0.0,650,3600,0.36,Higher C content
+Wang_et_al,2013,XRD,5.0,0.2,0.0,0.0,650,14400,0.38,Higher C content equilibrium

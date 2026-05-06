@@ -1,7 +1,10 @@
 import logging
 import math
+import os
+import threading
 import time
 from collections import Counter
+from pathlib import Path
 from typing import Dict, List, Optional
 
 import numpy as np
@@ -18,6 +21,18 @@ from model import EnsembleNODE, PhysicsNODE, SWAG
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s', datefmt='%H:%M:%S')
 logger = logging.getLogger(__name__)
+
+
+def _ode_time_from_seconds(t_seconds: np.ndarray, config: Config) -> np.ndarray:
+    transform = str(getattr(config.data, 'ode_time_transform', 'raw')).lower()
+    t = np.asarray(t_seconds, dtype=np.float32)
+    if transform == 'log10':
+        scale = max(float(getattr(config.data, 'ode_time_log_scale', 6.0)), 1e-6)
+        return (np.log10(np.maximum(t, 0.0) + 1.0) / scale).astype(np.float32)
+    if transform == 'log1p':
+        scale = max(float(getattr(config.data, 'ode_time_log_scale', 6.0)), 1e-6)
+        return (np.log1p(np.maximum(t, 0.0)) / scale).astype(np.float32)
+    return t.astype(np.float32)
 
 
 class AusteniteReversionDataset(Dataset):
@@ -48,12 +63,15 @@ class AusteniteReversionDataset(Dataset):
                 ],
                 dtype=np.float32,
             )
+            raw_t = sub['t_seconds'].to_numpy(dtype=np.float32)
+            ode_t = _ode_time_from_seconds(raw_t, config)
             self.samples.append(
                 {
                     'sample_id': int(sid),
                     'static': torch.tensor(static, dtype=torch.float32),
                     'traj': torch.tensor(sub['f_RA'].to_numpy(dtype=np.float32), dtype=torch.float32),
-                    't_span': torch.tensor(sub['t_seconds'].to_numpy(dtype=np.float32), dtype=torch.float32),
+                    't_span': torch.tensor(ode_t, dtype=torch.float32),
+                    'raw_t_span': torch.tensor(raw_t, dtype=torch.float32),
                     'obs_mask': torch.tensor(obs_mask, dtype=torch.float32),
                     'f_eq': torch.tensor(f_eq, dtype=torch.float32),
                     'dG_norm': torch.tensor(dG / 1000.0, dtype=torch.float32),
@@ -78,6 +96,7 @@ def _collate_fn(batch):
 
     traj = torch.zeros(batch_size, max_len, dtype=torch.float32)
     t_span = torch.zeros(batch_size, max_len, dtype=torch.float32)
+    raw_t_span = torch.zeros(batch_size, max_len, dtype=torch.float32)
     point_mask = torch.zeros(batch_size, max_len, dtype=torch.float32)
     obs_mask = torch.zeros(batch_size, max_len, dtype=torch.float32)
 
@@ -85,16 +104,19 @@ def _collate_fn(batch):
         cur_len = sample['traj'].shape[0]
         traj[idx, :cur_len] = sample['traj']
         t_span[idx, :cur_len] = sample['t_span']
+        raw_t_span[idx, :cur_len] = sample['raw_t_span']
         point_mask[idx, :cur_len] = 1.0
         obs_mask[idx, :cur_len] = sample['obs_mask']
         if cur_len > 0 and cur_len < max_len:
             traj[idx, cur_len:] = sample['traj'][-1]
             t_span[idx, cur_len:] = sample['t_span'][-1]
+            raw_t_span[idx, cur_len:] = sample['raw_t_span'][-1]
 
     return {
         'static': torch.stack([sample['static'] for sample in batch]),
         'traj': traj,
         't_span': t_span,
+        'raw_t_span': raw_t_span,
         'point_mask': point_mask,
         'obs_mask': obs_mask,
         'lengths': lengths,
@@ -114,8 +136,13 @@ def set_seed(seed=42):
     torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+    fast_mode = os.environ.get('PROJECT43_FAST_MODE', '0').strip().lower() in {'1', 'true', 'yes'}
+    if torch.cuda.is_available() and fast_mode:
+        torch.backends.cudnn.deterministic = False
+        torch.backends.cudnn.benchmark = True
+    else:
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
 
 
 class Trainer:
@@ -139,6 +166,7 @@ class Trainer:
         if use_homoscedastic is None:
             use_homoscedastic = bool(getattr(self.mc, 'use_homoscedastic', False))
         self.use_homoscedastic = use_homoscedastic
+        self.use_gradnorm = use_gradnorm
 
         self.criterion = PhysicsConstrainedLoss(
             config=self.mc,
@@ -202,6 +230,8 @@ class Trainer:
         self.patience_counter = 0
 
     def _get_shared_layer(self):
+        if not self.use_gradnorm:
+            return None
         for module in self.model.ode_func.net:
             if hasattr(module, 'weight'):
                 return module
@@ -228,68 +258,120 @@ class Trainer:
         self.optimizer.zero_grad(set_to_none=True)
         accum_steps = 0
         shared_layer = self._get_shared_layer()
+        total_batches = len(loader)
+        epoch_t0 = time.time()
+        log_every = max(1, int(os.environ.get('PHYSICSNODE_BATCH_LOG_EVERY', '2')))
+        batch_heartbeat_sec = max(10, int(os.environ.get('PHYSICSNODE_BATCH_HEARTBEAT_SEC', '30')))
+        last_log_t = epoch_t0
+        active_batch = {'step': 0, 'start_t': epoch_t0}
+        stop_watchdog = threading.Event()
 
-        for step, batch in enumerate(loader):
-            static = batch['static'].to(self.device)
-            f_true = batch['traj'].to(self.device)
-            t_span = batch['t_span'].to(self.device)
-            point_mask = batch['point_mask'].to(self.device)
-            obs_mask = batch['obs_mask'].to(self.device)
-            lengths = batch['lengths']
-            f_eq = batch['f_eq'].to(self.device)
-            dG = batch['dG_norm'].to(self.device)
-            k_j = batch['k_jmak'].to(self.device)
-            n_j = batch['n_jmak'].to(self.device)
-
-            with autocast('cuda', enabled=self.mc.use_amp and torch.cuda.is_available()):
-                try:
-                    f_pred = self.model(static, f_eq, dG, t_span, lengths=lengths)
-                    ml = min(f_pred.shape[1], f_true.shape[1])
-                    t_loss = t_span[:, :ml]
-                    loss_d = self.criterion(
-                        f_pred[:, :ml],
-                        f_true[:, :ml],
-                        f_eq,
-                        t_loss,
-                        k_j,
-                        n_j,
-                        self.model,
-                        shared_layer,
-                        epoch,
-                        point_mask=point_mask[:, :ml],
-                        obs_mask=obs_mask[:, :ml],
-                    )
-
-                    provenance = batch.get('provenance', ['unknown'] * static.shape[0])
-                    real_mask = torch.tensor(
-                        [p in ('experimental', 'user_provided') for p in provenance],
-                        dtype=torch.float32,
-                        device=self.device,
-                    )
-                    if real_mask.sum() > 0 and getattr(self.config.data, 'provenance_aware_loss', False):
-                        weight = 1.0 + (self.config.data.real_data_weight - 1.0) * real_mask.mean()
-                        loss_d['total'] = loss_d['total'] * weight
-                except Exception as exc:
-                    skipped += 1
-                    logger.warning(f"Skipped batch {step}: {exc}")
+        def _watchdog():
+            while not stop_watchdog.wait(batch_heartbeat_sec):
+                step_idx = int(active_batch['step'])
+                if step_idx <= 0:
                     continue
+                running_for = time.time() - float(active_batch['start_t'])
+                logger.info(
+                    "E%04d batch %04d/%04d running | batch_elapsed=%.1fs epoch_elapsed=%.1fm"
+                    % (
+                        epoch,
+                        step_idx,
+                        total_batches,
+                        running_for,
+                        (time.time() - epoch_t0) / 60.0,
+                    )
+                )
 
-            self.scaler.scale(loss_d['total']).backward()
-            accum_steps += 1
-            if accum_steps >= self.mc.accumulate_grad_batches:
-                self.scaler.unscale_(self.optimizer)
-                nn.utils.clip_grad_norm_(self.model.parameters(), self.mc.gradient_clip_val)
-                self.scaler.step(self.optimizer)
-                self.scaler.update()
-                self.optimizer.zero_grad(set_to_none=True)
-                accum_steps = 0
+        watchdog_thread = threading.Thread(target=_watchdog, daemon=True)
+        watchdog_thread.start()
 
-            for key in totals:
-                if key in loss_d:
-                    totals[key] += float(loss_d[key].detach().item())
-            nfe_total += float(self.model.ode_func.nfe)
-            self.model.ode_func.nfe = 0
-            n += 1
+        try:
+            for step, batch in enumerate(loader, start=1):
+                active_batch['step'] = step
+                active_batch['start_t'] = time.time()
+                if step == 1 or step % log_every == 0:
+                    logger.info(f"E{epoch:04d} batch {step:04d}/{total_batches:04d} start")
+                static = batch['static'].to(self.device)
+                f_true = batch['traj'].to(self.device)
+                t_span = batch['t_span'].to(self.device)
+                raw_t_span = batch.get('raw_t_span', batch['t_span']).to(self.device)
+                point_mask = batch['point_mask'].to(self.device)
+                obs_mask = batch['obs_mask'].to(self.device)
+                lengths = batch['lengths']
+                f_eq = batch['f_eq'].to(self.device)
+                dG = batch['dG_norm'].to(self.device)
+                k_j = batch['k_jmak'].to(self.device)
+                n_j = batch['n_jmak'].to(self.device)
+
+                with autocast('cuda', enabled=self.mc.use_amp and torch.cuda.is_available()):
+                    try:
+                        f_pred = self.model(static, f_eq, dG, t_span, lengths=lengths)
+                        ml = min(f_pred.shape[1], f_true.shape[1])
+                        t_loss = raw_t_span[:, :ml]
+                        loss_d = self.criterion(
+                            f_pred[:, :ml],
+                            f_true[:, :ml],
+                            f_eq,
+                            t_loss,
+                            k_j,
+                            n_j,
+                            self.model,
+                            shared_layer,
+                            epoch,
+                            point_mask=point_mask[:, :ml],
+                            obs_mask=obs_mask[:, :ml],
+                        )
+
+                        provenance = batch.get('provenance', ['unknown'] * static.shape[0])
+                        real_mask = torch.tensor(
+                            [p in ('experimental', 'user_provided') for p in provenance],
+                            dtype=torch.float32,
+                            device=self.device,
+                        )
+                        if real_mask.sum() > 0 and getattr(self.config.data, 'provenance_aware_loss', False):
+                            weight = 1.0 + (self.config.data.real_data_weight - 1.0) * real_mask.mean()
+                            loss_d['total'] = loss_d['total'] * weight
+                    except Exception as exc:
+                        skipped += 1
+                        logger.warning(f"Skipped batch {step}: {exc}")
+                        continue
+
+                self.scaler.scale(loss_d['total']).backward()
+                accum_steps += 1
+                if accum_steps >= self.mc.accumulate_grad_batches:
+                    self.scaler.unscale_(self.optimizer)
+                    nn.utils.clip_grad_norm_(self.model.parameters(), self.mc.gradient_clip_val)
+                    self.scaler.step(self.optimizer)
+                    self.scaler.update()
+                    self.optimizer.zero_grad(set_to_none=True)
+                    accum_steps = 0
+
+                for key in totals:
+                    if key in loss_d:
+                        totals[key] += float(loss_d[key].detach().item())
+                nfe_total += float(self.model.ode_func.nfe)
+                self.model.ode_func.nfe = 0
+                n += 1
+                now = time.time()
+                if step == 1 or step == total_batches or step % log_every == 0 or (now - last_log_t) >= 60.0:
+                    logger.info(
+                        "E%04d batch %04d/%04d done | avg_total=%.5f avg_data=%.5f avg_nfe=%.0f skipped=%d elapsed=%.1fm"
+                        % (
+                            epoch,
+                            step,
+                            total_batches,
+                            totals['total'] / max(n, 1),
+                            totals['data'] / max(n, 1),
+                            nfe_total / max(n, 1),
+                            skipped,
+                            (now - epoch_t0) / 60.0,
+                        )
+                    )
+                    last_log_t = now
+        finally:
+            stop_watchdog.set()
+            watchdog_thread.join(timeout=2.0)
 
         if accum_steps > 0:
             self.scaler.unscale_(self.optimizer)
@@ -314,6 +396,7 @@ class Trainer:
             static = batch['static'].to(self.device)
             f_true = batch['traj'].to(self.device)
             t_span = batch['t_span'].to(self.device)
+            raw_t_span = batch.get('raw_t_span', batch['t_span']).to(self.device)
             point_mask = batch['point_mask'].to(self.device)
             obs_mask = batch['obs_mask'].to(self.device)
             lengths = batch['lengths']
@@ -325,7 +408,7 @@ class Trainer:
             try:
                 f_pred = self.model(static, f_eq, dG, t_span, lengths=lengths)
                 ml = min(f_pred.shape[1], f_true.shape[1])
-                t_loss = t_span[:, :ml]
+                t_loss = raw_t_span[:, :ml]
                 point_mask_cut = point_mask[:, :ml]
                 obs_mask_cut = obs_mask[:, :ml]
                 pred_cut = f_pred[:, :ml]
@@ -416,11 +499,20 @@ class Trainer:
             f"Training on {self.device} | Epochs: {self.mc.max_epochs} | Batch: {self.mc.batch_size} | LR: {self.mc.learning_rate}"
         )
         logger.info(f"AMP: {self.mc.use_amp} | Adjoint: {self.mc.adjoint} | SWAG: {self.swag is not None}")
+        logger.info(
+            f"ODE time transform: {getattr(self.config.data, 'ode_time_transform', 'raw')} "
+            f"| scale: {getattr(self.config.data, 'ode_time_log_scale', 'n/a')}"
+        )
         logger.info(f"Checkpoint metric: {self.best_metric_name}")
+        logger.info(f"Train batches: {len(train_loader)} | Val batches: {len(val_loader)}")
+        logger.info(f"Batch heartbeat: every {os.environ.get('PHYSICSNODE_BATCH_LOG_EVERY', '2')} batches")
         logger.info(f"{'=' * 60}")
         t0 = time.time()
+        start_epoch = len(self.history.get('train_loss', [])) + 1
+        if start_epoch > 1:
+            logger.info(f"Resuming from epoch {start_epoch} based on loaded history.")
 
-        for epoch in range(1, self.mc.max_epochs + 1):
+        for epoch in range(start_epoch, self.mc.max_epochs + 1):
             train_loss, nfe, skipped = self._train_epoch(train_loader, epoch)
             val_loss, viol, val_metrics = self._validate(val_loader)
             self.scheduler.step()
@@ -459,6 +551,8 @@ class Trainer:
             else:
                 self.patience_counter += 1
                 if self.patience_counter >= self.mc.early_stopping_patience:
+                    self.save_checkpoint('last')
+                    self.save_history('last')
                     logger.info(f"Early stopping at epoch {epoch}")
                     break
 
@@ -480,10 +574,14 @@ class Trainer:
                     )
                 )
 
+            self.save_checkpoint('last')
+            self.save_history('last')
+
         logger.info(
             f"Done in {(time.time() - t0) / 60:.1f}m | Best {self.best_metric_name}: {self.best_checkpoint_metric:.6f}"
         )
         self.save_checkpoint('last')
+        self.save_history('last')
         return self.history
 
     def save_checkpoint(self, tag='best'):
@@ -496,6 +594,8 @@ class Trainer:
             'best_metric_name': self.best_metric_name,
             'best_metric_value': self.best_checkpoint_metric,
             'best_val_metrics': self.best_val_metrics,
+            'patience_counter': self.patience_counter,
+            'epoch': len(self.history.get('train_loss', [])),
             'history': self.history,
             'config': {
                 'hidden_dims': self.mc.hidden_dims,
@@ -509,7 +609,28 @@ class Trainer:
         if self.swag and self.swag.n_collected > 0:
             state['swag_mean'] = self.swag.mean
             state['swag_sq_mean'] = self.swag.sq_mean
-        torch.save(state, path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path = path.with_suffix(path.suffix + '.tmp')
+        torch.save(state, tmp_path)
+        tmp_path.replace(path)
+        mirror_dir = os.environ.get('PHYSICSNODE_CHECKPOINT_MIRROR')
+        if mirror_dir:
+            mirror_path = Path(mirror_dir) / path.name
+            mirror_path.parent.mkdir(parents=True, exist_ok=True)
+            mirror_tmp = mirror_path.with_suffix(mirror_path.suffix + '.tmp')
+            torch.save(state, mirror_tmp)
+            mirror_tmp.replace(mirror_path)
+        return path
+
+    def save_history(self, tag='last'):
+        path = self.config.checkpoint_dir / f"physics_node_{tag}_history.csv"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(self.history).to_csv(path, index=False)
+        mirror_dir = os.environ.get('PHYSICSNODE_CHECKPOINT_MIRROR')
+        if mirror_dir:
+            mirror_path = Path(mirror_dir) / path.name
+            mirror_path.parent.mkdir(parents=True, exist_ok=True)
+            pd.DataFrame(self.history).to_csv(mirror_path, index=False)
         return path
 
     def load_checkpoint(self, tag='best'):
@@ -522,6 +643,7 @@ class Trainer:
         self.best_metric_name = ckpt.get('best_metric_name', self.best_metric_name)
         self.best_checkpoint_metric = ckpt.get('best_metric_value', self.best_checkpoint_metric)
         self.best_val_metrics = ckpt.get('best_val_metrics', {})
+        self.patience_counter = ckpt.get('patience_counter', self.patience_counter)
         if 'criterion' in ckpt and self.use_homoscedastic:
             self.criterion.load_state_dict(ckpt['criterion'])
         if 'history' in ckpt:
@@ -544,7 +666,7 @@ def create_data_loaders(train_df, val_df, config=None):
         else:
             last_idx = sample['traj'].shape[0] - 1
         endpoint = float(sample['traj'][last_idx].item())
-        duration = float(sample['t_span'][last_idx].item()) if sample['t_span'].numel() else 0.0
+        duration = float(sample.get('raw_t_span', sample['t_span'])[last_idx].item()) if sample['t_span'].numel() else 0.0
         provenance_weight = len(train_ds) / max(provenance_counts[prov], 1)
         endpoint_weight = 1.0 + 4.0 * min(endpoint, 0.5)
         duration_weight = 1.0 + 0.15 * min(np.log10(max(duration, 1.0)), 4.0)

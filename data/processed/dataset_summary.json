@@ -1,0 +1,13 @@
+{
+  "master_rows_all": 409,
+  "experimental_core_exact": 88,
+  "experimental_digitized": 96,
+  "transfer_real_weak_labels": 189,
+  "candidate_or_not_ready": 29,
+  "legacy_unverified": 7,
+  "ml_ready_real_pool": 184,
+  "ml_ready_with_transfer": 373,
+  "ml_ready_strict_nonlegacy": 66,
+  "unique_studies_master": 56,
+  "unique_studies_ml_ready_real": 33
+}

@@ -8,10 +8,6 @@ build/
 .eggs/
 *.egg
 
-# pytorch models - track these with git lfs or keep them out
-# uncomment the next line if you dont want to push model weights
-# *.pt
-
 # env
 .env
 .venv
@@ -28,39 +24,33 @@ ENV/
 # os
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# logs that get regenerated
-pipeline.log
+# === Large files that should NOT go to GitHub ===
 
-# jupyter
-.ipynb_checkpoints/
+# References (1GB+ pip cache + PDFs from p4.2)
+references/
 
-# pytest
-.pytest_cache/
-htmlcov/
-.coverage
+# Large zip archives (Kaggle results)
+*.zip
 
-# private / session notes
-HANDOFF_PROMPT.md
-docs/newplan_improvement.txt
-docs/stage2_retry_cells_summary.txt
-docs/RECOVER_FROM_STAGE1_CHECKPOINT.md
-docs/KAGGLE_RECOVERY_SETUP.txt
+# Raw literature PDFs (180MB)
+data/raw/
 
-# large synthetic data CSVs (regenerate with: python main.py --generate-data)
-# the small preview sample IS tracked for reference
-data/synthetic/synthetic_kinetics.csv
-data/synthetic/full_dataset.csv
-data/synthetic/train.csv
-data/synthetic/val.csv
-data/synthetic/test.csv
-src/data/synthetic/synthetic_kinetics.csv
-src/data/synthetic/full_dataset.csv
-src/data/synthetic/train.csv
-src/data/synthetic/val.csv
-src/data/synthetic/test.csv
+# Kaggle input packages (large)
+kaggle/v43_input_package/
+kaggle/v43_hifi_input_package/
+kaggle/v43_upload/
+kaggle/v43_hifi_upload/
+kaggle/v43_input_build/
+kaggle/v43_hifi_input_build/
 
-# temp generation scripts
-src/_gen_synthetic.py
-src/_gen_sample.py
+# Large synthetic data (45MB+ each)
+data/processed/full_dataset.csv
+data/processed/synthetic_kinetics.csv
+data/processed/train.csv
+data/processed/test.csv
+data/processed/val.csv
+
+# Logs
+logs/
+*.log
